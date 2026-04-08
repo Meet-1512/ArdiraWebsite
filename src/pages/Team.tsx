@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Link } from "wouter";
-import { ArrowRight, Users, Globe, Award, Zap } from "lucide-react";
+import { Users, Globe, Award, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
