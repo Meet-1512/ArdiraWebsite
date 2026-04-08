@@ -10,7 +10,7 @@ import relationshipVistaLogo from "@assets/ProductLogo/RelationshipVistaLogo.png
 import complianceVistaLogo from "@assets/ProductLogo/CompliancVistaLogo.png";
 import agentVistaLogo from "@assets/ProductLogo/AgentVistaLogo.png";
 import rvProductCard from "@assets/ProductCard/RV_ProductCard.png";
-import cvProductCard from "@assets/ProductCard/CV_ProductCard.png";
+import cvProductCard from "@assets/ProductCard/CV_ProductCard.jpg";
 import svProductCard from "@assets/ProductCard/SV_ProductCard.png";
 import fvProductCard from "@assets/ProductCard/FV_ProductCard.jpg";
 import avProductCard from "@assets/ProductCard/AV_ProductCard.png";
@@ -173,7 +173,7 @@ export default function Products() {
             transition={{ duration: 0.5 }}
             className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-6 flex items-center justify-center w-full h-[600px]">
+            <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
               <img
                 src={svProductCard}
                 alt="SurveyVista Product Card"
@@ -197,7 +197,7 @@ export default function Products() {
             transition={{ duration: 0.5 }}
             className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-6 flex items-center justify-center w-full h-[500px]">
+            <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
               <img
                 src={fvProductCard}
                 alt="FormVista Product Card"
@@ -439,7 +439,7 @@ export default function Products() {
             transition={{ duration: 0.5 }}
             className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center min-h-[400px] w-full h-[600px]">
+            <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center min-h-[400px] w-full h-[350px]">
               <img
                 src={rvProductCard}
                 alt="RelationshipVista Product Card"
@@ -463,11 +463,11 @@ export default function Products() {
             transition={{ duration: 0.5 }}
             className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-violet-50 to-purple-100 rounded-3xl p-6 flex items-center justify-center shadow-xl w-full h-[600px]">
+            <div className="bg-gradient-to-br from-violet-50 to-purple-100 rounded-3xl p-6 flex items-center justify-center w-full h-[400px]">
               <img
                 src={cvProductCard}
                 alt="ComplianceVista Product Card"
-                className="w-full rounded-2xl"
+                className="w-full h-full object-contain rounded-2xl"
               />
             </div>
           </motion.div>
@@ -685,7 +685,7 @@ export default function Products() {
             transition={{ duration: 0.5 }}
             className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[600px]">
+            <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
               <img
                 src={avProductCard}
                 alt="AgentVista Product Card"
