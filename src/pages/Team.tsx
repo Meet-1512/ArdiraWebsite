@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
 import ardiraTeam from "@assets/ArdiraTeam.jpg";
 
-
 import rajesh from "@assets/ArdiraMind/rajesh.png";
 import hitesh from "@assets/ArdiraMind/hitesh.png";
 import brijesh from "@assets/ArdiraMind/brijesh.png";
@@ -17,12 +16,27 @@ import robertAdvisor from "@assets/AdvisoryBoard/robert.png";
 import davidAdvisor from "@assets/AdvisoryBoard/david.png";
 
 const values = [
-  { icon: Zap, title: "Native First", desc: "We never build workarounds. Every product and solution lives entirely within the Salesforce platform — secure, scalable, and seamless." },
-  { icon: Users, title: "Client Partnership", desc: "We treat every engagement as a long-term partnership. Your success is our success, and we stay with you through every phase." },
-  { icon: Award, title: "Engineering Excellence", desc: "Our engineers hold multiple Salesforce certifications and have shipped products through the rigorous AppExchange security review process." },
-  { icon: Globe, title: "Global Delivery", desc: "With offices in Santa Clara and India, we provide around-the-clock delivery and support across every time zone." },
+  {
+    icon: Zap,
+    title: "Native First",
+    desc: "We never build workarounds. Every product and solution lives entirely within the Salesforce platform — secure, scalable, and seamless.",
+  },
+  {
+    icon: Users,
+    title: "Client Partnership",
+    desc: "We treat every engagement as a long-term partnership. Your success is our success, and we stay with you through every phase.",
+  },
+  {
+    icon: Award,
+    title: "Engineering Excellence",
+    desc: "Our engineers hold multiple Salesforce certifications and have shipped products through the rigorous AppExchange security review process.",
+  },
+  {
+    icon: Globe,
+    title: "Global Delivery",
+    desc: "With offices in Santa Clara and India, we provide around-the-clock delivery and support across every time zone.",
+  },
 ];
-
 
 const team = [
   {
@@ -93,14 +107,21 @@ const advisoryBoard = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-white text-[#0f172a] font-sans" data-testid="page-about">
+    <div
+      className="min-h-screen bg-white text-[#0f172a] font-sans"
+      data-testid="page-about"
+    >
       <Navbar />
 
       {/* Hero */}
       <section className="pt-40 pb-20 px-6 bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
         <div className="max-w-4xl mx-auto relative z-10">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-[#43AF57] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
               Our Team
             </div>
@@ -108,7 +129,12 @@ export default function About() {
               The People Behind <span className="text-[#43AF57]">Ardira</span>
             </h1>
             <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed max-w-3xl mx-auto font-normal">
-              Our team has Salesforce Certified Developers &amp; Administrators located in the US &amp; India — working with you 24×7 and cost-effectively. We combine years of experience across information security, compliance &amp; risk management, cloud computing, enterprise software, SaaS services, and large-scale software infrastructure.
+              Our team has Salesforce Certified Developers &amp; Administrators
+              located in the US &amp; India — working with you 24×7 and
+              cost-effectively. We combine years of experience across
+              information security, compliance &amp; risk management, cloud
+              computing, enterprise software, SaaS services, and large-scale
+              software infrastructure.
             </p>
           </motion.div>
 
@@ -131,7 +157,12 @@ export default function About() {
       {/* Mission */}
       <section className="py-24 px-6 bg-[#f8fafc]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-[#43AF57] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-widest mb-5">
               Our Mission
             </div>
@@ -139,22 +170,36 @@ export default function About() {
               Making Salesforce Work Harder for You
             </h2>
             <p className="text-slate-500 text-justify text-lg leading-relaxed mb-6">
-              Ardira was founded on a simple belief: Salesforce is the world's most powerful business platform, and most organizations are only scratching the surface of what it can do.
+              Ardira was founded on a simple belief: Salesforce is the world's
+              most powerful business platform, and most organizations are only
+              scratching the surface of what it can do.
             </p>
             <p className="text-slate-500 text-justify text-lg leading-relaxed">
-              Our mission is to close that gap — with native products that extend Salesforce capabilities, and expert services that ensure your org is configured, integrated, and running at its best.
+              Our mission is to close that gap — with native products that
+              extend Salesforce capabilities, and expert services that ensure
+              your org is configured, integrated, and running at its best.
             </p>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {values.map((v) => (
-                <div key={v.title} className="bg-white border border-slate-100 rounded-2xl p-6 hover:border-emerald-200 hover:shadow-sm transition-all">
+                <div
+                  key={v.title}
+                  className="bg-white border border-slate-100 rounded-2xl p-6 hover:border-emerald-200 hover:shadow-sm transition-all"
+                >
                   <div className="inline-flex p-2.5 rounded-xl bg-emerald-50 mb-4">
                     <v.icon size={20} className="text-[#43AF57]" />
                   </div>
                   <h3 className="font-bold text-[#0f172a] mb-2">{v.title}</h3>
-                  <p className="text-sm text-justify text-slate-500 leading-relaxed">{v.desc}</p>
+                  <p className="text-sm text-justify text-slate-500 leading-relaxed">
+                    {v.desc}
+                  </p>
                 </div>
               ))}
             </div>
@@ -165,15 +210,22 @@ export default function About() {
       {/* Team */}
       <section className="py-28 px-6">
         <div className="max-w-5xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
             <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-[#43AF57] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-widest mb-5">
               Our Team
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] mb-4">
-              The Minds Behind Ardira
+              Our Excecutive Team
             </h2>
             <p className="text-slate-500 text-lg max-w-xl mx-auto">
-              A team of Salesforce veterans, product builders, and customer success champions.
+              A team of Salesforce veterans, product builders, and customer
+              success champions.
             </p>
           </motion.div>
 
@@ -181,18 +233,35 @@ export default function About() {
             {team.slice(0, 4).map((member, i) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="flex flex-col items-center text-center group cursor-pointer"
               >
                 {member.image ? (
-                  <img src={member.image} alt={member.name} className={`w-50 h-54 object-cover rounded-lg mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`} />
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className={`w-50 h-54 object-cover rounded-lg mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}
+                  />
                 ) : (
-                  <div className={`w-40 h-48 rounded-lg ${member.bg} flex items-center justify-center mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}>
-                    <span className={`text-2xl font-extrabold font-display ${member.text}`}>{member.initials}</span>
+                  <div
+                    className={`w-40 h-48 rounded-lg ${member.bg} flex items-center justify-center mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}
+                  >
+                    <span
+                      className={`text-2xl font-extrabold font-display ${member.text}`}
+                    >
+                      {member.initials}
+                    </span>
                   </div>
                 )}
-                <h3 className="text-base font-extrabold font-display text-[#0f172a] mb-1">{member.name}</h3>
-                <p className="text-sm font-semibold text-[#43AF57]">{member.title}</p>
+                <h3 className="text-base font-extrabold font-display text-[#0f172a] mb-1">
+                  {member.name}
+                </h3>
+                <p className="text-sm font-semibold text-[#43AF57]">
+                  {member.title}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -202,12 +271,19 @@ export default function About() {
       {/* Advisory Board */}
       <section className="py-28 px-6 border-t border-slate-100">
         <div className="max-w-5xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a] mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] mb-4">
               Our Advisory Board
             </h2>
             <p className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-normal">
-              Guided by industry leaders and visionaries who bring decades of experience to shape our strategic direction.
+              Guided by industry leaders and visionaries who bring decades of
+              experience to shape our strategic direction.
             </p>
           </motion.div>
 
@@ -215,23 +291,28 @@ export default function About() {
             {advisoryBoard.map((member, i) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="flex flex-col items-center text-center group"
               >
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className={`w-50 h-60 object-cover rounded-lg mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className={`w-50 h-54 object-cover rounded-lg mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}
                 />
-                <h3 className="text-lg md:text-xl font-semibold font-display text-[#0f172a] mb-2">{member.name}</h3>
-                <p className="text-sm font-medium text-[#43AF57]">{member.title}</p>
+                <h3 className="text-lg md:text-xl font-semibold font-display text-[#0f172a] mb-2">
+                  {member.name}
+                </h3>
+                <p className="text-sm font-medium text-[#43AF57]">
+                  {member.title}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-
-      
 
       <ContactCta
         headline="Want to work with our team?"

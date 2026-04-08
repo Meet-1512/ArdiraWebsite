@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { CheckCircle, Send } from "lucide-react";
+import {
+  CheckCircle,
+  Send,
+  Layers,
+  Share2,
+  Sliders,
+  TrendingUp,
+  ClipboardCheck,
+  Users,
+  Rocket,
+} from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
@@ -9,18 +19,22 @@ const whyPartner = [
   {
     title: "Tailored Partner Tiers",
     desc: "Programs designed to match your growth stage — whether you're just starting or scaling rapidly.",
+    icon: Layers,
   },
   {
     title: "Collaborative Marketing",
     desc: "Co-branded campaigns, case studies, and joint webinars to amplify your reach and credibility.",
+    icon: Share2,
   },
   {
     title: "Flexible Models",
     desc: "Choose from referral, reseller, or technology partnership — whichever fits your business model.",
+    icon: Sliders,
   },
   {
     title: "Shared Leads & GTM Support",
     desc: "Access to shared leads, joint go-to-market planning, and dedicated partner success resources.",
+    icon: TrendingUp,
   },
 ];
 
@@ -78,7 +92,7 @@ export default function PartnerHub() {
                 className="bg-[#f8fafc] border border-slate-100 rounded-2xl p-8 hover:border-emerald-200 hover:shadow-sm transition-all group"
               >
                 <div className="inline-flex p-2.5 rounded-xl bg-emerald-50 mb-5 group-hover:bg-emerald-100 transition-colors">
-                  <CheckCircle size={20} className="text-emerald-600" />
+                  <item.icon size={20} className="text-emerald-600" />
                 </div>
                 <h3 className="text-xl font-bold font-display text-[#0f172a] mb-3">
                   {item.title}
@@ -114,16 +128,19 @@ export default function PartnerHub() {
                 step: "01",
                 title: "Apply",
                 desc: "Fill out the partner application form below. Tell us about your business and how you'd like to partner.",
+                icon: ClipboardCheck,
               },
               {
                 step: "02",
                 title: "Onboard",
                 desc: "Our partner team will review your application and set you up with training, resources, and a dedicated partner manager.",
+                icon: Users,
               },
               {
                 step: "03",
                 title: "Grow Together",
                 desc: "Start referring, reselling, or integrating. Access joint GTM resources, shared leads, and co-marketing support.",
+                icon: Rocket,
               },
             ].map((item, i) => (
               <motion.div
@@ -134,8 +151,8 @@ export default function PartnerHub() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="text-5xl font-extrabold font-display text-emerald-100 mb-4">
-                  {item.step}
+                <div className="text-5xl font-extrabold font-display text-emerald-100 mb-4 flex justify-center">
+                  <item.icon size={48} className="text-[#43AF57]" />
                 </div>
                 <h3 className="text-xl font-bold font-display text-[#0f172a] mb-3">
                   {item.title}
