@@ -3,18 +3,18 @@ import { Link } from "wouter";
 import { ArrowLeft, CheckCircle2, Download } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import rvInstallImage1 from "@/assets/RVInstallation/RelationshipVista-Installation-G.png";
-import rvInstallImage2 from "@/assets/RVInstallation/RelationshipVista-Installation-G (1).png";
-import rvInstallImage3 from "@/assets/RVInstallation/RelationshipVista-Installation-G (2).png";
-import rvInstallImage4 from "@/assets/RVInstallation/RelationshipVista-Installation-G (3).png";
-import rvInstallImage5 from "@/assets/RVInstallation/RelationshipVista-Installation-G (4).png";
-import rvInstallImage6 from "@/assets/RVInstallation/RelationshipVista-Installation-G (5).png";
-import rvInstallImage7 from "@/assets/RVInstallation/RelationshipVista-Installation-G (6).png";
-import rvInstallImage8 from "@/assets/RVInstallation/RelationshipVista-Installation-G (7).png";
-import rvInstallImage9 from "@/assets/RVInstallation/RelationshipVista-Installation-G (8).png";
-import rvInstallImage10 from "@/assets/RVInstallation/RelationshipVista-Installation-G (9).png";
-import rvInstallImage11 from "@/assets/RVInstallation/RelationshipVista-Installation-G (10).png";
-import rvInstallImage12 from "@/assets/RVInstallation/RelationshipVista-Installation-G (11).png";
+import rvInstallImage1 from "@/assets/RVInstallation/RelationshipVista-Installation-G (1).png";
+import rvInstallImage2 from "@/assets/RVInstallation/RelationshipVista-Installation-G (2).png";
+import rvInstallImage3 from "@/assets/RVInstallation/RelationshipVista-Installation-G (3).png";
+import rvInstallImage4 from "@/assets/RVInstallation/RelationshipVista-Installation-G (4).png";
+import rvInstallImage5 from "@/assets/RVInstallation/RelationshipVista-Installation-G (5).png";
+import rvInstallImage6 from "@/assets/RVInstallation/RelationshipVista-Installation-G (6).png";
+import rvInstallImage7 from "@/assets/RVInstallation/RelationshipVista-Installation-G (7).png";
+import rvInstallImage8 from "@/assets/RVInstallation/RelationshipVista-Installation-G (9).png";
+import rvInstallImage9 from "@/assets/RVInstallation/RelationshipVista-Installation-G (9).png";
+import rvInstallImage10 from "@/assets/RVInstallation/RelationshipVista-Installation-G (10).png";
+import rvInstallImage11 from "@/assets/RVInstallation/RelationshipVista-Installation-G (11).png";
+import rvInstallImage12 from "@/assets/RVInstallation/RelationshipVista-Installation-G (12).png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -51,112 +51,219 @@ export default function RelationshipVistaInstallationGuide() {
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
             <h2 className="text-3xl font-semibold font-display text-[#0f172a] mb-8">Install RelationshipVista Package</h2>
             
-            <p className="text-base text-slate-600 mb-6 leading-relaxed">
+            <p className="text-base text-slate-600 mb-12 leading-relaxed font-medium">
               Follow these steps to install RelationshipVista in your Salesforce org:
             </p>
 
-            <ol className="space-y-6 mb-8 ml-6 list-decimal">
-              <li className="text-slate-600 leading-relaxed">
-                <strong className="text-[#0f172a]">Access AppExchange:</strong> Visit <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000FZcqBUAT" target="_blank" rel="noopener noreferrer" className="text-sky-600 hover:text-sky-700 font-semibold">the RelationshipVista AppExchange listing</a> to begin the installation process.
-              </li>
-              <li className="text-slate-600 leading-relaxed">
-                <strong className="text-[#0f172a]">Click Get It Now:</strong> Click the "Get It Now" button to initiate the installation wizard.
-              </li>
-              <li className="text-slate-600 leading-relaxed">
-                <strong className="text-[#0f172a]">Login to Salesforce:</strong> You will be asked to login with your Salesforce Administrator credentials into the org where you want to install RelationshipVista.
-              </li>
-              <li className="text-slate-600 leading-relaxed">
-                <strong className="text-[#0f172a]">Choose Installation Org:</strong> Select whether you want to install RelationshipVista in a Sandbox or Production org.
-              </li>
-              <li className="text-slate-600 leading-relaxed">
-                <strong className="text-[#0f172a]">Accept Terms:</strong> Check the box to accept the terms and conditions, then click "Confirm and Install".
-              </li>
-            </ol>
-
-            <div className="my-8 rounded-xl overflow-hidden border border-sky-200 shadow-lg">
-              <img src={rvInstallImage1} alt="RelationshipVista Installation Step 1" className="w-full h-auto" />
+            {/* Step 1 */}
+            <div className="mb-12 border-l-4 border-sky-300 pl-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-sky-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-[#0f172a] mb-2">Access AppExchange</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Visit <a href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000FZcqBUAT" target="_blank" rel="noopener noreferrer" className="text-sky-600 hover:text-sky-700 font-semibold">the RelationshipVista AppExchange listing</a> to begin the installation process.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="bg-sky-50 border border-sky-200 rounded-xl p-6 my-8">
-              <p className="text-sm text-slate-700">
-                <strong className="text-sky-700">Important:</strong> When installing RelationshipVista, we recommend that you select "Install for Admins Only". You can later give access to other users by updating their profiles and assigning permission sets.
+            {/* Step 2 */}
+            <div className="mb-12 border-l-4 border-sky-300 pl-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-sky-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-[#0f172a] mb-2">Click Get It Now</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Click the "Get It Now" button to initiate the installation wizard.
+                  </p>
+                </div>
+              </div>
+              <div className="my-8 flex justify-center">
+                <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                  <img src={rvInstallImage1} alt="Click Get It Now button" className="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="mb-12 border-l-4 border-sky-300 pl-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-sky-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-[#0f172a] mb-2">Login to Salesforce</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    You will be asked to login with your Salesforce Administrator credentials into the org where you want to install RelationshipVista.
+                  </p>
+                </div>
+              </div>
+              <div className="my-8 flex justify-center">
+                <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                  <img src={rvInstallImage2} alt="Login to Salesforce" className="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="mb-12 border-l-4 border-sky-300 pl-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-sky-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-[#0f172a] mb-2">Choose Installation Org</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Select whether you want to install RelationshipVista in a Sandbox or Production org.
+                  </p>
+                </div>
+              </div>
+              <div className="my-8 flex justify-center">
+                <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                  <img src={rvInstallImage3} alt="Choose Installation Org" className="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+
+            {/* Step 5 */}
+            <div className="mb-12 border-l-4 border-sky-300 pl-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="flex-shrink-0 w-10 h-10 bg-sky-600 text-white rounded-full flex items-center justify-center font-bold text-sm">5</div>
+                <div className="flex-1">
+                  <h4 className="text-lg font-semibold text-[#0f172a] mb-2">Accept Terms & Install</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Check the box to accept the terms and conditions, then click "Confirm and Install".
+                  </p>
+                </div>
+              </div>
+              <div className="my-8 flex justify-center">
+                <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                  <img src={rvInstallImage4} alt="Accept Terms & Install" className="w-full h-auto" />
+                </div>
+              </div>
+            </div>
+
+
+            <div className="bg-sky-50 border border-sky-200 rounded-xl p-6 my-10 border-l-4 border-l-sky-600">
+              <p className="text-sm text-slate-700 leading-relaxed">
+                <strong className="text-sky-700">📌 Important:</strong> When installing RelationshipVista, we recommend that you select <strong>"Install for Admins Only"</strong>. You can later give access to other users by updating their profiles and assigning permission sets.
               </p>
             </div>
+            <div className="my-8 flex justify-center">
+              <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                <img src={rvInstallImage5} alt="Install for Admins Only option" className="w-full h-auto" />
+              </div>
+            </div>
 
-            <h2 className="text-3xl font-semibold font-display text-[#0f172a] mb-8 mt-12">Configure User Access</h2>
+            <h2 className="text-3xl font-semibold font-display text-[#0f172a] mb-6 mt-16">Configure User Access</h2>
             
-            <p className="text-base text-slate-600 mb-6 leading-relaxed">
+            <p className="text-base text-slate-600 mb-10 leading-relaxed font-medium">
               To use RelationshipVista, users need to be granted permissions to an apex class and a custom object. You can do this either by assigning them a permission set or updating their profile.
             </p>
 
-            <h3 className="text-2xl font-semibold font-display text-[#0f172a] mt-8 mb-4">Option 1: Assigning Permission Set</h3>
-            <p className="text-base text-slate-600 mb-4 leading-relaxed">
+            <h3 className="text-2xl font-semibold font-display text-[#0f172a] mt-10 mb-6">Option 1: Assigning Permission Set</h3>
+            <p className="text-base text-slate-600 mb-6 leading-relaxed">
               This is the recommended approach as it's simpler and more maintainable.
             </p>
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6">
-              <p className="text-sm text-slate-700 flex items-start gap-2">
-                <CheckCircle2 size={16} className="text-emerald-600 mt-0.5 shrink-0" />
+            <div className="bg-sky-50 border border-sky-200 rounded-xl p-5 mb-10">
+              <p className="text-sm text-slate-700 flex items-start gap-3 leading-relaxed">
+                <CheckCircle2 size={18} className="text-sky-600 mt-0.5 shrink-0" />
                 <span>Assign the packaged permission set <strong>"RV Standard User"</strong> to the user</span>
               </p>
             </div>
+            <div className="space-y-8">
+              <div className="flex justify-center">
+                <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                  <img src={rvInstallImage6} alt="Permission Set Assignment" className="w-full h-auto" />
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                  <img src={rvInstallImage7} alt="Permission Set Confirmation" className="w-full h-auto" />
+                </div>
+              </div>
+            </div>
 
-            <h3 className="text-2xl font-semibold font-display text-[#0f172a] mt-8 mb-4">Option 2: Updating User Profile</h3>
-            <p className="text-base text-slate-600 mb-6 leading-relaxed">
+            <h3 className="text-2xl font-semibold font-display text-[#0f172a] mt-14 mb-6">Option 2: Updating User Profile</h3>
+            <p className="text-base text-slate-600 mb-10 leading-relaxed">
               If you prefer to manage access through profiles, update the custom profile assigned to users with the following changes:
             </p>
 
-            <h4 className="text-lg font-semibold font-display text-[#0f172a] mt-6 mb-3">Apex Class Access</h4>
-            <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 mb-6">
-              <p className="text-sm text-slate-700 font-mono">RVController</p>
+            {/* Apex Class Access */}
+            <div className="mb-12 border-l-4 border-sky-300 pl-6 bg-sky-50/50 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold font-display text-[#0f172a] mb-4">Apex Class Access</h4>
+              <div className="bg-white border border-sky-200 rounded-lg p-4 mb-8 inline-block">
+                <p className="text-sm text-slate-700 font-mono font-medium">RVController</p>
+              </div>
+              <div className="flex justify-center">
+                <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                  <img src={rvInstallImage8} alt="Apex Class Access Configuration" className="w-full h-auto" />
+                </div>
+              </div>
             </div>
 
-            <div className="my-8 rounded-xl overflow-hidden border border-sky-200 shadow-lg">
-              <img src={rvInstallImage6} alt="Apex Class Access Configuration" className="w-full h-auto" />
+            {/* Object Access */}
+            <div className="mb-12 border-l-4 border-sky-300 pl-6 bg-sky-50/50 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold font-display text-[#0f172a] mb-4">Object Access</h4>
+              <p className="text-sm text-slate-600 mb-6 leading-relaxed">Grant the following permissions on the <strong>RV Configuration</strong> custom object:</p>
+              <div className="bg-white border border-sky-200 rounded-lg p-5 mb-8 space-y-3">
+                <p className="text-slate-700 flex items-center gap-3 text-sm">
+                  <CheckCircle2 size={18} className="text-sky-600 shrink-0" /> <span>Read</span>
+                </p>
+                <p className="text-slate-700 flex items-center gap-3 text-sm">
+                  <CheckCircle2 size={18} className="text-sky-600 shrink-0" /> <span>Create</span>
+                </p>
+                <p className="text-slate-700 flex items-center gap-3 text-sm">
+                  <CheckCircle2 size={18} className="text-sky-600 shrink-0" /> <span>Edit</span>
+                </p>
+                <p className="text-slate-700 flex items-center gap-3 text-sm">
+                  <CheckCircle2 size={18} className="text-sky-600 shrink-0" /> <span>Delete</span>
+                </p>
+                <p className="text-slate-700 flex items-center gap-3 text-sm">
+                  <CheckCircle2 size={18} className="text-sky-600 shrink-0" /> <span>View All</span>
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                  <img src={rvInstallImage9} alt="Object Access Configuration" className="w-full h-auto" />
+                </div>
+              </div>
             </div>
 
-            <h4 className="text-lg font-semibold font-display text-[#0f172a] mt-6 mb-3">Object Access</h4>
-            <p className="text-sm text-slate-600 mb-3">Grant the following permissions on the <strong>RV Configuration</strong> custom object:</p>
-            <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 mb-6 ml-4 space-y-2 text-sm">
-              <p className="text-slate-700 flex items-center gap-2">
-                <CheckCircle2 size={14} className="text-sky-600" /> Read
+            {/* Fields Access */}
+            <div className="mb-12 border-l-4 border-sky-300 pl-6 bg-sky-50/50 p-6 rounded-lg">
+              <h4 className="text-lg font-semibold font-display text-[#0f172a] mb-4">Fields Access</h4>
+              <p className="text-sm text-slate-600 mb-6 leading-relaxed">Grant Read/Write access on the following <strong>RV Configuration</strong> fields:</p>
+              <div className="bg-white border border-sky-200 rounded-lg p-5 mb-8 space-y-3">
+                <p className="text-slate-700 text-sm">• Auto Expand Levels</p>
+                <p className="text-slate-700 text-sm">• Configuration</p>
+                <p className="text-slate-700 text-sm">• Max Visible Record Count</p>
+                <p className="text-slate-700 text-sm">• Pinned</p>
+                <p className="text-slate-700 text-sm">• Sharing Setting</p>
+                <p className="text-slate-700 text-sm">• Show</p>
+              </div>
+              <div className="space-y-8">
+                <div className="flex justify-center">
+                  <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                    <img src={rvInstallImage10} alt="Fields Access Configuration" className="w-full h-auto" />
+                  </div>
+                </div>
+                <div className="flex justify-center">
+                  <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                    <img src={rvInstallImage11} alt="Additional Fields Configuration" className="w-full h-auto" />
+                  </div>
+                </div>
+                <div className="flex justify-center">
+                  <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                    <img src={rvInstallImage12} alt="Complete Fields Configuration" className="w-full h-auto" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <h2 className="text-3xl font-semibold font-display text-[#0f172a] mb-6 mt-16">Next Steps</h2>
+            <div className="bg-gradient-to-br from-sky-50 to-sky-100 border border-sky-200 rounded-xl p-6">
+              <p className="text-base text-slate-600 mb-6 leading-relaxed">
+                After installation and configuration, refer to the <Link href="/relationship-vista-user-guide" className="text-sky-600 hover:text-sky-700 font-semibold underline">User Guide</Link> to learn how to configure and use RelationshipVista in your Salesforce org.
               </p>
-              <p className="text-slate-700 flex items-center gap-2">
-                <CheckCircle2 size={14} className="text-sky-600" /> Create
-              </p>
-              <p className="text-slate-700 flex items-center gap-2">
-                <CheckCircle2 size={14} className="text-sky-600" /> Edit
-              </p>
-              <p className="text-slate-700 flex items-center gap-2">
-                <CheckCircle2 size={14} className="text-sky-600" /> Delete
-              </p>
-              <p className="text-slate-700 flex items-center gap-2">
-                <CheckCircle2 size={14} className="text-sky-600" /> View All
-              </p>
             </div>
-
-            <div className="my-8 rounded-xl overflow-hidden border border-sky-200 shadow-lg">
-              <img src={rvInstallImage7} alt="Object Access Configuration" className="w-full h-auto" />
-            </div>
-
-            <h4 className="text-lg font-semibold font-display text-[#0f172a] mt-6 mb-3">Fields Access</h4>
-            <p className="text-sm text-slate-600 mb-3">Grant Read/Write access on the following <strong>RV Configuration</strong> fields:</p>
-            <div className="bg-slate-50 border border-slate-200 rounded-lg p-4 mb-8 ml-4 space-y-2 text-sm">
-              <p className="text-slate-700">• Auto Expand Levels</p>
-              <p className="text-slate-700">• Configuration</p>
-              <p className="text-slate-700">• Max Visible Record Count</p>
-              <p className="text-slate-700">• Pinned</p>
-              <p className="text-slate-700">• Sharing Setting</p>
-              <p className="text-slate-700">• Show</p>
-            </div>
-
-            <div className="my-8 rounded-xl overflow-hidden border border-sky-200 shadow-lg">
-              <img src={rvInstallImage8} alt="Fields Access Configuration" className="w-full h-auto" />
-            </div>
-
-            <h2 className="text-3xl font-semibold font-display text-[#0f172a] mb-6 mt-12">Next Steps</h2>
-            <p className="text-base text-slate-600 leading-relaxed">
-              After installation and configuration, refer to the <Link href="/relationship-vista-user-guide" className="text-sky-600 hover:text-sky-700 font-semibold">User Guide</Link> to learn how to configure and use RelationshipVista in your Salesforce org.
-            </p>
           </motion.div>
         </div>
       </section>
