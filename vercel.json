@@ -3,10 +3,16 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
-  "outputDirectory": "dist",
+  "outputDirectory": "dist/public",
   "env": {
     "NODE_ENV": "production"
   },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
   "github": {
     "enabled": true,
     "autoAlias": true,
