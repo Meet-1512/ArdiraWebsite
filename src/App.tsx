@@ -12,6 +12,8 @@ import Contact from "@/pages/Contact";
 import PartnerHub from "@/pages/PartnerHub";
 import Terms from "@/pages/Terms";
 import Privacy from "@/pages/Privacy";
+import RelationshipVistaUserGuide from "@/pages/RelationshipVistaUserGuide";
+import RelationshipVistaInstallationGuide from "@/pages/RelationshipVistaInstallationGuide";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
+      <Route path="/relationship-vista-user-guide" component={RelationshipVistaUserGuide} />
+      <Route path="/relationship-vista-installation-guide" component={RelationshipVistaInstallationGuide} />
       <Route path="/partners" component={PartnerHub} />
       <Route path="/team" component={Team} />
       <Route path="/contact" component={Contact} />

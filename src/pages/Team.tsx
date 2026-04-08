@@ -7,14 +7,14 @@ import ContactCta from "@/components/ContactCta";
 import ardiraTeam from "@assets/ArdiraTeam.jpg";
 
 
-import rajesh from "@assets/ArdiraMind/rajesh.webp";
-import hitesh from "@assets/ArdiraMind/hitesh.webp";
-import brijesh from "@assets/ArdiraMind/brijesh.webp";
-import qRegan from "@assets/ArdiraMind/LI-photo.webp";
+import rajesh from "@assets/ArdiraMind/rajesh.png";
+import hitesh from "@assets/ArdiraMind/hitesh.png";
+import brijesh from "@assets/ArdiraMind/brijesh.png";
+import qRegan from "@assets/ArdiraMind/LI-photo.png";
 
-import devAdvisor from "@assets/AdvisoryBoard/dev-advisor.webp";
-import robertAdvisor from "@assets/AdvisoryBoard/robert.webp";
-import davidAdvisor from "@assets/AdvisoryBoard/david.webp";
+import devAdvisor from "@assets/AdvisoryBoard/dev-advisor.png";
+import robertAdvisor from "@assets/AdvisoryBoard/robert.png";
+import davidAdvisor from "@assets/AdvisoryBoard/david.png";
 
 const values = [
   { icon: Zap, title: "Native First", desc: "We never build workarounds. Every product and solution lives entirely within the Salesforce platform — secure, scalable, and seamless." },

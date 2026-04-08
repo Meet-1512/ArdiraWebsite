@@ -5,6 +5,15 @@ import { ArrowRight, ChevronLeft, ChevronRight, Zap, Users, Award, Globe } from 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
+import ebayLogo from "@/assets/TrustedEnterprises/ebay-1.png";
+import hpLogo from "@/assets/TrustedEnterprises/hp-1.png";
+import marriottLogo from "@/assets/TrustedEnterprises/Marriott-International.png";
+import unicefLogo from "@/assets/TrustedEnterprises/unicef-new.png";
+import nissanLogo from "@/assets/TrustedEnterprises/nissan-new.png";
+import jcbLogo from "@/assets/TrustedEnterprises/jcb-1.png";
+import volkswagonLogo from "@/assets/TrustedEnterprises/volkswagon-new.png";
+import flixLogo from "@/assets/TrustedEnterprises/flix-new.png";
+import tedLogo from "@/assets/TrustedEnterprises/Ted_193x77.png";
 
 const carouselSlides = [
   {
@@ -60,7 +69,17 @@ const whyChooseUs = [
   },
 ];
 
-const customers = ["eBay", "HP", "Marriot" , "UNICEF" , "Nissan" , "JCB" , "Volkswagen" , "FlixBus" , "TED"];
+const customers = [
+  { name: "eBay", logo: ebayLogo },
+  { name: "HP", logo: hpLogo },
+  { name: "Marriott", logo: marriottLogo },
+  { name: "UNICEF", logo: unicefLogo },
+  { name: "Nissan", logo: nissanLogo },
+  { name: "JCB", logo: jcbLogo },
+  { name: "Volkswagen", logo: volkswagonLogo },
+  { name: "FlixBus", logo: flixLogo },
+  { name: "TED", logo: tedLogo },
+];
 
 export default function Home() {
   const [current, setCurrent] = useState(0);
@@ -168,7 +187,9 @@ export default function Home() {
               <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-[#f0fdf4] to-transparent z-10 pointer-events-none" />
               <div className="flex items-center animate-marquee py-2 w-max" style={{ animationDuration: "35s" }}>
                 {[...customers, ...customers, ...customers, ...customers].map((c, i) => (
-                  <span key={`${c}-${i}`} className="text-slate-400 opacity-80 font-display font-extrabold text-xl md:text-2xl whitespace-nowrap mx-10 md:mx-14 flex-shrink-0">{c}</span>
+                  <div key={`${c.name}-${i}`} className="flex items-center justify-center mx-10 md:mx-14 flex-shrink-0 h-12 md:h-14">
+                    <img src={c.logo} alt={c.name} className="max-h-full max-w-[120px] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                  </div>
                 ))}
               </div>
             </div>
@@ -196,7 +217,8 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
                 <button
-                  onClick={() => setActiveWhy(activeWhy === i ? -1 : i)}
+                  onMouseEnter={() => setActiveWhy(i)}
+                  onMouseLeave={() => setActiveWhy(-1)}
                   className="w-full text-justify group py-8 flex gap-8 md:gap-16 items-start"
                 >
                   {/* Number */}

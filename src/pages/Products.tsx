@@ -9,6 +9,7 @@ import formVistaLogo from "@assets/ProductLogo/FormVistaLogo.png";
 import relationshipVistaLogo from "@assets/ProductLogo/RelationshipVistaLogo.png";
 import complianceVistaLogo from "@assets/ProductLogo/CompliancVistaLogo.png";
 import agentVistaLogo from "@assets/ProductLogo/AgentVistaLogo.png";
+import rvProductCard from "@assets/ProductCard/RV_ProductCard.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -154,7 +155,7 @@ export default function Products() {
             <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">Form Vista: 100% Native Forms, Surveys, Quizzes, Checklists, and Assessments</h2>
             <p className="text-base md:text-lg font-medium text-[#28aae1]">Endless Applications: The 5-star rated Data Collection Solution You Need.</p>
             <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
-              FormVista is all-in-one Salesforce-native solution for creating, managing, and analyzing forms and surveys. Effortlessly collect data, integrate with CRM for real-time insights, and act on data to enhance experiences, leveraging dynamic forms and robust security.
+              FormVista is an all-in-one Salesforce-native solution for creating, managing, and analyzing forms and surveys. Effortlessly collect data, integrate with CRM for real-time insights, and act on data to enhance experiences, leveraging dynamic forms and robust security.
             </p>
             <div className="space-y-3">
               {['Drag & Drop Builder', 'Conditional Logic & Dynamic Fields', 'File Uploads & E-Signatures', 'Salesforce Native & Secure', 'Real-time Data Validation'].map(f => (
@@ -227,10 +228,18 @@ export default function Products() {
             <div>
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Use Cases</p>
               <div className="flex flex-wrap gap-2">
-                {['Healthcare & Life Sciences', 'High Tech', 'Manufacturing', 'Productivity', 'Sales Intelligence', 'Data Visualization'].map(u => (
+                {['Hierarchy Visualization', 'Data Grouping', 'Relationship Mapping', 'Filter Configuration', 'Data Visualization'].map(u => (
                   <span key={u} className="bg-sky-50 border border-sky-200 text-sky-700 px-3 py-1 rounded-full text-xs font-semibold">{u}</span>
                 ))}
               </div>
+            </div>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <Link to="/relationship-vista-user-guide" className="inline-flex items-center gap-2 border border-sky-300 text-sky-700 bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-sky-50 transition-colors">
+                User Guide <ArrowRight size={15} />
+              </Link>
+              <Link to="/relationship-vista-installation-guide" className="inline-flex items-center gap-2 border border-sky-300 text-sky-700 bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-sky-50 transition-colors">
+                Installation Guide <ArrowRight size={15} />
+              </Link>
             </div>
             <div className="flex flex-wrap gap-3 pt-2">
               <a href="https://relationshipvista.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-sky-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-sky-700 transition-colors shadow-sm group">
@@ -243,21 +252,8 @@ export default function Products() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-10 flex items-center justify-center">
-              <svg width="260" height="260" viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-                <line x1="130" y1="130" x2="60" y2="70" stroke="#93c5fd" strokeWidth="2" />
-                <line x1="130" y1="130" x2="200" y2="60" stroke="#93c5fd" strokeWidth="2" />
-                <line x1="130" y1="130" x2="210" y2="180" stroke="#93c5fd" strokeWidth="2" />
-                <line x1="130" y1="130" x2="55" y2="190" stroke="#93c5fd" strokeWidth="2" />
-                <line x1="200" y1="60" x2="230" y2="110" stroke="#93c5fd" strokeWidth="2" />
-                <circle cx="130" cy="130" r="22" fill="#0284c7" />
-                <circle cx="60" cy="70" r="13" fill="white" stroke="#0284c7" strokeWidth="2.5" />
-                <circle cx="200" cy="60" r="16" fill="#0ea5e9" />
-                <circle cx="210" cy="180" r="11" fill="white" stroke="#0284c7" strokeWidth="2.5" />
-                <circle cx="55" cy="190" r="16" fill="#38bdf8" />
-                <circle cx="230" cy="110" r="8" fill="white" stroke="#0284c7" strokeWidth="2.5" />
-                <text x="130" y="135" textAnchor="middle" fill="white" fontSize="10" fontWeight="bold">Acct</text>
-              </svg>
+            <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-10 flex items-center justify-center min-h-[400px]">
+              <img src={rvProductCard} alt="RelationshipVista Product Card" className="w-full h-full object-contain rounded-2xl shadow-lg border border-sky-200" />
             </div>
           </motion.div>
         </div>
