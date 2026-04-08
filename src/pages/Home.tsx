@@ -158,23 +158,24 @@ export default function Home() {
       <Navbar />
 
       {/* ── Hero Carousel ───────────────────────── */}
-      <section className="relative bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] pt-32 pb-20 px-6">
+      <section className="relative bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] pt-32 pb-20 px-6" style={{ height: "100vh" }}>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col h-full">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-white border border-[#43AF57] text-[#43AF57] text-sm font-semibold px-4 py-1.5 rounded-full mb-10 shadow-sm"
+            className="inline-flex items-center gap-2 bg-white border border-[#43AF57] text-[#43AF57] text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm self-center"
+            style={{ height: "2.5rem", marginBottom: "2rem" }}
           >
             <span className="w-2 h-2 rounded-full bg-[#43AF57] animate-pulse" />
             100% Native Salesforce Software
           </motion.div>
 
-          {/* Sliding headline — fixed height, no overflow-hidden clipping */}
-          <div className="relative mb-5" style={{ minHeight: "10rem" }}>
+          {/* Headline - Fixed height */}
+          <div className="relative" style={{ height: "12rem", marginBottom: "1rem" }}>
             <AnimatePresence custom={direction} mode="wait">
               <motion.h1
                 key={current}
@@ -196,26 +197,29 @@ export default function Home() {
             </AnimatePresence>
           </div>
 
-          {/* Subtitle */}
-          <AnimatePresence mode="wait">
-            <motion.p
-              key={`sub-${current}`}
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.4 }}
-              className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10 font-normal"
-            >
-              {carouselSlides[current].sub}
-            </motion.p>
-          </AnimatePresence>
+          {/* Subtitle - Fixed height */}
+          <div style={{ height: "5rem", marginBottom: "2rem" }}>
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={`sub-${current}`}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.4 }}
+                className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-normal"
+              >
+                {carouselSlides[current].sub}
+              </motion.p>
+            </AnimatePresence>
+          </div>
 
-          {/* CTAs */}
+          {/* CTAs - Fixed position */}
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.25 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-10"
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+            style={{ height: "3.5rem", marginBottom: "2rem" }}
           >
             <Link
               href="/products"
@@ -236,7 +240,7 @@ export default function Home() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="mt-4"
           >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-8">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">
               Trusted by global enterprises
             </p>
             <div className="relative w-full overflow-hidden mx-auto">
