@@ -6,12 +6,14 @@ interface ContactCtaProps {
   headline?: string;
   description?: string;
   buttonText?: string;
+  buttonLink?: string;
 }
 
 export default function ContactCta({
   headline = "Ready to Transform Your Salesforce?",
   description = "Talk to our team and discover how Ardira's native apps and expert services can unlock new value in your org.",
   buttonText = "Get a Free Consultation",
+  buttonLink = "/contact",
 }: ContactCtaProps) {
   return (
     <section className="py-28 px-6 relative overflow-hidden">
@@ -32,10 +34,14 @@ export default function ContactCta({
       />
 
       {/* Subtle grid pattern */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{
-        backgroundImage: "radial-gradient(circle, #0f172a 1px, transparent 1px)",
-        backgroundSize: "32px 32px"
-      }} />
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #0f172a 1px, transparent 1px)",
+          backgroundSize: "32px 32px",
+        }}
+      />
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
         <motion.div
@@ -68,13 +74,44 @@ export default function ContactCta({
             transition={{ type: "spring", stiffness: 400, damping: 17 }}
             className="inline-block"
           >
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-3 bg-[#43AF57] text-white px-10 py-4 rounded-xl font-bold text-base hover:bg-[#15803d] transition-all shadow-md group"
-            >
-              {buttonText}
-              <ArrowRight size={18} className="group-hover:translate-x-1.5 transition-transform duration-300" />
-            </Link>
+            {buttonLink?.startsWith("#") ? (
+              <a
+                href={buttonLink}
+                onClick={(e) => {
+                  e.preventDefault();
+                  const element = document.querySelector(buttonLink);
+                  if (element) {
+                    const offset = 80;
+                    const elementPosition =
+                      element.getBoundingClientRect().top +
+                      window.scrollY -
+                      offset;
+                    window.scrollTo({
+                      top: elementPosition,
+                      behavior: "smooth",
+                    });
+                  }
+                }}
+                className="inline-flex items-center gap-3 bg-[#43AF57] text-white px-10 py-4 rounded-xl font-bold text-base hover:bg-[#15803d] transition-all shadow-md group"
+              >
+                {buttonText}
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1.5 transition-transform duration-300"
+                />
+              </a>
+            ) : (
+              <Link
+                href={buttonLink}
+                className="inline-flex items-center gap-3 bg-[#43AF57] text-white px-10 py-4 rounded-xl font-bold text-base hover:bg-[#15803d] transition-all shadow-md group"
+              >
+                {buttonText}
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1.5 transition-transform duration-300"
+                />
+              </Link>
+            )}
           </motion.div>
         </motion.div>
       </div>
