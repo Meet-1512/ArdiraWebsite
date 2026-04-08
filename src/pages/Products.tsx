@@ -130,12 +130,12 @@ export default function Products() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Horizontal Product",
-                  "Education",
-                  "Healthcare & Life Sciences",
-                  "Customer Service",
-                  "Surveys",
-                  "Ratings & Reviews",
+                  "Customer Experience",
+                  "Marketing",
+                  "Sales",
+                  "Operations",
+                  "Employee Experience",
+                  "Compliance & Risk",
                 ].map((u) => (
                   <span
                     key={u}
@@ -177,7 +177,7 @@ export default function Products() {
               <img
                 src={svProductCard}
                 alt="SurveyVista Product Card"
-                className="w-full h-full object-contain rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl shadow-md"
               />
             </div>
           </motion.div>
@@ -201,7 +201,7 @@ export default function Products() {
               <img
                 src={fvProductCard}
                 alt="FormVista Product Card"
-                className="w-full h-full object-contain rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl shadow-md"
               />
             </div>
           </motion.div>
@@ -274,12 +274,11 @@ export default function Products() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Horizontal Product",
-                  "Education",
-                  "Nonprofit",
+                  "Service & Support",
+                  "Sales",
                   "Marketing",
-                  "Information Management",
-                  "Ratings & Reviews",
+                  "Human Resource",
+                  "Product Discovery",
                 ].map((u) => (
                   <span
                     key={u}
@@ -384,10 +383,10 @@ export default function Products() {
               <div className="flex flex-wrap gap-2">
                 {[
                   "Hierarchy Visualization",
-                  "Data Grouping",
-                  "Relationship Mapping",
-                  "Filter Configuration",
-                  "Data Visualization",
+                  "Opportunity Grouping",
+                  "Record Filtering",
+                  "Quick Record Access",
+                  "Case Intelligence",
                 ].map((u) => (
                   <span
                     key={u}
@@ -443,7 +442,7 @@ export default function Products() {
               <img
                 src={rvProductCard}
                 alt="RelationshipVista Product Card"
-                className="w-full h-full object-contain rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl shadow-md"
               />
             </div>
           </motion.div>
@@ -467,7 +466,7 @@ export default function Products() {
               <img
                 src={cvProductCard}
                 alt="ComplianceVista Product Card"
-                className="w-full h-full object-contain rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl shadow-md"
               />
             </div>
           </motion.div>
@@ -537,12 +536,10 @@ export default function Products() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Horizontal Product",
-                  "Financial Services",
-                  "Healthcare & Life Sciences",
-                  "Audit & Compliance",
-                  "Information Management",
-                  "Security",
+                  "Employee 360 Assessments",
+                  "Vendor Risk & Due Diligence (TPRM)",
+                  "Compliance & Control Testing",
+                  "Audit & Risk Assessments",
                 ].map((u) => (
                   <span
                     key={u}
@@ -642,12 +639,16 @@ export default function Products() {
               </p>
               <div className="flex flex-wrap gap-2">
                 {[
-                  "Horizontal Product",
-                  "Education",
-                  "Nonprofit",
-                  "Sales",
-                  "Customer Service",
-                  "Surveys",
+                  "Customer Experience",
+                  "Employee Engagement",
+                  "Sales Enablement",
+                  "Webinar & Event Feedback",
+                  "Sales & Revenue",
+                  "Marketing & Campaign",
+                  "Partner & Vendor",
+                  "Knowledge & Insight",
+                  "Platform Admin & Ops",
+                  "Cross Industry",
                 ].map((u) => (
                   <span
                     key={u}
@@ -689,7 +690,7 @@ export default function Products() {
               <img
                 src={avProductCard}
                 alt="AgentVista Product Card"
-                className="w-full h-full object-contain rounded-2xl"
+                className="w-full h-full object-cover rounded-2xl shadow-md"
               />
             </div>
           </motion.div>

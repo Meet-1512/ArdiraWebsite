@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { MapPin, Phone, Mail } from "lucide-react";
 import sfPartnerLogo from "@assets/SalesForcePartnerLogo.png";
+import ardiraFooterLogo from "@assets/ArdiraFooterLogo.png";
 
 export default function Footer() {
   return (
@@ -11,7 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="flex flex-col space-y-4">
             <Link href="/" className="inline-block" data-testid="footer-link-logo">
-              <span className="text-2xl font-display font-bold text-white tracking-tight">Ardira</span>
+              <img src={ardiraFooterLogo} alt="Ardira" className="h-auto w-32 object-contain" />
             </Link>
             <p className="text-sm leading-relaxed text-justify text-slate-400 max-w-xs">
               100% native Salesforce applications that transform how enterprises work smarter and grow faster.

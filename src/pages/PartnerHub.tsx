@@ -15,6 +15,19 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
 
+import eightSquadLogo from "@/assets/TrustedPartner/8SquadLogo.png";
+import accentureLogo from "@/assets/TrustedPartner/AccentureLogo.png";
+import actumDigitalLogo from "@/assets/TrustedPartner/ActumDigitalLogo.png";
+import allCloudLogo from "@/assets/TrustedPartner/AllCloudLogo.png";
+import asugoLogo from "@/assets/TrustedPartner/AsugoLogo.jpg.jpeg";
+import bearingLogo from "@/assets/TrustedPartner/BearingLogo.jpg.jpeg";
+import capgeminiLogo from "@/assets/TrustedPartner/capgeminiLogo.png";
+import nolticLogo from "@/assets/TrustedPartner/NolticLogo.png";
+import syraGonLogo from "@/assets/TrustedPartner/SyraGonLogo.jpg.jpeg";
+import veraSolutionLogo from "@/assets/TrustedPartner/VeraSolutionLogo.png";
+import zenyusLogo from "@/assets/TrustedPartner/Zenyus.png";
+
+
 const whyPartner = [
   {
     title: "Tailored Partner Tiers",
@@ -36,6 +49,20 @@ const whyPartner = [
     desc: "Access to shared leads, joint go-to-market planning, and dedicated partner success resources.",
     icon: TrendingUp,
   },
+];
+
+const trustedPartners = [
+  { name: "8Squad", logo: eightSquadLogo },
+  { name: "Accenture", logo: accentureLogo },
+  { name: "Actum Digital", logo: actumDigitalLogo },
+  { name: "AllCloud", logo: allCloudLogo },
+  { name: "Asugo", logo: asugoLogo },
+  { name: "Bearing", logo: bearingLogo },
+  { name: "Capgemini", logo: capgeminiLogo },
+  { name: "Noltic", logo: nolticLogo },
+  { name: "SyraGon", logo: syraGonLogo },
+  { name: "VeraSolution", logo: veraSolutionLogo },
+  { name: "Zenyus", logo: zenyusLogo },
 ];
 
 export default function PartnerHub() {
@@ -101,6 +128,59 @@ export default function PartnerHub() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Our Trusted Partners - Carousel */}
+      <section className="py-24 px-6 bg-white border-t border-slate-100">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-16"
+          >
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-4">
+              Our Global Partners
+            </p>
+            <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a] leading-tight max-w-2xl mx-auto">
+              Trusted by Industry Leaders
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mt-12"
+          >
+            <div className="relative w-full overflow-hidden mx-auto">
+              {/* Fade edges */}
+              <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+              <div
+                className="flex items-center animate-marquee py-4 w-max"
+                style={{ animationDuration: "40s" }}
+              >
+                {[...trustedPartners, ...trustedPartners, ...trustedPartners, ...trustedPartners].map(
+                  (p, i) => (
+                    <div
+                      key={`${p.name}-${i}`}
+                      className="flex items-center justify-center mx-10 md:mx-14 flex-shrink-0 h-14 md:h-16"
+                    >
+                      <img
+                        src={p.logo}
+                        alt={p.name}
+                        className="max-h-full max-w-[140px] object-contain opacity-70 hover:opacity-100 transition-opacity"
+                      />
+                    </div>
+                  ),
+                )}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
