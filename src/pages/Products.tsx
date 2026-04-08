@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Bot,
-  FileText,
-  ExternalLink,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
@@ -17,6 +11,9 @@ import complianceVistaLogo from "@assets/ProductLogo/CompliancVistaLogo.png";
 import agentVistaLogo from "@assets/ProductLogo/AgentVistaLogo.png";
 import rvProductCard from "@assets/ProductCard/RV_ProductCard.png";
 import cvProductCard from "@assets/ProductCard/CV_ProductCard.png";
+import svProductCard from "@assets/ProductCard/SV_ProductCard.png";
+import fvProductCard from "@assets/ProductCard/FV_ProductCard.jpg";
+import avProductCard from "@assets/ProductCard/AV_ProductCard.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -64,7 +61,7 @@ export default function Products() {
         id="surveyvista"
         className="py-24 px-6 border-t border-slate-100"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -174,44 +171,14 @@ export default function Products() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-10 flex items-center justify-center">
-              <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl border border-emerald-100 overflow-hidden">
-                <div className="bg-emerald-600 px-6 py-4">
-                  <div className="w-40 h-3 bg-white/40 rounded-full" />
-                </div>
-                <div className="p-6 space-y-5">
-                  <div>
-                    <div className="w-3/4 h-2 bg-slate-200 rounded mb-4" />
-                    <div className="space-y-3">
-                      {[1, 2, 3].map((i) => (
-                        <div key={i} className="flex items-center gap-3">
-                          <div
-                            className={`w-4 h-4 rounded-full border-2 border-emerald-600 ${i === 2 ? "bg-emerald-600" : "bg-white"}`}
-                          />
-                          <div className="w-2/5 h-2 bg-slate-100 rounded" />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="border-t border-slate-100 pt-4">
-                    <div className="w-1/2 h-2 bg-slate-200 rounded mb-4" />
-                    <div className="flex justify-between gap-2">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <div
-                          key={i}
-                          className={`flex-1 h-9 rounded-lg border text-xs font-bold flex items-center justify-center ${i === 4 ? "bg-emerald-600 border-emerald-600 text-white" : "border-slate-200 text-slate-400"}`}
-                        >
-                          {i}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="bg-emerald-600 text-white text-xs font-bold px-4 py-2 rounded-lg text-center">
-                    Submit Response
-                  </div>
-                </div>
-              </div>
+            <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-6 flex items-center justify-center w-full h-[600px]">
+              <img
+                src={svProductCard}
+                alt="SurveyVista Product Card"
+                className="w-full h-full object-contain rounded-2xl"
+              />
             </div>
           </motion.div>
         </div>
@@ -222,37 +189,20 @@ export default function Products() {
         id="formvista"
         className="py-24 px-6 bg-[#f8fafc] border-t border-slate-100"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-10 flex items-center justify-center">
-              <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl border border-[#b3e9f5] overflow-hidden">
-                <div className="bg-[#28aae1] px-6 py-4 flex items-center gap-3">
-                  <FileText size={18} className="text-white" />
-                  <div className="w-28 h-2.5 bg-white/40 rounded-full" />
-                </div>
-                <div className="p-6 space-y-4">
-                  <div>
-                    <div className="w-1/3 h-2 bg-[#7dd3e8] rounded mb-2" />
-                    <div className="w-full h-9 rounded-lg border border-slate-200 bg-slate-50" />
-                  </div>
-                  <div>
-                    <div className="w-1/4 h-2 bg-[#7dd3e8] rounded mb-2" />
-                    <div className="w-full h-9 rounded-lg border border-slate-200 bg-slate-50" />
-                  </div>
-                  <div>
-                    <div className="w-2/5 h-2 bg-[#7dd3e8] rounded mb-2" />
-                    <div className="w-full h-16 rounded-lg border border-slate-200 bg-slate-50" />
-                  </div>
-                  <div className="bg-[#28aae1] text-white text-xs font-bold px-4 py-2 rounded-lg text-center">
-                    Submit Form
-                  </div>
-                </div>
-              </div>
+            <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-6 flex items-center justify-center w-full h-[500px]">
+              <img
+                src={fvProductCard}
+                alt="FormVista Product Card"
+                className="w-full h-full object-contain rounded-2xl"
+              />
             </div>
           </motion.div>
 
@@ -367,7 +317,7 @@ export default function Products() {
         id="relationshipvista"
         className="py-24 px-6 border-t border-slate-100"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -487,12 +437,13 @@ export default function Products() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-10 flex items-center justify-center min-h-[400px]">
+            <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center min-h-[400px] w-full h-[600px]">
               <img
                 src={rvProductCard}
                 alt="RelationshipVista Product Card"
-                className="w-full h-full object-contain rounded-2xl shadow-lg border border-sky-200"
+                className="w-full h-full object-contain rounded-2xl"
               />
             </div>
           </motion.div>
@@ -504,14 +455,15 @@ export default function Products() {
         id="compliancevista"
         className="py-24 px-6 bg-[#f8fafc] border-t border-slate-100"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-violet-50 to-purple-100 rounded-3xl p-10 flex items-center justify-center shadow-xl">
+            <div className="bg-gradient-to-br from-violet-50 to-purple-100 rounded-3xl p-6 flex items-center justify-center shadow-xl w-full h-[600px]">
               <img
                 src={cvProductCard}
                 alt="ComplianceVista Product Card"
@@ -625,7 +577,7 @@ export default function Products() {
 
       {/* ── AgentVista ────────────────────────────── */}
       <section id="agentvista" className="py-24 px-6 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -731,37 +683,14 @@ export default function Products() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="lg:sticky lg:top-24 flex items-center"
           >
-            <div className="bg-gradient-to-br from-amber-50 to-orange-100 rounded-3xl p-10 flex items-center justify-center">
-              <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl border border-amber-100 overflow-hidden">
-                <div className="bg-amber-500 px-6 py-4 flex items-center gap-3">
-                  <Bot size={18} className="text-white" />
-                  <div className="w-24 h-2.5 bg-white/40 rounded-full" />
-                </div>
-                <div className="p-5 space-y-3">
-                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-3">
-                    <p className="text-xs text-amber-800">
-                      Found 3 high-value accounts not contacted in 90 days.
-                      Create follow-up tasks?
-                    </p>
-                  </div>
-                  <div className="flex justify-end">
-                    <div className="bg-[#0f172a] rounded-xl p-3 max-w-[75%]">
-                      <p className="text-xs text-white">
-                        Yes, assign to regional reps.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-3">
-                    <p className="text-xs text-amber-800">
-                      Done! Created 3 tasks and sent email reminders.
-                    </p>
-                  </div>
-                  <div className="bg-[#43AF57] text-white text-xs font-bold px-4 py-2 rounded-lg text-center">
-                    3 tasks created ✓
-                  </div>
-                </div>
-              </div>
+            <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[600px]">
+              <img
+                src={avProductCard}
+                alt="AgentVista Product Card"
+                className="w-full h-full object-contain rounded-2xl"
+              />
             </div>
           </motion.div>
         </div>
