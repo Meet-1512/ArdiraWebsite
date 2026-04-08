@@ -1,0 +1,209 @@
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+import { MapPin, Phone, Mail, CheckCircle } from "lucide-react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+const formSchema = z.object({
+  fullName: z.string().min(2, "Full Name is required"),
+  email: z.string().email("Invalid email address"),
+  company: z.string().min(1, "Company is required"),
+  interest: z.string().min(1, "Please select an option"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+});
+
+export default function Contact() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+  });
+
+  const onSubmit = (_data: unknown) => {
+    setIsSubmitted(true);
+  };
+
+  return (
+    <div className="min-h-screen bg-white text-[#0f172a] font-sans" data-testid="page-contact">
+      <Navbar />
+
+      {/* Hero */}
+      <section className="pt-40 pb-16 px-6 bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
+        <div className="max-w-3xl mx-auto relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-[#43AF57] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
+              Get In Touch
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold font-display leading-[1.05] tracking-tight text-[#0f172a] mb-6">
+              Let's Build Something<br /><span className="text-[#43AF57]">Together</span>
+            </h1>
+            <p className="text-slate-500 text-base md:text-lg leading-relaxed font-normal">
+              Whether you're exploring our products or need expert Salesforce services, our team typically responds within 1 business day.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Main */}
+      <section className="py-20 px-6 pb-32">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-16">
+
+          {/* Left info column */}
+          <motion.div
+            initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}
+            className="lg:col-span-2 flex flex-col h-full"
+          >
+            <div className="space-y-6">
+              <h2 className="text-2xl font-extrabold font-display text-[#0f172a]">Reach Out</h2>
+              <div className="space-y-5">
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
+                    <MapPin size={18} className="text-[#43AF57]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#0f172a] mb-1">Headquarters</p>
+                    <p className="text-slate-500 text-sm leading-relaxed">2040 Martin Ave<br />Santa Clara, CA 95050<br />United States</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
+                    <Phone size={18} className="text-[#43AF57]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#0f172a] mb-1">Phone</p>
+                    <a href="tel:16697776838" className="text-slate-500 text-sm hover:text-[#43AF57] transition-colors">1.669.777.6838</a>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
+                    <Mail size={18} className="text-[#43AF57]" />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#0f172a] mb-1">Email</p>
+                    <a href="mailto:info@ardira.com" className="text-slate-500 text-sm hover:text-[#43AF57] transition-colors">info@ardira.com</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Map */}
+            <div className="w-full rounded-2xl overflow-hidden border border-slate-200 shadow-sm mt-10 grow min-h-[300px] relative">
+              <iframe
+                title="Ardira Headquarters Map"
+                src="https://maps.google.com/maps?q=2040%20Martin%20Ave,%20Santa%20Clara,%20CA%2095050&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                className="absolute inset-0 w-full h-full"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </motion.div>
+
+          {/* Right form */}
+          <motion.div
+            initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}
+            className="lg:col-span-3 flex flex-col h-full"
+          >
+            <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm h-full">
+              {isSubmitted ? (
+                <div className="text-center py-16 space-y-4">
+                  <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto">
+                    <CheckCircle size={32} className="text-[#43AF57]" />
+                  </div>
+                  <h3 className="text-2xl font-extrabold font-display text-[#0f172a]">Message Sent!</h3>
+                  <p className="text-slate-500">Thank you for reaching out. We'll be in touch within 1 business day.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                  <h3 className="text-xl font-extrabold font-display text-[#0f172a] mb-6">Send us a message</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Name</label>
+                      <input
+                        type="text"
+                        placeholder="Your full name"
+                        className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-[#43AF57] focus:ring-2 focus:ring-emerald-100 transition-all"
+                        {...register("fullName")}
+                      />
+                      {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message as string}</p>}
+                    </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Work Email</label>
+                      <input
+                        type="email"
+                        placeholder="you@company.com"
+                        className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-[#43AF57] focus:ring-2 focus:ring-emerald-100 transition-all"
+                        {...register("email")}
+                      />
+                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message as string}</p>}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Company</label>
+                    <input
+                      type="text"
+                      placeholder="Your company name"
+                      className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all"
+                      {...register("company")}
+                    />
+                    {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company.message as string}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">I'm interested in</label>
+                    <select
+                      className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all bg-white appearance-none"
+                      {...register("interest")}
+                    >
+                      <option value="">Select an option...</option>
+                      <option value="SurveyVista">SurveyVista</option>
+                      <option value="RelationshipVista">RelationshipVista</option>
+                      <option value="ComplianceVista">ComplianceVista</option>
+                      <option value="AgentVista">AgentVista</option>
+                      <option value="Product Development">Product Development</option>
+                      <option value="Salesforce Admin">Salesforce Admin Services</option>
+                      <option value="Customization">Customization & Config</option>
+                      <option value="Integration">Integration & Data Migration</option>
+                      <option value="General">General Inquiry</option>
+                    </select>
+                    {errors.interest && <p className="text-red-500 text-xs mt-1">{errors.interest.message as string}</p>}
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Message</label>
+                    <textarea
+                      rows={4}
+                      placeholder="Tell us about your project or question..."
+                      className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all resize-none"
+                      {...register("message")}
+                    />
+                    {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message as string}</p>}
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-[#16a34a] text-white py-4 rounded-lg font-bold text-base hover:bg-[#15803d] transition-colors shadow-sm mt-2"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              )}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
