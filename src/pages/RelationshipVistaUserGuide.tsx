@@ -5,7 +5,39 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
-import rvUserImage1 from "@/assets/RVUser/ArdiraRelationshipVistaComponent/Ardira RelationshipVista Component1.png";
+import arvcImage1 from "@/assets/RVUser/ArdiraRelationshipVistaComponent/Ardira RelationshipVista Component1.png";
+import arvcImage2 from "@/assets/RVUser/ArdiraRelationshipVistaComponent/Ardira RelationshipVista Component2.png";
+import arvcImage3 from "@/assets/RVUser/ArdiraRelationshipVistaComponent/Ardira RelationshipVista Component3.png";
+import arvcImage4 from "@/assets/RVUser/ArdiraRelationshipVistaComponent/Ardira RelationshipVista Component4.png";
+
+import rvImage1 from "@/assets/RVUser/RelationshipViews/RelationshipViews1.png";
+import rvImage2 from "@/assets/RVUser/RelationshipViews/RelationshipViews2.png";
+import rvImage3 from "@/assets/RVUser/RelationshipViews/RelationshipViews3.png";
+import rvImage4 from "@/assets/RVUser/RelationshipViews/RelationshipViews4.png";
+import rvImage5 from "@/assets/RVUser/RelationshipViews/RelationshipViews5.png";
+import rvImage6 from "@/assets/RVUser/RelationshipViews/RelationshipViews6.png";
+import rvImage7 from "@/assets/RVUser/RelationshipViews/RelationshipViews7.png";
+import rvImage8 from "@/assets/RVUser/RelationshipViews/RelationshipViews8.png";
+import rvImage9 from "@/assets/RVUser/RelationshipViews/RelationshipViews9.png";
+import rvImage10 from "@/assets/RVUser/RelationshipViews/RelationshipViews10.png";
+import rvImage11 from "@/assets/RVUser/RelationshipViews/RelationshipViews11.png";
+import rvImage12 from "@/assets/RVUser/RelationshipViews/RelationshipViews12.png";
+import rvImage13 from "@/assets/RVUser/RelationshipViews/RelationshipViews13.png";
+import rvImage14 from "@/assets/RVUser/RelationshipViews/RelationshipViews14.png";
+import rvImage15 from "@/assets/RVUser/RelationshipViews/RelationshipViews15.png";
+import rvImage16 from "@/assets/RVUser/RelationshipViews/RelationshipViews16.png";
+import rvImage17 from "@/assets/RVUser/RelationshipViews/RelationshipViews17.png";
+import rvImage18 from "@/assets/RVUser/RelationshipViews/RelationshipViews18.png";
+import rvImage19 from "@/assets/RVUser/RelationshipViews/RelationshipViews19.png";
+import rvImage20 from "@/assets/RVUser/RelationshipViews/RelationshipViews20.png";
+import rvImage21 from "@/assets/RVUser/RelationshipViews/RelationshipViews21.png";
+import rvImage22 from "@/assets/RVUser/RelationshipViews/RelationshipViews22.png";
+import rvImage23 from "@/assets/RVUser/RelationshipViews/RelationshipViews23.png";
+
+import mfImage1 from "@/assets/RVUser/MiscellaneousFeatures/MiscellaneousFeatures1.png";
+import mfImage2 from "@/assets/RVUser/MiscellaneousFeatures/MiscellaneousFeatures2.png";
+import mfImage3 from "@/assets/RVUser/MiscellaneousFeatures/MiscellaneousFeatures3.png";
+import mfImage4 from "@/assets/RVUser/MiscellaneousFeatures/MiscellaneousFeatures4.png";    
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -71,7 +103,7 @@ export default function RelationshipVistaUserGuide() {
           <Accordion type="single" collapsible className="space-y-3">
             {/* Section 1: Ardira RelationshipVista Component */}
             <AccordionItem value="component" className="border border-sky-200 rounded-lg overflow-hidden">
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">Ardira RelationshipVista Component</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 bg-white">
@@ -82,10 +114,26 @@ export default function RelationshipVistaUserGuide() {
                       To start using the Relationship Vista, edit your record detail page, create a custom tab and drop the "Ardira RelationshipVista" component in that page. Name the custom tab appropriately (e.g. RelationshipVista). You are not limited to adding the component in a custom tab, you can add the component anywhere in the record page.
                     </p>
 
-                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                        <img src={rvUserImage1} alt="Click Get It Now button" className="w-full h-auto" />
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={arvcImage1} alt="Adding RelationshipVista component to record detail page" className="w-full h-auto" />
                     </div>
-
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-3xl">
+                        <div className="flex gap-0 bg-white">
+                            <div className="flex-[2] overflow-hidden">
+                                <img src={arvcImage2} alt="Salesforce interface" className="w-full h-auto object-contain" />
+                            </div>
+                            <div className="flex-1 overflow-hidden bg-slate-50">
+                                <img src={arvcImage3} alt="Configuration panel" className="w-full h-auto object-contain" />
+                            </div>
+                        </div>
+                    </div>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={arvcImage4} alt="Saving and activating the record detail page with RelationshipVista component" className="w-full h-auto" />
+                    </div>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl"></div>
                     
                     <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 text-sm text-slate-700">
                       <p className="font-semibold text-sky-700 mb-2">Important:</p>
@@ -104,7 +152,7 @@ export default function RelationshipVistaUserGuide() {
 
             {/* Section 2: RVC Component Properties */}
             <AccordionItem value="properties" className="border border-sky-200 rounded-lg overflow-hidden">
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">RVC Component Properties</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 bg-white">
@@ -162,7 +210,7 @@ export default function RelationshipVistaUserGuide() {
 
             {/* Section 3: Relationship Views */}
             <AccordionItem value="rviews" className="border border-sky-200 rounded-lg overflow-hidden">
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">Relationship Views ("R-Views")</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 bg-white">
@@ -172,6 +220,11 @@ export default function RelationshipVistaUserGuide() {
                     <p className="text-slate-600 leading-relaxed mb-4">
                       When the component is first placed in a record page, the relationships are displayed based on the component attributes that were set in the page builder. You can create custom configurations using the relationship view selector.
                     </p>
+
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage1} alt="Relationship view selector interface for creating custom visualizations" className="w-full h-auto" />
+                    </div>
+                    <br></br>
                     <p className="text-slate-600 leading-relaxed">
                       You can configure "Relationship Views" using relationship view selector to navigate and visualize related records that are important and/or relevant. "Relationship Views" management is similar to managing Salesforce "List Views". Relationship View configuration allows you to configure each node in the view hierarchy to restrict types of records to visualize, filter records, group records by object fields, and more.
                     </p>
@@ -183,8 +236,41 @@ export default function RelationshipVistaUserGuide() {
                     </p>
                     <ul className="space-y-2 ml-6">
                       <li className="text-slate-600 text-sm">1. Go to the "RelationshipVista Getting Started" tab from the app launcher.</li>
+
+                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                            <img src={rvImage2} alt="RelationshipVista Getting Started tab in Salesforce app launcher" className="w-full h-100" />
+                        </div> 
+
                       <li className="text-slate-600 text-sm">2. Click "Load Sample data" to load some sample data to play around and experience RelationshipVista.</li>
+                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                            <img src={rvImage3} alt="Load Sample Data button in RelationshipVista Getting Started" className="w-full h-auto" />
+                        </div> 
+                        <p>The screenshots used in the subsequent sections use the following sample data.</p>
+                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                            <img src={rvImage4} alt="Sample account relationship data structure with related contacts, cases, and opportunities" className="w-full h-auto" />
+                        </div>
                     </ul>
+                  </div>
+                  <div>
+                    <h4 className="text-base font-semibold text-[#0f172a] mb-3">Create/Update/Delete a View Configuration</h4>
+                    <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                      A view configuration allows you to set what records are visualized in the relationship view by configuring the view configuration properties at each node in the relationship view.
+                    </p>
+                    <p className="text-slate-600 leading-relaxed text-sm">
+                      If your Salesforce administrator has configured an RVC so that users can update view configurations, you will see the following options to manage your view configurations.
+                    </p>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-4xl">
+                      <div className="flex gap-0 bg-white">
+                        <div className="flex-1 overflow-hidden min-w-0">
+                          <img src={rvImage5} alt="Salesforce interface" className="w-full h-auto object-contain" />
+                        </div>
+                        <div className="flex-1 overflow-hidden bg-slate-50 min-w-0">
+                          <img src={rvImage6} alt="Configuration panel" className="w-full h-auto object-contain" />
+                        </div>
+                      </div>
+                    </div>
+
                   </div>
                   <div className="bg-sky-50 border border-sky-200 rounded-lg p-4">
                     <h4 className="text-sm font-semibold text-sky-700 mb-3">View Configuration Properties</h4>
@@ -211,11 +297,18 @@ export default function RelationshipVistaUserGuide() {
                       </div>
                     </div>
                   </div>
+                  <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage7} alt="View Configuration properties showing Name, Show, Pinned, and other settings" className="w-full h-auto" />
+                  </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-3">Root Node Configuration</h4>
                     <p className="text-slate-600 leading-relaxed text-sm mb-4">
                       You can configure the root node in a "Relationship Views" to navigate and visualize related records. To update the node configuration, select the view and click edit. To configure a root node, click the settings icon next to the node.
                     </p>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage8} alt="Root node configuration interface with Record Node Label Field and Auto Expand settings" className="w-full h-auto" />
+                  </div>
+                  <br></br>
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
                       <div>
                         <p className="text-sm font-semibold text-slate-700">Record Node Label Field</p>
@@ -235,8 +328,28 @@ export default function RelationshipVistaUserGuide() {
                     <h4 className="text-base font-semibold text-[#0f172a] mb-3">Node Configuration</h4>
                     <p className="text-slate-600 leading-relaxed text-sm mb-4">
                       You can configure each node in a "Relationship Views" by clicking the settings icon next to the node. This will display the configuration options for the selected object.
+                        <br></br>
+                        <br></br>
+                        Click on gear icon and click on Edit.
                     </p>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage9} alt="Relationship view showing gear icon for accessing node configuration settings" className="w-full h-auto" />
+                  </div>
+                  <br></br>
+                  <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage10} alt="Node configuration dialog showing edit and delete options" className="w-full h-auto" />
+                  </div>
+                  <br></br>
+                  <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage11} alt="Node configuration properties including Object Node Label and Record Node Label Field" className="w-full h-auto" />
+                  </div>
+                    <br></br>
+
+
                     <div className="space-y-3">
+                        <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                      To modify or edit the configuration of an object, click on the gear icon corresponding to that object. This will display the configuration options for the selected object, including the object type that is currently configured by the node.
+                    </p>
                       <div className="border-l-2 border-sky-300 pl-4">
                         <p className="text-sm font-semibold text-[#0f172a]">Object Node Label</p>
                         <p className="text-sm text-slate-600">Modify the label used for the object node in the visualization.</p>
@@ -289,8 +402,12 @@ export default function RelationshipVistaUserGuide() {
                   </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-3">Junction Object Configuration</h4>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage12} alt="Account Contact Relationship junction object configuration setup" className="w-full h-auto" />
+                  </div>
+                    <br></br>
                     <p className="text-slate-600 leading-relaxed text-sm mb-4">
-                      Account Contact Relationship is a junction object. It can be enabled in Account Settings. The key configuration options for junction objects are:
+                      Account Contact Relationship is a junction object. It can be enabled in Account Settings. Just below the junction object is the id which represents the Account Contact Relation i.e., junction object.
                     </p>
                     <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 space-y-3">
                       <div>
@@ -302,6 +419,133 @@ export default function RelationshipVistaUserGuide() {
                         <p className="text-sm text-slate-600">Hide the record node of a junction object when you want to hide record IDs or associated information.</p>
                       </div>
                     </div>
+                        <br></br>
+                      <br></br>
+
+                    <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                      Below images show the use of the Cascade Auto Expand and Display Record Node.
+                        <br></br>
+                     In the below example Person Accounts are enabled, allowing users to relate a contact to multiple accounts (which is AccountContactRelation Junction object).
+                    </p>
+
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage13} alt="Relationship graph demonstrating Cascade Auto Expand with junction object visible" className="w-full h-auto" />
+                  </div>
+                    <br></br>
+                    <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                      When "Display Record Node" is set to false, the record id node is hidden. Relation of Test Account ABC to another contact named Test Contact XYZ can be seen without the intermediate junction object record.
+                    </p>
+                    <br></br>
+                  <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage14} alt="Relationship graph with Display Record Node hidden showing direct contact-to-account relationship" className="w-full h-auto" />
+                  </div>
+
+                  </div>
+                  <div>
+                    <h4 className="text-base font-semibold text-[#0f172a] mb-3">Change Icons in Record URL from Lightning Design System</h4>
+                    <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                      Set custom icons from the Lightning Design System to be displayed for nodes in your visualization. Visit the <a href="https://www.lightningdesignsystem.com/icons/" target="_blank" rel="noopener noreferrer" className="text-sky-600 hover:text-sky-700 font-semibold underline">Lightning Design System Icons</a> page to browse and select icons.
+                        <br></br>
+                        <br></br>
+                        Go to the official website of lightning design system - Icons - Standard & Custom or click the below link https://www.lightningdesignsystem.com/icons/
+                    </p>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage15} alt="Lightning Design System website showing Icons section with Standard and Custom filters" className="w-full h-auto" />
+                  </div>
+                        <br></br>
+                    <div className="space-y-3">
+                        <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                      Select the name of :
+                    </p>
+                      <div className="border-l-2 border-sky-300 pl-4">
+                        <p className="text-sm font-semibold text-[#0f172a]">Standard Icons</p>
+                        <p className="text-sm text-slate-600 mb-2">Standard Icons and paste it in the url as /img/icon/t4v35/standard/your_standard_icon_name.svg</p>
+                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                        <img src={rvImage16} alt="Lightning Design System standard icons browsing interface with icon names" className="w-full h-auto" />
+                  </div>
+                      </div>
+                      <div className="border-l-2 border-sky-300 pl-4">
+                        <p className="text-sm font-semibold text-[#0f172a]">Custom Icons</p>
+                        <p className="text-sm text-slate-600 mb-2">For custom icons grab it from the same site in the Custom icons section and paste it in the link as /img/icon/t4v35/custom/your_custom_icon_name.svg</p>
+                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                            <img src={rvImage17} alt="Lightning Design System custom icons browsing interface with custom icon options" className="w-full h-auto" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-base font-semibold text-[#0f172a] mb-3">Set Record Icon Background Color</h4>
+                    <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                      Customize the background color of the icon using hex color codes. Use your browser's developer tools to pick any color.
+                    </p>
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
+                      <p className="text-sm font-semibold text-slate-700 mb-2">How to pick a color:</p>
+                      <ol className="list-decimal list-inside space-y-2 text-sm text-slate-600">
+                        <li>Right-click on any element and select <strong>Inspect</strong> (or press F12)</li>
+                        <li>Open Developer Tools and locate the <strong>Color Picker</strong> option</li>
+                        <li>Click on any color to copy the hex code to clipboard</li>
+
+                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                            <img src={rvImage18} alt="Click Get It Now button" className="w-full h-auto" />
+                        </div>
+
+                        <li>Paste the hex color into the <strong>Record Icon Background Color</strong> field</li>
+                        <li>Click <strong>Save</strong> to apply the color to the icon</li>
+                        
+
+                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                            <img src={rvImage19} alt="Click Get It Now button" className="w-full h-auto" />
+                        </div>
+
+                      </ol>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-base font-semibold text-[#0f172a] mb-3">Sort Records</h4>
+                    <p className="text-slate-600 leading-relaxed text-sm mb-4">
+                      Sort, filter, and group the child records based on different fields of the object. Select the object that needs to be configured for sorting to customize how related records are displayed in the visualization.
+                    </p>
+
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                            <img src={rvImage20} alt="Click Get It Now button" className="w-full h-auto" />
+                        </div>
+                    <br ></br>
+                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                            <img src={rvImage21} alt="Click Get It Now button" className="w-full h-auto" />
+                        </div>
+                    <br ></br>
+                    <div className="space-y-3">
+                      <div className="border-l-2 border-sky-300 pl-4">
+                        <p className="text-sm font-semibold text-[#0f172a]">Auto Expand</p>
+                        <p className="text-sm text-slate-600">If enabled, the parent node is automatically expanded when the visualization is loaded.</p>
+                      </div>
+                      <div className="border-l-2 border-sky-300 pl-4">
+                        <p className="text-sm font-semibold text-[#0f172a]">Show Objects</p>
+                        <p className="text-sm text-slate-600">To show the relation of records from another object. Specify which object types should be displayed as children of this node.</p>
+                      </div>
+                      <div className="border-l-2 border-sky-300 pl-4">
+                        <p className="text-sm font-semibold text-[#0f172a]">Filter Records</p>
+                        <p className="text-sm text-slate-600 mb-2">Filter to show only records that meet specific criteria. Multiple filter conditions can be used together to refine the records displayed.</p>
+                        <p className="text-xs text-slate-600 italic">Example: Filter Opportunities to show only those with Probability greater than or equal to 10%.</p>
+                      </div>
+                      <div className="border-l-2 border-sky-300 pl-4">
+                        <p className="text-sm font-semibold text-[#0f172a]">Group Records</p>
+                        <p className="text-sm text-slate-600 mb-2">Group the records by fields of the object and choose a different label for each group. More than one criteria can be used to group records.</p>
+                        <p className="text-xs text-slate-600 italic">Example: Group Opportunities by Stage field to organize them by sales status.</p>
+                      </div>
+                      <div className="border-l-2 border-sky-300 pl-4">
+                        <p className="text-sm font-semibold text-[#0f172a]">Sort Records By</p>
+                        <p className="text-sm text-slate-600">Sort the records by fields of the object in ascending or descending order to organize how child records appear.</p>
+                      </div>
+                    </div>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
+                            <img src={rvImage22} alt="Click Get It Now button" className="w-full h-auto" />
+                        </div>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                            <img src={rvImage23} alt="Click Get It Now button" className="w-full h-auto" />
+                        </div>
                   </div>
                 </div>
               </AccordionContent>
@@ -309,7 +553,7 @@ export default function RelationshipVistaUserGuide() {
 
             {/* Section 4: Miscellaneous Features */}
             <AccordionItem value="misc" className="border border-sky-200 rounded-lg overflow-hidden">
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">Miscellaneous Features</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 bg-white">
@@ -319,24 +563,44 @@ export default function RelationshipVistaUserGuide() {
                     <p className="text-slate-600 leading-relaxed mb-4">
                       In some situations, the administrator would like to define a view and restrict all users to that view. To do this, configure the view name in the "Use Configuration" component attribute in the page builder. If the "Use Configuration" attribute is set, the view selector is hidden from users. This is overridden when a View Configuration has a pinned view.
                     </p>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-sm">
+                            <img src={mfImage1} alt="Restricting the View Selector" className="w-full h-auto" />
+                        </div>
                   </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-4">Configuring User View Options</h4>
                     <p className="text-slate-600 leading-relaxed mb-4">
                       In some situations, the administrator wants to give users a few view options to select from. To do this, build multiple views. For each of these views to be shared with users, set "Sharing Setting" to "All users can see".
                     </p>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                            <img src={mfImage2} alt="Configuring User View Options" className="w-full h-auto" />
+                        </div>
                   </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-4">Setting a Default View</h4>
                     <p className="text-slate-600 leading-relaxed mb-4">
                       The administrator can pin a view by checking the "Pinned" attribute to make the view as a default view for every user. This is similar to pinning Salesforce list views. Note that a user who can create her view can also pin a view to make it default selected for her.
                     </p>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                            <img src={mfImage3} alt="Setting a Default View" className="w-full h-auto" />
+                        </div>
                   </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-4">User View Creation Control</h4>
                     <p className="text-slate-600 leading-relaxed mb-4">
                       In some cases, the administrator would like to allow users to create their own views. To do this, check the page attribute "Allow Users to Update View Configuration" in the page builder. If that is checked, users will be able to create their own views and also share with other users.
                     </p>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-sm">
+                            <img src={mfImage4} alt="User View Creation Control" className="w-full h-auto" />
+                        </div>
+                    <br></br>
+                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-sm">
+                            <img src={mfImage4} alt="User View Creation Control" className="w-full h-auto" />
+                        </div>
                   </div>
                   <div className="bg-gradient-to-r from-sky-50 to-sky-100 border border-sky-300 rounded-lg p-6">
                     <h4 className="text-base font-semibold text-sky-900 mb-3">Advanced Features</h4>
@@ -369,7 +633,7 @@ export default function RelationshipVistaUserGuide() {
 
             {/* Section 5: Have Questions */}
             <AccordionItem value="questions" className="border border-sky-200 rounded-lg overflow-hidden">
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">Have Questions?</h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 bg-white">
