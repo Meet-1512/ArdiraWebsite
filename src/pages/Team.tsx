@@ -6,33 +6,6 @@ import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
 import ardiraTeam from "@assets/ArdiraTeam.jpg";
 
-import collab1 from "@assets/CollabTeam/Boddepalli-Vijaya-Vardhana-Rao.webp";
-import collab2 from "@assets/CollabTeam/Dhaval-Patel.webp";
-import collab3 from "@assets/CollabTeam/Jignesh-Sharma.webp";
-import collab4 from "@assets/CollabTeam/Kishan-Parekh.webp";
-import collab5 from "@assets/CollabTeam/Kush-Patel.webp";
-import collab6 from "@assets/CollabTeam/Nirav-Prajapati.webp";
-import collab7 from "@assets/CollabTeam/Reddy-Rachamallu.webp";
-import collab8 from "@assets/CollabTeam/Sohil-Vainsh.webp";
-import collab9 from "@assets/CollabTeam/Meet-Patel.png";
-import collab10 from "@assets/CollabTeam/Param-Buddh.jpg";
-import collab11 from "@assets/CollabTeam/Milan-gajera.png";
-import collab12 from "@assets/CollabTeam/Jeni-Patel.jpg";
-import collab13 from "@assets/CollabTeam/Trupal-Godhat.jpg";
-import collab14 from "@assets/CollabTeam/Neel-Dobariya.jpg";
-import collab15 from "@assets/CollabTeam/Brinda-Popat.webp";
-import collab16 from "@assets/CollabTeam/Dhruvika-Babariya.webp";
-import collab17 from "@assets/CollabTeam/Karan-Parmar.webp";
-import collab18 from "@assets/CollabTeam/Kunj-Shah.webp";
-import collab19 from "@assets/CollabTeam/Manav-Bhagiya.webp";
-import collab20 from "@assets/CollabTeam/Naimish-Kalena.webp";
-import collab21 from "@assets/CollabTeam/Parth-Mistry.webp";
-import collab22 from "@assets/CollabTeam/Priyank-Gandhi.webp";
-import collab23 from "@assets/CollabTeam/Priyank-Pandit.webp";
-import collab24 from "@assets/CollabTeam/Raoul-Joachim.webp";
-import collab25 from "@assets/CollabTeam/Sarang-Boda.webp";
-import collab26 from "@assets/CollabTeam/Surbhi-Mohta.webp";
-import collab27 from "@assets/CollabTeam/Tilak-Kundaliya.webp";
 
 import rajesh from "@assets/ArdiraMind/rajesh.webp";
 import hitesh from "@assets/ArdiraMind/hitesh.webp";
@@ -42,16 +15,6 @@ import qRegan from "@assets/ArdiraMind/LI-photo.webp";
 import devAdvisor from "@assets/AdvisoryBoard/dev-advisor.webp";
 import robertAdvisor from "@assets/AdvisoryBoard/robert.webp";
 import davidAdvisor from "@assets/AdvisoryBoard/david.webp";
-
-
-
-const collabTeamImages = [collab1, collab2, collab3, collab4, collab5, collab6, collab7, collab8, collab9, collab10, collab11, collab12, collab13, collab14, collab15, collab16, collab17, collab18, collab19, collab20, collab21, collab22, collab23, collab24, collab25, collab26, collab27];
-const stats = [
-  { value: "50+", label: "Years combined Salesforce experience" },
-  { value: "450+", label: "Enterprise clients served" },
-  { value: "250+", label: "AppExchange reviews" },
-  { value: "5", label: "100% native Salesforce products" },
-];
 
 const values = [
   { icon: Zap, title: "Native First", desc: "We never build workarounds. Every product and solution lives entirely within the Salesforce platform — secure, scalable, and seamless." },
@@ -222,15 +185,14 @@ export default function About() {
                 className="flex flex-col items-center text-center group cursor-pointer"
               >
                 {member.image ? (
-                  <img src={member.image} alt={member.name} className={`w-28 h-28 object-cover rounded-full ring-4 ${member.ring} mb-5 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl`} />
+                  <img src={member.image} alt={member.name} className={`w-50 h-54 object-cover rounded-lg mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`} />
                 ) : (
-                  <div className={`w-28 h-28 rounded-full ${member.bg} ring-4 ${member.ring} flex items-center justify-center mb-5 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl`}>
+                  <div className={`w-40 h-48 rounded-lg ${member.bg} flex items-center justify-center mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}>
                     <span className={`text-2xl font-extrabold font-display ${member.text}`}>{member.initials}</span>
                   </div>
                 )}
                 <h3 className="text-base font-extrabold font-display text-[#0f172a] mb-1">{member.name}</h3>
-                <p className="text-sm font-semibold text-[#43AF57] mb-3">{member.title}</p>
-                <p className="text-sm text-slate-500 leading-relaxed max-w-[200px]">{member.bio}</p>
+                <p className="text-sm font-semibold text-[#43AF57]">{member.title}</p>
               </motion.div>
             ))}
           </div>
@@ -259,7 +221,7 @@ export default function About() {
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  className={`w-28 h-28 object-cover rounded-full ring-4 ${member.ringColor} mb-5 shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-xl`}
+                  className={`w-50 h-60 object-cover rounded-lg mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}
                 />
                 <h3 className="text-lg md:text-xl font-semibold font-display text-[#0f172a] mb-2">{member.name}</h3>
                 <p className="text-sm font-medium text-[#43AF57]">{member.title}</p>
@@ -269,42 +231,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Collaborative Team */}
-      <section className="py-24 px-6 bg-slate-50 overflow-hidden border-t border-slate-100">
-        <div className="max-w-5xl mx-auto text-center mb-16">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a] mb-6">
-              Our Collaborative Team
-            </h2>
-            <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed max-w-4xl mx-auto font-normal">
-              Behind Ardira's success is our dynamic and collaborative team of professionals. From talented developers and data analysts to creative designers and dedicated support staff, our diverse team brings a wealth of skills and expertise to the table. We thrive on innovation and teamwork, consistently pushing the boundaries of what's possible. Our shared passion for delivering unparalleled solutions and providing exceptional service defines our culture.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Carousel */}
-        <div className="relative w-full mt-4 overflow-hidden">
-          {/* Fade edges hugging the screen edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none" />
-          
-          <div className="flex animate-marquee py-6 items-center w-max" style={{ animationDuration: "50s" }}>
-            {[...collabTeamImages, ...collabTeamImages, ...collabTeamImages, ...collabTeamImages].map((img, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                className="mx-6 shrink-0"
-              >
-                <img
-                  src={img}
-                  alt={`Team Member ${i}`}
-                  className="w-40 h-40 object-cover rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.08)] border-4 border-white transition-shadow hover:shadow-xl"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       <ContactCta
         headline="Want to work with our team?"

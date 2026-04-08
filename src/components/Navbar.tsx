@@ -23,11 +23,11 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-white/95 backdrop-blur-[16px] shadow-sm border-b border-emerald-100 py-3" : "bg-transparent py-5"
+      isScrolled ? "bg-white/95 backdrop-blur-[16px] shadow-sm border-b border-emerald-100 py-1" : "bg-transparent py-1"
     }`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
-          <img src={ardiraLogo} alt="Ardira" className="h-12 w-auto" />
+          <img src={ardiraLogo} alt="Ardira" className="h-20 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">
