@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { MapPin, Phone, Mail } from "lucide-react";
-import ardiraLogo from "@assets/ArdiraLogo.png";
 import sfPartnerLogo from "@assets/SalesForcePartnerLogo.png";
 
 export default function Footer() {

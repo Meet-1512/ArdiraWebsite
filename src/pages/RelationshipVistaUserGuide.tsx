@@ -6,9 +6,6 @@ import Footer from "@/components/Footer";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 import rvUserImage1 from "@/assets/RVUser/ArdiraRelationshipVistaComponent/Ardira RelationshipVista Component1.png";
-import rvUserImage2 from "@/assets/RVUser/ArdiraRelationshipVistaComponent/Ardira RelationshipVista Component2.png";
-import rvUserImage3 from "@/assets/RVUser/ArdiraRelationshipVistaComponent/Ardira RelationshipVista Component3.png";
-import rvUserImage4 from "@/assets/RVUser/ArdiraRelationshipVistaComponent/Ardira RelationshipVista Component4.png";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -84,7 +81,7 @@ export default function RelationshipVistaUserGuide() {
                     <p className="text-slate-600 leading-relaxed mb-4">
                       To start using the Relationship Vista, edit your record detail page, create a custom tab and drop the "Ardira RelationshipVista" component in that page. Name the custom tab appropriately (e.g. RelationshipVista). You are not limited to adding the component in a custom tab, you can add the component anywhere in the record page.
                     </p>
-                    
+
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
                         <img src={rvUserImage1} alt="Click Get It Now button" className="w-full h-auto" />
                     </div>
