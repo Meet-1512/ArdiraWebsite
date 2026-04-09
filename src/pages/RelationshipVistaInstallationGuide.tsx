@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { ArrowLeft, CheckCircle2, Download } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import rvInstallImage1 from "@/assets/RVInstallation/relationshipvista-installation-g-1.webp";
 import rvInstallImage2 from "@/assets/RVInstallation/relationshipvista-installation-g-2.webp";
 import rvInstallImage3 from "@/assets/RVInstallation/relationshipvista-installation-g-3.webp";
@@ -28,6 +30,15 @@ const fadeUp = {
 export default function RelationshipVistaInstallationGuide() {
   return (
     <div className="min-h-screen bg-white text-[#0f172a] font-sans">
+      <SEO
+        title="RelationshipVista Installation Guide | Ardira"
+        description="Step-by-step installation guide for RelationshipVista. Get started with Salesforce relationship mapping in minutes."
+        keywords="RelationshipVista installation, setup guide, Salesforce app installation"
+        ogTitle="RelationshipVista Installation Guide"
+        ogDescription="Install RelationshipVista and start visualizing your Salesforce relationships"
+        ogUrl="https://www.ardira.com/relationship-vista-installation-guide"
+      />
+      <StructuredData type="WebPage" data={{ name: "RelationshipVista Installation Guide" }} />
       <Navbar />
 
       {/* Hero Section */}

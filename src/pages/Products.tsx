@@ -4,6 +4,8 @@ import { ArrowRight, CheckCircle2, ExternalLink, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import surveyVistaLogo from "@assets/ProductLogo/SurveyVistaLogo.webp";
 import formVistaLogo from "@assets/ProductLogo/FormVistaLogo.webp";
 import relationshipVistaLogo from "@assets/ProductLogo/RelationshipVistaLogo.webp";
@@ -183,6 +185,21 @@ export default function Products() {
       className="min-h-screen bg-white text-[#0f172a] font-sans"
       data-testid="page-products"
     >
+      <SEO
+        title="Ardira Products | Enterprise Salesforce Applications"
+        description="Discover Ardira's suite of enterprise Salesforce applications: SurveyVista, FormVista, RelationshipVista, ComplianceVista, and AgentVista. 100% native, AppExchange certified solutions."
+        keywords="Salesforce products, survey management, form builder, relationship mapping, compliance management"
+        ogTitle="Ardira Products - Salesforce Applications"
+        ogDescription="Enterprise-grade Salesforce native applications for surveys, forms, relationships, compliance, and AI-powered agents"
+        ogUrl="https://www.ardira.com/products"
+      />
+      <StructuredData
+        type="WebPage"
+        data={{
+          name: "Ardira Products",
+          url: "https://www.ardira.com/products",
+        }}
+      />
       <Navbar />
 
       {/* Hero */}
@@ -331,6 +348,7 @@ export default function Products() {
                   <img
                     src={svProductCard}
                     alt="SurveyVista Product Card"
+                    loading="lazy"
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
@@ -391,6 +409,7 @@ export default function Products() {
                               <img
                                 src={testimonial.logo}
                                 alt={`${testimonial.company} Logo`}
+                                loading="lazy"
                                 className="h-12 w-auto object-contain"
                               />
                             </div>
@@ -429,6 +448,7 @@ export default function Products() {
                   <img
                     src={fvProductCard}
                     alt="FormVista Product Card"
+                    loading="lazy"
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
@@ -489,6 +509,7 @@ export default function Products() {
                               <img
                                 src={testimonial.logo}
                                 alt={`${testimonial.company} Logo`}
+                                loading="lazy"
                                 className="h-12 w-auto object-contain"
                               />
                             </div>
@@ -515,6 +536,7 @@ export default function Products() {
                 <img
                   src={formVistaLogo}
                   alt="Form Vista"
+                  loading="lazy"
                   className="h-12 w-auto"
                 />
               </div>
@@ -625,6 +647,7 @@ export default function Products() {
               <div className="flex items-center">
                 <img
                   src={relationshipVistaLogo}
+                  loading="lazy"
                   alt="Relationship Vista"
                   className="h-22 w-auto"
                 />
@@ -739,6 +762,7 @@ export default function Products() {
                   <img
                     src={rvProductCard}
                     alt="Relationship Vista Product Card"
+                    loading="lazy"
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
@@ -798,6 +822,7 @@ export default function Products() {
                             <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
+                                loading="lazy"
                                 alt={`${testimonial.company} Logo`}
                                 className="h-12 w-auto object-contain"
                               />
@@ -837,6 +862,7 @@ export default function Products() {
                   <img
                     src={cvProductCard}
                     alt="ComplianceVista Product Card"
+                    loading="lazy"
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
@@ -896,6 +922,7 @@ export default function Products() {
                             <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
+                                loading="lazy"
                                 alt={`${testimonial.company} Logo`}
                                 className="h-12 w-auto object-contain"
                               />
@@ -923,6 +950,7 @@ export default function Products() {
                 <img
                   src={complianceVistaLogo}
                   alt="Compliance Vista"
+                  loading="lazy"
                   className="h-12 w-auto"
                 />
               </div>
@@ -1030,6 +1058,7 @@ export default function Products() {
                 <img
                   src={agentVistaLogo}
                   alt="Agent Vista"
+                  loading="lazy"
                   className="h-16 w-auto"
                 />
               </div>
@@ -1138,6 +1167,7 @@ export default function Products() {
                   <img
                     src={avProductCard}
                     alt="AgentVista Product Card"
+                    loading="lazy"
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
@@ -1196,6 +1226,7 @@ export default function Products() {
                             {/* Logo Center Aligned */}
                             <div className="flex justify-center pt-8">
                               <img
+                                loading="lazy"
                                 src={testimonial.logo}
                                 alt={`${testimonial.company} Logo`}
                                 className="h-12 w-auto object-contain"

@@ -3,6 +3,8 @@ import { Link } from "wouter";
 import { ArrowLeft, Download, Mail } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import {
   Accordion,
   AccordionItem,
@@ -56,6 +58,15 @@ const fadeUp = {
 export default function RelationshipVistaUserGuide() {
   return (
     <div className="min-h-screen bg-white text-[#0f172a] font-sans">
+      <SEO
+        title="RelationshipVista User Guide | Ardira"
+        description="Comprehensive user guide for RelationshipVista. Learn how to visualize and manage Salesforce record relationships and hierarchies."
+        keywords="RelationshipVista, Salesforce relationships, user guide, documentation"
+        ogTitle="RelationshipVista User Guide"
+        ogDescription="Master RelationshipVista and visualize your Salesforce relationships"
+        ogUrl="https://www.ardira.com/relationship-vista-user-guide"
+      />
+      <StructuredData type="WebPage" data={{ name: "RelationshipVista User Guide" }} />
       <Navbar />
 
       {/* Hero Section */}

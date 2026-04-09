@@ -14,6 +14,8 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 
 import eightSquadLogo from "@/assets/TrustedPartner/8squadlogo.webp";
 import accentureLogo from "@/assets/TrustedPartner/accenturelogo.webp";
@@ -122,6 +124,15 @@ export default function PartnerHub() {
       className="min-h-screen bg-white text-[#0f172a] font-sans"
       data-testid="page-partners"
     >
+      <SEO
+        title="Ardira Partner Hub | Join Our Partner Network"
+        description="Become an Ardira partner and grow your Salesforce business. Access resources, tools, and opportunities."
+        keywords="Salesforce partners, partner program, consulting partners"
+        ogTitle="Ardira Partner Hub"
+        ogDescription="Partner with Ardira for mutual success in Salesforce solutions"
+        ogUrl="https://www.ardira.com/partners"
+      />
+      <StructuredData type="Organization" />
       <Navbar />
 
       {/* Why Partner */}

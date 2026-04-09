@@ -3,6 +3,8 @@ import { Users, Globe, Award, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import ardiraTeam from "@assets/ArdiraTeam.webp";
 
 import rajesh from "@assets/ArdiraMind/rajesh.webp";
@@ -110,6 +112,15 @@ export default function About() {
       className="min-h-screen bg-white text-[#0f172a] font-sans"
       data-testid="page-about"
     >
+      <SEO
+        title="Ardira Team | Enterprise Salesforce Experts"
+        description="Meet Ardira's leadership team with 50+ years of combined Salesforce expertise. Based in USA and India, we deliver enterprise-grade solutions."
+        keywords="Salesforce team, enterprise architects, Salesforce consultants"
+        ogTitle="Ardira Team - Salesforce Experts"
+        ogDescription="Experienced leadership and advisory board dedicated to Salesforce innovation"
+        ogUrl="https://www.ardira.com/team"
+      />
+      <StructuredData type="Organization" />
       <Navbar />
 
       {/* Hero */}

@@ -6,6 +6,8 @@ import * as z from "zod";
 import { MapPin, Phone, Mail, CheckCircle, AlertCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import { useRecaptcha } from "@/hooks/use-recaptcha";
 
 const formSchema = z.object({
@@ -76,6 +78,15 @@ export default function Contact() {
       className="min-h-screen bg-white text-[#0f172a] font-sans"
       data-testid="page-contact"
     >
+      <SEO
+        title="Contact Ardira | Get in Touch"
+        description="Contact Ardira for Salesforce consulting, AppExchange applications, or partnership inquiries. We're here to help."
+        keywords="contact Ardira, Salesforce consulting, partnership"
+        ogTitle="Contact Ardira"
+        ogDescription="Reach out to us for enterprise Salesforce solutions"
+        ogUrl="https://www.ardira.com/contact"
+      />
+      <StructuredData type="Organization" />
       <Navbar />
 
       {/* Hero */}

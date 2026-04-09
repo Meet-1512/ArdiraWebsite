@@ -1,9 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 
 export default function Terms() {
   return (
     <div className="min-h-screen bg-slate-50 text-justify text-[#0f172a] font-sans flex flex-col" data-testid="page-terms">
+      <SEO
+        title="Terms of Use | Ardira"
+        description="Read Ardira's Terms of Use and understand the legal agreement governing your use of our website and services."
+        robots="index, follow"
+        ogUrl="https://www.ardira.com/terms"
+      />
+      <StructuredData type="WebPage" data={{ name: "Terms of Use" }} />
       <Navbar />
 
       <main className="flex-grow pt-32 pb-24 px-6 max-w-3xl mx-auto w-full">

@@ -16,6 +16,8 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 import ebayLogo from "@/assets/TrustedEnterprise/ebay.webp";
 import hpLogo from "@/assets/TrustedEnterprise/hp.webp";
 import marriottLogo from "@/assets/TrustedEnterprise/marriott-international.webp";
@@ -158,6 +160,22 @@ export default function Home() {
       className="min-h-screen bg-white text-[#0f172a] font-sans"
       data-testid="page-home"
     >
+      <SEO
+        title="Ardira | Enterprise Salesforce Solutions & AppExchange Applications"
+        description="Ardira delivers 100% native Salesforce applications including SurveyVista, FormVista, RelationshipVista, ComplianceVista, and AgentVista. Trusted by 450+ enterprise clients worldwide."
+        keywords="Salesforce apps, AppExchange applications, enterprise software, Salesforce native solutions"
+        ogTitle="Ardira - Enterprise Salesforce Solutions"
+        ogDescription="Build, deploy, and optimize enterprise-grade Salesforce native applications"
+        ogUrl="https://www.ardira.com"
+      />
+      <StructuredData
+        type="Organization"
+        data={{
+          foundingDate: "2015",
+          areaServed: ["US", "IN"],
+          numberOfEmployees: "50+",
+        }}
+      />
       <Navbar />
 
       {/* ── Hero Carousel ───────────────────────── */}

@@ -1,9 +1,18 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import StructuredData from "@/components/StructuredData";
 
 export default function Privacy() {
   return (
     <div className="min-h-screen bg-slate-50 text-justify text-[#0f172a] font-sans flex flex-col" data-testid="page-privacy">
+      <SEO
+        title="Privacy Policy | Ardira"
+        description="Learn how Ardira protects your privacy and handles your personal information in accordance with applicable laws."
+        robots="index, follow"
+        ogUrl="https://www.ardira.com/privacy-policy"
+      />
+      <StructuredData type="WebPage" data={{ name: "Privacy Policy" }} />
       <Navbar />
 
       <main className="flex-grow pt-32 pb-24 px-6 max-w-3xl mx-auto w-full">

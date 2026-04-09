@@ -1,0 +1,39 @@
+# Robots.txt for Ardira Website
+# Allow all search engines to crawl
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: *.pdf$
+Disallow: *.doc$
+Disallow: *.xls$
+
+# Allow crawling of specific directories
+Allow: /public/
+
+# Sitemap location
+Sitemap: https://www.ardira.com/sitemap.xml
+
+# Crawl delay to prevent server overload
+Crawl-delay: 2
+
+# Specific rules for Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Rules for other bots (restrict aggressive crawlers)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
