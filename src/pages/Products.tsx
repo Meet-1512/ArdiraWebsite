@@ -608,7 +608,7 @@ export default function Products() {
               </div>
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
-                  href="https://formvista.com"
+                  href="https://surveyvista.com/products/form-vista-business-forms/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#28aae1] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#1a8ec4] transition-colors shadow-sm group"

@@ -75,7 +75,7 @@ export default function SEO({
       viewportMeta.content = "width=device-width, initial-scale=1.0";
       document.head.appendChild(viewportMeta);
     }
-  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, canonical, twitterCard, twitterCreator, robots]);
+  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, twitterCard, twitterCreator, robots]);
 
   return null;
 }

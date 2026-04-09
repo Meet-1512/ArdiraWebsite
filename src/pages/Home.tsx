@@ -30,7 +30,7 @@ import tedLogo from "@/assets/TrustedEnterprise/ted.webp";
 
 const carouselSlides = [
   {
-    headline: ["Best 100% Native Survey For ", "Salesforce", " Solution"],
+    headline: ["Best 100% Native ", "Salesforce", " Intelligence & Action Platform"],
     sub: "SurveyVista — Collect insights, run assessments, and build forms directly inside Salesforce.",
   },
   {
@@ -221,7 +221,7 @@ export default function Home() {
                       {carouselSlides[current].headline[1]}
                     </span>
                   )}
-                  {carouselSlides[current].headline[2]}
+                  {carouselSlides[current].headline[2] && carouselSlides[current].headline[2]}
                 </motion.h1>
               </AnimatePresence>
             </div>
