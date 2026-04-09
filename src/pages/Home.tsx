@@ -73,25 +73,25 @@ const whyChooseUs = [
   {
     num: "01",
     title: "Technology Passion",
-    desc: "We are a creative group of professionals with a deep love for technology and a passion for building enterprise-scale software that drives organizational success. As a software services provider, we operate global delivery centers in the USA and India. Our team brings over 50 years of combined experience developing and deploying large-scale SaaS applications on leading PaaS platforms such as Force.com.",
+    desc: "We are a team of technologists with a deep passion for building enterprise-grade software. With 50+ years of combined experience and global delivery centers in the USA and India, we develop and deploy large-scale Salesforce native applications that organizations depend on.",
     icon: Zap,
   },
   {
     num: "02",
     title: "Experience & Execution",
-    desc: "Working hard and delivering results is our mantra. We have acted as a catalyst for growth by providing enterprise-grade software solutions to organizations. Our executive team has a proven track record of building successful SaaS applications and delivering high-quality software services projects.",
+    desc: "Delivering results is at the core of everything we do. As a 100% Salesforce-native company, we empower organizations with enterprise-grade applications built entirely on the Salesforce platform. Our leadership team brings a strong track record of building and scaling successful SaaS products, along with delivering high-impact, high-quality software solutions that drive measurable business growth.",
     icon: Award,
   },
   {
     num: "03",
     title: "Honesty & Simplicity",
-    desc: "Our philosophy is rooted in simplicity. While you may not always agree with what we say, we are committed to being transparent and honest to simplify execution. We strongly believe that less is more—especially when it comes to managing complexity.",
+    desc: "Our philosophy is rooted in simplicity. While you may not always agree with what we say, we are committed to being transparent and honest to simplify execution. We strongly believe that less is more, especially when it comes to managing complexity.",
     icon: Users,
   },
   {
     num: "04",
     title: "Adaptability & Affordability",
-    desc: "Our ability to adapt to evolving technologies and business processes gives us a competitive edge. By leveraging both onshore and offshore resources, we deliver reliable and cost-effective solutions tailored to our clients' needs.",
+    desc: "We adapt to your business, not the other way around. By combining onshore and offshore delivery, we bring the right expertise at the right time, giving enterprises reliable, scalable solutions aligned to their goals and timelines.",
     icon: Globe,
   },
 ];
