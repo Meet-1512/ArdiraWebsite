@@ -144,18 +144,18 @@ const rvTestimonials = [
 const cvTestimonials = [
   {
     id: 1,
-    title: "The technical support is excellent!",
-    company: "CIon Demand",
+    title: "Amazing Support and UX",
+    company: "DataColada",
     description:
-      "The technical support is excellent and professional. They provided the best solution for our needs and were extremely patient throughout the process.",
+      "Very easy app to use, amazing support team but some formatting can be improved.",
     logo: cvTestimonialLogo1,
   },
   {
     id: 2,
-    title: "Exceptional Service and Outstanding Value",
-    company: "Fujifilm",
+    title: "Great Tool, Great Team and Great Support",
+    company: "Meritain Health",
     description:
-      "SurveyVista has been a game-changer for our team. From day one, their customer service stood out—fast responses, clear guidance, and proactive check-ins that made setup and rollout painless. The onboarding materials were concise, and support was always just a message away.Functionally, the platform delivers more than expected for the price...",
+      "We moved to this tool from another provider and I have nothing but wonderful things to say. The one thing that stand out to me the most would be their customer/technical support...",
     logo: cvTestimonialLogo2,
   },
 ];
