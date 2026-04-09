@@ -31,15 +31,15 @@ import tedLogo from "@/assets/TrustedEnterprise/ted.webp";
 const carouselSlides = [
   {
     headline: ["Turn ", "customer signals ", "into results - natively within Salesforce"],
-    sub: "SurveyVista helps you collect insights, run assessments, and automate actions — all 100% native to Salesforce.",
+    sub: "SurveyVista helps you collect insights, run assessments, and automate actions - all 100% native to Salesforce.",
   },
   {
     headline: [
       "Turn ",
       "Data Collection ",
-      "Into Action — natively within Salesforce.",
+      "Into Action - natively within Salesforce.",
     ],
-    sub: "FormVista enables you to capture, validate, and process data seamlessly — fully native to Salesforce with no integrations.",
+    sub: "FormVista enables you to capture, validate, and process data seamlessly - fully native to Salesforce with no integrations.",
   },
   {
     headline: [
@@ -47,19 +47,19 @@ const carouselSlides = [
       "visualize relationships ",
       "across your Salesforce data.",
     ],
-    sub: "RelationshipVista helps you visualize and understand complex relationships across your Salesforce data—instantly and intuitively.",
+    sub: "RelationshipVista helps you visualize and understand complex relationships across your Salesforce data - instantly and intuitively.",
   },
   {
-    headline: ["Turn ", "Compliance Into Confidence -- ", "Directly Inside Salesforce."],
-    sub: "ComplianceVista streamlines assessments, tracks risk, and ensures compliance—all within your Salesforce environment.",
+    headline: ["Turn ", "Compliance Into Confidence ", "- Directly Inside Salesforce."],
+    sub: "ComplianceVista streamlines assessments, tracks risk, and ensures compliance - all within your Salesforce environment.",
   },
   {
     headline: [
       "Turn ",
-      "Feedback Into Intelligence -- ",
-      "Directly Inside Salesforce",
+      "Feedback Into Intelligence ",
+      "- Directly Inside Salesforce",
     ],
-    sub: "AgentVista uses AI to automate feedback analysis and actions—enhancing performance and customer experience within Salesforce.",
+    sub: "AgentVista uses AI to automate feedback analysis and actions - enhancing performance and customer experience within Salesforce.",
   },
 ];
 
@@ -189,7 +189,7 @@ export default function Home() {
               style={{ height: "2.5rem", marginBottom: "3rem" }}
             >
               <span className="w-2 h-2 rounded-full bg-[#43AF57] animate-pulse" />
-              100% Native Salesforce Software
+              100% Native Salesforce Applications
             </motion.div>
 
             {/* Headline - Fixed height with larger container */}
@@ -392,11 +392,9 @@ export default function Home() {
             >
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-5">
                 About Ardira
-                <br></br>
-                Building powerful, native products for Salesforce
               </p>
               <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-7">
-                Salesforce ISV Partner
+                Building powerful, native products for Salesforce
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed mb-10">
                 Founded in 2019, Ardira set out with a clear mission to build powerful, 
