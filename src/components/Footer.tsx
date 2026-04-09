@@ -108,7 +108,7 @@ export default function Footer() {
           <p>© 2026 Ardira Corporation. All Rights Reserved.</p>
           <div className="flex space-x-6">
             <Link
-              href="/terms"
+              href="/terms-of-use"
               className="hover:text-slate-300 transition-colors"
               data-testid="footer-link-terms"
             >

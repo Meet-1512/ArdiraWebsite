@@ -216,10 +216,12 @@ export default function Products() {
               Our Products
             </div>
             <h1 className="text-4xl md:text-5xl font-bold font-display leading-[1.05] tracking-tight text-[#0f172a] mb-7">
-              Native. Secure. <span className="text-[#43AF57]">Powerful.</span>
+              Native. <span className="text-[#43AF57]">Secure.</span>{" "}
+              <span className="text-[#0f172a]">Powerful.</span>
             </h1>
             <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
-              Five products built 100% on Salesforce — your data stays in your org, delivering seamless, instant value.
+              Five products built 100% on Salesforce — your data stays in your
+              org, delivering seamless, instant value.
             </p>
           </motion.div>
         </div>
@@ -254,11 +256,12 @@ export default function Products() {
                 Turn customer signals into results — inside Salesforce.
               </p>
               <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
-                SurveyVista helps organizations collect high-quality feedback, understand customer and 
-                employee sentiment, and drive action — all natively within Salesforce. 
-                Whether you're improving CSAT, running NPS surveys, managing checklists, or 
-                automating lifecycle engagement, SurveyVista turns feedback into outcomes without 
-                integrations or data sync delays.
+                SurveyVista helps organizations collect high-quality feedback,
+                understand customer and employee sentiment, and drive action —
+                all natively within Salesforce. Whether you're improving CSAT,
+                running NPS surveys, managing checklists, or automating
+                lifecycle engagement, SurveyVista turns feedback into outcomes
+                without integrations or data sync delays.
               </p>
               <div className="space-y-3">
                 {[
@@ -393,7 +396,9 @@ export default function Products() {
                             <div className="border-t border-slate-200"></div>
                             {/* Quotation Mark and Title */}
                             <div className="flex items-center justify-center gap-2">
-                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">
+                                "
+                              </span>
                               <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
@@ -415,7 +420,9 @@ export default function Products() {
                             </div>
                           </div>
                           {/* Closing Decorator - Bottom Right */}
-                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">
+                            "
+                          </span>
                         </div>
                       </CarouselItem>
                     ))}
@@ -493,7 +500,9 @@ export default function Products() {
                             <div className="border-t border-slate-200"></div>
                             {/* Quotation Mark and Title */}
                             <div className="flex items-center justify-center gap-2">
-                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">
+                                "
+                              </span>
                               <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
@@ -515,7 +524,9 @@ export default function Products() {
                             </div>
                           </div>
                           {/* Closing Decorator - Bottom Right */}
-                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">
+                            "
+                          </span>
                         </div>
                       </CarouselItem>
                     ))}
@@ -541,16 +552,19 @@ export default function Products() {
                 />
               </div>
               <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-                FormVista: 100% Native Forms, Surveys, Quizzes, Checklists, and Assessments
+                FormVista: 100% Native Forms, Surveys, Quizzes, Checklists, and
+                Assessments
               </h2>
               <p className="text-base md:text-lg font-medium text-[#28aae1]">
-                Endless Applications: The 5-star rated Data Collection Solution You Need.
+                Endless Applications: The 5-star rated Data Collection Solution
+                You Need.
               </p>
               <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
-                FormVista is an all-in-one Salesforce-native solution for creating, managing, 
-                and analyzing forms and surveys. Effortlessly collect data, integrate 
-                with CRM for real-time insights, and act on data to enhance experiences, 
-                leveraging dynamic forms and robust security.
+                FormVista is an all-in-one Salesforce-native solution for
+                creating, managing, and analyzing forms and surveys.
+                Effortlessly collect data, integrate with CRM for real-time
+                insights, and act on data to enhance experiences, leveraging
+                dynamic forms and robust security.
               </p>
               <div className="space-y-3">
                 {[
@@ -807,7 +821,9 @@ export default function Products() {
                             <div className="border-t border-slate-200"></div>
                             {/* Quotation Mark and Title */}
                             <div className="flex items-center justify-center gap-2">
-                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">
+                                "
+                              </span>
                               <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
@@ -829,7 +845,9 @@ export default function Products() {
                             </div>
                           </div>
                           {/* Closing Decorator - Bottom Right */}
-                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">
+                            "
+                          </span>
                         </div>
                       </CarouselItem>
                     ))}
@@ -907,7 +925,9 @@ export default function Products() {
                             <div className="border-t border-slate-200"></div>
                             {/* Quotation Mark and Title */}
                             <div className="flex items-center justify-center gap-2">
-                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">
+                                "
+                              </span>
                               <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
@@ -929,7 +949,9 @@ export default function Products() {
                             </div>
                           </div>
                           {/* Closing Decorator - Bottom Right */}
-                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">
+                            "
+                          </span>
                         </div>
                       </CarouselItem>
                     ))}
@@ -1212,7 +1234,9 @@ export default function Products() {
                             <div className="border-t border-slate-200"></div>
                             {/* Quotation Mark and Title */}
                             <div className="flex items-center justify-center gap-2">
-                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">
+                                "
+                              </span>
                               <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
@@ -1234,7 +1258,9 @@ export default function Products() {
                             </div>
                           </div>
                           {/* Closing Decorator - Bottom Right */}
-                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">
+                            "
+                          </span>
                         </div>
                       </CarouselItem>
                     ))}
