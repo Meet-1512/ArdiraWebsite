@@ -21,9 +21,9 @@ import svTestimonialLogo3 from "@assets/SVTestimonialLogo/maxeonLogo.jpeg";
 import svTestimonialLogo4 from "@assets/SVTestimonialLogo/ALogo.jpeg";
 import svTestimonialLogo5 from "@assets/SVTestimonialLogo/VizergyLogo.jpeg";
 
-import fvTestimonialLogo1 from "@assets/fvtestimoniallogo/BedrockSuccess.jpeg";
-import fvTestimonialLogo2 from "@assets/fvtestimoniallogo/jcbLogo.jpeg";
-import fvTestimonialLogo3 from "@assets/fvtestimoniallogo/mentorLogo.jpeg";
+import fvTestimonialLogo1 from "@assets/FVTestimonialLogo/BedrockSuccess.jpeg";
+import fvTestimonialLogo2 from "@assets/FVTestimonialLogo/jcbLogo.jpeg";
+import fvTestimonialLogo3 from "@assets/FVTestimonialLogo/mentorLogo.jpeg";
 
 import rvTestimonialLogo1 from "@assets/RVTestimonialLogo/SmiLogo.jpeg";
 import rvTestimonialLogo2 from "@assets/RVTestimonialLogo/SteamlineEdgeLogo.png";
