@@ -146,9 +146,6 @@ export default function PartnerHub() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold font-display text-[#0f172a] leading-tight mb-4">
-              Partner Hub
-            </h1>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-4">
               Why Partner With Us
             </p>
@@ -338,13 +335,7 @@ export default function PartnerHub() {
                 </div>
               </div>
 
-              {/* Certification Badge */}
-              <div className="mt-6 pt-4 border-t border-green-600">
-                <p className="text-xs font-semibold text-green-100 uppercase tracking-widest mb-1">
-                  Certified
-                </p>
-                <p className="text-lg font-bold">Ardira Trusted Partner</p>
-              </div>
+              
             </motion.div>
 
             {/* Right Form Section */}
