@@ -364,7 +364,7 @@ export default function PartnerHub() {
                     <h3 className="text-lg font-bold font-display text-[#0f172a] mb-3">
                       Application Submitted!
                     </h3>
-                    <p className="text-sm text-slate-500 text-justify">
+                    <p className="text-sm text-slate-500">
                       Thank you for your interest. Our partnerships team will
                       review your application and reach out within 2 business
                       days.

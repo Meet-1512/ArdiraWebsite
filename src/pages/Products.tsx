@@ -255,7 +255,7 @@ export default function Products() {
               <p className="text-base md:text-lg font-medium text-[#43AF57]">
                 Turn customer signals into results — inside Salesforce.
               </p>
-              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
                 SurveyVista helps organizations collect high-quality feedback,
                 understand customer and employee sentiment, and drive action —
                 all natively within Salesforce. Whether you're improving CSAT,
@@ -545,7 +545,7 @@ export default function Products() {
                 Endless Applications: The 5-star rated Data Collection Solution
                 You Need.
               </p>
-              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
                 FormVista is an all-in-one Salesforce-native solution for
                 creating, managing, and analyzing forms and surveys.
                 Effortlessly collect data, integrate with CRM for real-time
@@ -659,7 +659,7 @@ export default function Products() {
               <p className="text-base md:text-lg font-medium text-sky-600">
                 Uncover & Visualize Your Salesforce Relationships
               </p>
-              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
                 RelationshipVista helps gain Insights into Complex Hierarchies
                 and Customer Relationships. Explore Salesforce Data with Ease
                 for Informed Decisions, Pattern Identification, and Process
@@ -956,7 +956,7 @@ export default function Products() {
                 Automate assessments, reduce risk, and ensure compliance inside
                 Salesforce
               </p>
-              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
                 ComplianceVista extends SurveyVista into a Salesforce-native
                 platform for 360 employee reviews, vendor due diligence,
                 compliance checks, and audits. Automate workflows, consolidate
@@ -1063,7 +1063,7 @@ export default function Products() {
               <p className="text-base md:text-lg font-medium text-amber-600">
                 AI-Powered Feedback Automation with SurveyVista & Agentforce
               </p>
-              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
                 Harness the power of Agentforce with SurveyVista to drive
                 intelligent feedback operations through AI powered survey & form
                 generation, sentiment insights, and natural language actions for

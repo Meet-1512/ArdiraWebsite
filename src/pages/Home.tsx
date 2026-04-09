@@ -334,7 +334,7 @@ export default function Home() {
                 <button
                   onMouseEnter={() => setActiveWhy(i)}
                   onMouseLeave={() => setActiveWhy(-1)}
-                  className="w-full text-justify group py-8 flex gap-8 md:gap-16 items-start"
+                  className="w-full group py-8 flex gap-8 md:gap-16 items-start"
                 >
                   {/* Icon */}
                   <span
@@ -404,13 +404,13 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-7">
                 Salesforce ISV Partner
               </h2>
-              <p className="text-slate-600 text-justify text-lg leading-relaxed mb-10">
+              <p className="text-slate-600 text-lg leading-relaxed mb-10">
                 Founded in 2019, Ardira set out with a clear mission to build powerful, 
                 100% native Salesforce applications that enterprises can trust. 
                 What began as a small startup has grown into a recognized Salesforce ISV partner, 
                 delivering a suite of applications available on the Salesforce AppExchange.
               </p>
-              <p className="text-slate-600 text-justify text-lg leading-relaxed mb-10">
+              <p className="text-slate-600 text-lg leading-relaxed mb-10">
                 Everything we build lives natively inside Salesforce, 
                 designed from the ground up to help enterprises work better, move faster, 
                 and scale with confidence. As a Salesforce ISV partner, 

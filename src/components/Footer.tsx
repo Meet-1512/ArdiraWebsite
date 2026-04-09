@@ -21,7 +21,7 @@ export default function Footer() {
                 className="h-auto w-32 object-contain"
               />
             </Link>
-            <p className="text-sm leading-relaxed text-justify text-slate-400 max-w-xs">
+            <p className="text-sm leading-relaxed text-slate-400 max-w-xs">
               100% native Salesforce applications that power how enterprises
               work.
             </p>

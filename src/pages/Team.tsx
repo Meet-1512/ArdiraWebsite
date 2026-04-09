@@ -140,7 +140,7 @@ export default function About() {
               <h1 className="text-3xl md:text-4xl font-bold font-display text-[#0f172a] leading-tight mb-6">
                 The People Behind <span className="text-[#43AF57]">Ardira</span>
               </h1>
-              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal mb-4">
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal mb-4">
                 Our team has Salesforce Certified Developers &amp;
                 Administrators located in the US &amp; India — working with you
                 24×7 and cost-effectively. We combine years of experience across
@@ -148,7 +148,7 @@ export default function About() {
                 computing, enterprise software, SaaS services, and large-scale
                 software infrastructure.
               </p>
-              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
                 Behind Ardira's success is our dynamic and collaborative team of
                 professionals. From talented developers and data analysts to
                 creative designers and dedicated support staff, our diverse team
@@ -191,12 +191,12 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-6">
               Making Salesforce Work Harder for You
             </h2>
-            <p className="text-slate-500 text-justify text-lg leading-relaxed mb-6">
+            <p className="text-slate-500 text-lg leading-relaxed mb-6">
               Ardira was founded on a simple belief: Salesforce is the world's
               most powerful business platform, and most organizations are only
               scratching the surface of what it can do.
             </p>
-            <p className="text-slate-500 text-justify text-lg leading-relaxed">
+            <p className="text-slate-500 text-lg leading-relaxed">
               Our mission is to close that gap — with native products that
               extend Salesforce capabilities, and expert services that ensure
               your org is configured, integrated, and running at its best.
@@ -219,7 +219,7 @@ export default function About() {
                     <v.icon size={20} className="text-[#43AF57]" />
                   </div>
                   <h3 className="font-bold text-[#0f172a] mb-2">{v.title}</h3>
-                  <p className="text-sm text-justify text-slate-500 leading-relaxed">
+                  <p className="text-sm text-slate-500 leading-relaxed">
                     {v.desc}
                   </p>
                 </div>
