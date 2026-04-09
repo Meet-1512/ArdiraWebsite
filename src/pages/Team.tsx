@@ -252,7 +252,7 @@ export default function About() {
               Our Team
             </div>
             <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] mb-4">
-              Our Excecutive Team
+              Our Executive Team
             </h2>
             <p className="text-slate-500 text-lg max-w-xl mx-auto">
               A team of Salesforce veterans, product builders, and customer
