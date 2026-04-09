@@ -161,66 +161,71 @@ export default function Home() {
       <section className="relative bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] pt-32 pb-20 px-6" style={{ height: "100vh" }}>
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
 
-        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col h-full">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 bg-white border border-[#43AF57] text-[#43AF57] text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm self-center"
-            style={{ height: "2.5rem", marginBottom: "2rem" }}
-          >
-            <span className="w-2 h-2 rounded-full bg-[#43AF57] animate-pulse" />
-            100% Native Salesforce Software
-          </motion.div>
+        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col h-full justify-between">
+          {/* Top section */}
+          <div>
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 bg-white border border-[#43AF57] text-[#43AF57] text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm self-center"
+              style={{ height: "2.5rem", marginBottom: "3rem" }}
+            >
+              <span className="w-2 h-2 rounded-full bg-[#43AF57] animate-pulse" />
+              100% Native Salesforce Software
+            </motion.div>
 
-          {/* Headline - Fixed height */}
-          <div className="relative" style={{ height: "12rem", marginBottom: "1rem" }}>
-            <AnimatePresence custom={direction} mode="wait">
-              <motion.h1
-                key={current}
-                custom={direction}
-                variants={slideVariants as any}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                className="text-4xl sm:text-5xl md:text-6xl font-bold font-display leading-[1.1] tracking-tight text-[#0f172a]"
-              >
-                {carouselSlides[current].headline[0]}
-                {carouselSlides[current].headline[1] && (
-                  <span className="text-[#43AF57]">
-                    {carouselSlides[current].headline[1]}
-                  </span>
-                )}
-                {carouselSlides[current].headline[2]}
-              </motion.h1>
-            </AnimatePresence>
+            {/* Headline - Fixed height with larger container */}
+            <div className="relative" style={{ height: "13rem", marginBottom: "2rem" }}>
+              <AnimatePresence custom={direction} mode="wait">
+                <motion.h1
+                  key={current}
+                  custom={direction}
+                  variants={slideVariants as any}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  className="text-4xl sm:text-5xl md:text-6xl font-bold font-display leading-[1.1] tracking-tight text-[#0f172a]"
+                >
+                  {carouselSlides[current].headline[0]}
+                  {carouselSlides[current].headline[1] && (
+                    <span className="text-[#43AF57]">
+                      {carouselSlides[current].headline[1]}
+                    </span>
+                  )}
+                  {carouselSlides[current].headline[2]}
+                </motion.h1>
+              </AnimatePresence>
+            </div>
+
+            {/* Subtitle - Fixed height with larger container */}
+            <div style={{ height: "4rem", marginBottom: "0" }}>
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={`sub-${current}`}
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-normal"
+                >
+                  {carouselSlides[current].sub}
+                </motion.p>
+              </AnimatePresence>
+            </div>
           </div>
 
-          {/* Subtitle - Fixed height */}
-          <div style={{ height: "5rem", marginBottom: "2rem" }}>
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={`sub-${current}`}
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }}
-                className="text-slate-500 text-sm md:text-base leading-relaxed max-w-2xl mx-auto font-normal"
-              >
-                {carouselSlides[current].sub}
-              </motion.p>
-            </AnimatePresence>
-          </div>
-
-          {/* CTAs - Fixed position */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            style={{ height: "3.5rem", marginBottom: "2rem" }}
-          >
+          {/* Bottom section - CTAs and Trust bar */}
+          <div className="flex flex-col items-center">
+            {/* CTAs - Fixed position */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              style={{ height: "3.5rem", marginBottom: "2rem" }}
+            >
             <Link
               href="/products"
               className="bg-[#43AF57] text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-[#43AF57] transition-colors shadow-md flex items-center justify-center gap-2 group"
@@ -231,43 +236,44 @@ export default function Home() {
                 className="group-hover:translate-x-1 transition-transform"
               />
             </Link>
-          </motion.div>
+            </motion.div>
 
-          {/* Trust bar — infinite carousel */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="mt-4"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">
-              Trusted by global enterprises
-            </p>
-            <div className="relative w-full overflow-hidden mx-auto">
-              {/* Fade edges */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-[#f0fdf4] to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-[#f0fdf4] to-transparent z-10 pointer-events-none" />
-              <div
-                className="flex items-center animate-marquee py-2 w-max"
-                style={{ animationDuration: "35s" }}
-              >
-                {[...customers, ...customers, ...customers, ...customers].map(
-                  (c, i) => (
-                    <div
-                      key={`${c.name}-${i}`}
-                      className="flex items-center justify-center mx-10 md:mx-14 flex-shrink-0 h-12 md:h-14"
-                    >
-                      <img
-                        src={c.logo}
-                        alt={c.name}
-                        className="max-h-full max-w-[120px] object-contain opacity-80 hover:opacity-100 transition-opacity"
-                      />
-                    </div>
-                  ),
-                )}
+            {/* Trust bar — infinite carousel */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="w-full"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">
+                Trusted by global enterprises
+              </p>
+              <div className="relative w-full overflow-hidden mx-auto">
+                {/* Fade edges */}
+                <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-[#f0fdf4] to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-[#f0fdf4] to-transparent z-10 pointer-events-none" />
+                <div
+                  className="flex items-center animate-marquee py-2 w-max"
+                  style={{ animationDuration: "35s" }}
+                >
+                  {[...customers, ...customers, ...customers, ...customers].map(
+                    (c, i) => (
+                      <div
+                        key={`${c.name}-${i}`}
+                        className="flex items-center justify-center mx-10 md:mx-14 flex-shrink-0 h-12 md:h-14"
+                      >
+                        <img
+                          src={c.logo}
+                          alt={c.name}
+                          className="max-h-full max-w-[120px] object-contain opacity-80 hover:opacity-100 transition-opacity"
+                        />
+                      </div>
+                    ),
+                  )}
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
