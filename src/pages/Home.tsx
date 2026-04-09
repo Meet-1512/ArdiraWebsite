@@ -3,25 +3,28 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
 import {
   ArrowRight,
-
   ChevronRight,
   Zap,
   Users,
   Award,
   Globe,
+  Shield,
+  Star,
+  Building2,
+  Cloud,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
-import ebayLogo from "@/assets/TrustedEnterprises/ebay-1.png";
-import hpLogo from "@/assets/TrustedEnterprises/hp-1.png";
-import marriottLogo from "@/assets/TrustedEnterprises/Marriott-International.png";
-import unicefLogo from "@/assets/TrustedEnterprises/unicef-new.png";
-import nissanLogo from "@/assets/TrustedEnterprises/nissan-new.png";
-import jcbLogo from "@/assets/TrustedEnterprises/jcb-1.png";
-import volkswagonLogo from "@/assets/TrustedEnterprises/volkswagon-new.png";
-import flixLogo from "@/assets/TrustedEnterprises/flix-new.png";
-import tedLogo from "@/assets/TrustedEnterprises/Ted_193x77.png";
+import ebayLogo from "@/assets/TrustedEnterprise/ebay.webp";
+import hpLogo from "@/assets/TrustedEnterprise/hp.webp";
+import marriottLogo from "@/assets/TrustedEnterprise/marriott-international.webp";
+import unicefLogo from "@/assets/TrustedEnterprise/unicef-new.webp";
+import nissanLogo from "@/assets/TrustedEnterprise/nissan-new.webp";
+import jcbLogo from "@/assets/TrustedEnterprise/jcb.webp";
+import volkswagonLogo from "@/assets/TrustedEnterprise/volkswagon-new.webp";
+import flixLogo from "@/assets/TrustedEnterprise/flix-new.webp";
+import tedLogo from "@/assets/TrustedEnterprise/ted.webp";
 
 const carouselSlides = [
   {
@@ -158,7 +161,10 @@ export default function Home() {
       <Navbar />
 
       {/* ── Hero Carousel ───────────────────────── */}
-      <section className="relative bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] pt-32 pb-20 px-6" style={{ height: "100vh" }}>
+      <section
+        className="relative bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] pt-32 pb-20 px-6"
+        style={{ height: "100vh" }}
+      >
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col h-full justify-between">
@@ -177,7 +183,10 @@ export default function Home() {
             </motion.div>
 
             {/* Headline - Fixed height with larger container */}
-            <div className="relative" style={{ height: "13rem", marginBottom: "2rem" }}>
+            <div
+              className="relative"
+              style={{ height: "13rem", marginBottom: "2rem" }}
+            >
               <AnimatePresence custom={direction} mode="wait">
                 <motion.h1
                   key={current}
@@ -226,16 +235,16 @@ export default function Home() {
               className="flex flex-col sm:flex-row gap-4 justify-center"
               style={{ height: "3.5rem", marginBottom: "2rem" }}
             >
-            <Link
-              href="/products"
-              className="bg-[#43AF57] text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-[#43AF57] transition-colors shadow-md flex items-center justify-center gap-2 group"
-            >
-              Explore Products{" "}
-              <ArrowRight
-                size={18}
-                className="group-hover:translate-x-1 transition-transform"
-              />
-            </Link>
+              <Link
+                href="/products"
+                className="bg-[#43AF57] text-white px-8 py-4 rounded-lg font-semibold text-base hover:bg-[#43AF57] transition-colors shadow-md flex items-center justify-center gap-2 group"
+              >
+                Explore Products{" "}
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </Link>
             </motion.div>
 
             {/* Trust bar — infinite carousel */}
@@ -408,29 +417,60 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="relative">
-                <div className="absolute -top-6 -left-6 w-32 h-32 bg-emerald-100 rounded-full opacity-40 blur-2xl" />
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-teal-100 rounded-full opacity-40 blur-2xl" />
-                <div className="relative bg-white rounded-3xl p-10 border border-slate-100 shadow-sm space-y-6">
-                  {[
-                    { label: "Years of Combined Experience", val: "50+" },
-                    { label: "AppExchange Reviews", val: "250+" },
-                    { label: "Enterprise Clients", val: "450+" },
-                    { label: "Native Salesforce Products", val: "5" },
-                  ].map((s) => (
-                    <div
-                      key={s.label}
-                      className="flex items-center justify-between border-b border-slate-50 pb-5 last:border-0 last:pb-0"
+              <div className="grid grid-cols-2 gap-6">
+                {[
+                  {
+                    label: "Years of Combined Experience",
+                    val: "50+",
+                    icon: Shield,
+                    bgColor: "bg-blue-100",
+                    iconColor: "text-blue-600",
+                  },
+                  {
+                    label: "AppExchange Reviews",
+                    val: "250+",
+                    icon: Star,
+                    bgColor: "bg-green-100",
+                    iconColor: "text-green-600",
+                  },
+                  {
+                    label: "Enterprise Clients",
+                    val: "450+",
+                    icon: Building2,
+                    bgColor: "bg-amber-100",
+                    iconColor: "text-amber-600",
+                  },
+                  {
+                    label: "Native Salesforce Products",
+                    val: "5",
+                    icon: Cloud,
+                    bgColor: "bg-purple-100",
+                    iconColor: "text-purple-600",
+                  },
+                ].map((stat, index) => {
+                  const Icon = stat.icon;
+                  return (
+                    <motion.div
+                      key={stat.label}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.08 }}
+                      className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow text-center"
                     >
-                      <span className="text-sm text-slate-500 font-medium">
-                        {s.label}
-                      </span>
-                      <span className="text-2xl font-extrabold font-display text-[#43AF57]">
-                        {s.val}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                      <div
+                        className={`${stat.bgColor} w-14 h-14 rounded-xl flex items-center justify-center mx-auto mb-4`}
+                      >
+                        <Icon size={28} className={stat.iconColor} />
+                      </div>
+                      <p className="text-2xl md:text-3xl font-bold font-display text-[#43AF57] mb-2">
+                        {stat.val}
+                      </p>
+                      <p className="text-xs md:text-sm text-slate-600 font-medium leading-snug">
+                        {stat.label}
+                      </p>
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           </div>

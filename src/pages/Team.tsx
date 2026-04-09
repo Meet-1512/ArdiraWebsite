@@ -3,16 +3,16 @@ import { Users, Globe, Award, Zap } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
-import ardiraTeam from "@assets/ArdiraTeam.jpg";
+import ardiraTeam from "@assets/ArdiraTeam.webp";
 
-import rajesh from "@assets/ArdiraMind/rajesh.png";
-import hitesh from "@assets/ArdiraMind/hitesh.png";
-import brijesh from "@assets/ArdiraMind/brijesh.png";
-import qRegan from "@assets/ArdiraMind/LI-photo.png";
+import rajesh from "@assets/ArdiraMind/rajesh.webp";
+import hitesh from "@assets/ArdiraMind/hitesh.webp";
+import brijesh from "@assets/ArdiraMind/brijesh.webp";
+import qRegan from "@assets/ArdiraMind/Ll-photo.webp";
 
-import devAdvisor from "@assets/AdvisoryBoard/dev-advisor.png";
-import robertAdvisor from "@assets/AdvisoryBoard/robert.png";
-import davidAdvisor from "@assets/AdvisoryBoard/david.png";
+import devAdvisor from "@assets/AdvisoryBoard/dev-advisor.webp";
+import robertAdvisor from "@assets/AdvisoryBoard/robert.webp";
+import davidAdvisor from "@assets/AdvisoryBoard/david.webp";
 
 const values = [
   {
@@ -139,15 +139,22 @@ export default function About() {
                 The People Behind <span className="text-[#43AF57]">Ardira</span>
               </h1>
               <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal mb-4">
-                Our team has Salesforce Certified Developers &amp; Administrators
-                located in the US &amp; India — working with you 24×7 and
-                cost-effectively. We combine years of experience across
+                Our team has Salesforce Certified Developers &amp;
+                Administrators located in the US &amp; India — working with you
+                24×7 and cost-effectively. We combine years of experience across
                 information security, compliance &amp; risk management, cloud
                 computing, enterprise software, SaaS services, and large-scale
                 software infrastructure.
               </p>
               <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
-                Behind Ardira's success is our dynamic and collaborative team of professionals. From talented developers and data analysts to creative designers and dedicated support staff, our diverse team brings a wealth of skills and expertise to the table. We thrive on innovation and teamwork, consistently pushing the boundaries of what's possible. Our shared passion for delivering unparalleled solutions and providing exceptional service defines our culture.
+                Behind Ardira's success is our dynamic and collaborative team of
+                professionals. From talented developers and data analysts to
+                creative designers and dedicated support staff, our diverse team
+                brings a wealth of skills and expertise to the table. We thrive
+                on innovation and teamwork, consistently pushing the boundaries
+                of what's possible. Our shared passion for delivering
+                unparalleled solutions and providing exceptional service defines
+                our culture.
               </p>
             </motion.div>
 

@@ -15,18 +15,17 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
 
-import eightSquadLogo from "@/assets/TrustedPartner/8SquadLogo.png";
-import accentureLogo from "@/assets/TrustedPartner/AccentureLogo.png";
-import actumDigitalLogo from "@/assets/TrustedPartner/ActumDigitalLogo.png";
-import allCloudLogo from "@/assets/TrustedPartner/AllCloudLogo.png";
-import asugoLogo from "@/assets/TrustedPartner/AsugoLogo.jpg.jpeg";
-import bearingLogo from "@/assets/TrustedPartner/BearingLogo.jpg.jpeg";
-import capgeminiLogo from "@/assets/TrustedPartner/capgeminiLogo.png";
-import nolticLogo from "@/assets/TrustedPartner/NolticLogo.png";
-import syraGonLogo from "@/assets/TrustedPartner/SyraGonLogo.jpg.jpeg";
-import veraSolutionLogo from "@/assets/TrustedPartner/VeraSolutionLogo.png";
-import zenyusLogo from "@/assets/TrustedPartner/Zenyus.png";
-
+import eightSquadLogo from "@/assets/TrustedPartner/8squadlogo.webp";
+import accentureLogo from "@/assets/TrustedPartner/accenturelogo.webp";
+import actumDigitalLogo from "@/assets/TrustedPartner/actumdigitallogo.webp";
+import allCloudLogo from "@/assets/TrustedPartner/allcloudlogo.webp";
+import asugoLogo from "@/assets/TrustedPartner/asugologojpg.webp";
+import bearingLogo from "@/assets/TrustedPartner/bearinglogojpg.webp";
+import capgeminiLogo from "@/assets/TrustedPartner/capgeminilogo.webp";
+import nolticLogo from "@/assets/TrustedPartner/nolticlogo.webp";
+import syraGonLogo from "@/assets/TrustedPartner/syragonlogojpg.webp";
+import veraSolutionLogo from "@/assets/TrustedPartner/verasolutionlogo.webp";
+import zenyusLogo from "@/assets/TrustedPartner/zenyus.webp";
 
 const whyPartner = [
   {
@@ -76,9 +75,45 @@ export default function PartnerHub() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const newErrors: { [key: string]: string } = {};
+
+    // Validate all required fields
+    if (!formData.fullName.trim()) {
+      newErrors.fullName = "Full Name is required";
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = "Business Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Invalid email address";
+    }
+    if (!formData.company.trim()) {
+      newErrors.company = "Company Name is required";
+    }
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone Number is required";
+    } else if (!/^[0-9+()\-\s]+$/.test(formData.phone)) {
+      newErrors.phone = "Phone Number must contain only numbers";
+    }
+    if (!formData.country) {
+      newErrors.country = "Country / Region is required";
+    }
+    if (!formData.partnerType) {
+      newErrors.partnerType = "Partnership Type is required";
+    }
+    if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
     setSubmitted(true);
   };
 
@@ -164,20 +199,23 @@ export default function PartnerHub() {
                 className="flex items-center animate-marquee py-4 w-max"
                 style={{ animationDuration: "40s" }}
               >
-                {[...trustedPartners, ...trustedPartners, ...trustedPartners, ...trustedPartners].map(
-                  (p, i) => (
-                    <div
-                      key={`${p.name}-${i}`}
-                      className="flex items-center justify-center mx-10 md:mx-14 flex-shrink-0 h-14 md:h-16"
-                    >
-                      <img
-                        src={p.logo}
-                        alt={p.name}
-                        className="max-h-full max-w-[140px] object-contain opacity-70 hover:opacity-100 transition-opacity"
-                      />
-                    </div>
-                  ),
-                )}
+                {[
+                  ...trustedPartners,
+                  ...trustedPartners,
+                  ...trustedPartners,
+                  ...trustedPartners,
+                ].map((p, i) => (
+                  <div
+                    key={`${p.name}-${i}`}
+                    className="flex items-center justify-center mx-10 md:mx-14 flex-shrink-0 h-14 md:h-16"
+                  >
+                    <img
+                      src={p.logo}
+                      alt={p.name}
+                      className="max-h-full max-w-[140px] object-contain opacity-70 hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -324,11 +362,10 @@ export default function PartnerHub() {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <label className="block text-sm font-semibold text-[#0f172a] mb-1">
-                      Full Name *
+                      Full Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
-                      required
                       value={formData.fullName}
                       onChange={(e) =>
                         setFormData({
@@ -336,65 +373,103 @@ export default function PartnerHub() {
                           fullName: e.target.value,
                         })
                       }
-                      className="w-full px-4 py-2 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                      className={`w-full px-4 py-2 rounded-lg border bg-white text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
+                        errors.fullName
+                          ? "border-red-500 focus:ring-red-500"
+                          : "border-slate-200 focus:ring-emerald-500"
+                      }`}
                       placeholder="Full Name"
                     />
+                    {errors.fullName && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.fullName}
+                      </p>
+                    )}
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-[#0f172a] mb-1">
-                      Company Name *
+                      Company Name <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
-                      required
                       value={formData.company}
                       onChange={(e) =>
                         setFormData({ ...formData, company: e.target.value })
                       }
-                      className="w-full px-4 py-2 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                      className={`w-full px-4 py-2 rounded-lg border bg-white text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
+                        errors.company
+                          ? "border-red-500 focus:ring-red-500"
+                          : "border-slate-200 focus:ring-emerald-500"
+                      }`}
                       placeholder="Company Name"
                     />
+                    {errors.company && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.company}
+                      </p>
+                    )}
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-[#0f172a] mb-1">
-                      Business Email *
+                      Business Email <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
-                      required
                       value={formData.email}
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="w-full px-4 py-2 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                      className={`w-full px-4 py-2 rounded-lg border bg-white text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
+                        errors.email
+                          ? "border-red-500 focus:ring-red-500"
+                          : "border-slate-200 focus:ring-emerald-500"
+                      }`}
                       placeholder="Business Email"
                     />
+                    {errors.email && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-[#0f172a] mb-1">
-                      Phone Number
+                      Phone Number <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="tel"
                       value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
-                      }
-                      className="w-full px-4 py-2 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                      onChange={(e) => {
+                        // Only allow numbers and basic phone characters
+                        const value = e.target.value.replace(
+                          /[^0-9+()\-\s]/g,
+                          "",
+                        );
+                        setFormData({ ...formData, phone: value });
+                      }}
+                      className={`w-full px-4 py-2 rounded-lg border bg-white text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
+                        errors.phone
+                          ? "border-red-500 focus:ring-red-500"
+                          : "border-slate-200 focus:ring-emerald-500"
+                      }`}
                       placeholder="Phone Number"
                     />
+                    {errors.phone && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.phone}
+                      </p>
+                    )}
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                     <div>
                       <label className="block text-sm font-semibold text-[#0f172a] mb-1">
-                        Country / Region *
+                        Country / Region <span className="text-red-500">*</span>
                       </label>
                       <select
-                        required
                         value={formData.country}
                         onChange={(e) =>
                           setFormData({
@@ -402,7 +477,11 @@ export default function PartnerHub() {
                             country: e.target.value,
                           })
                         }
-                        className="w-full px-4 py-1.5 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                        className={`w-full px-4 py-1.5 rounded-lg border bg-white text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
+                          errors.country
+                            ? "border-red-500 focus:ring-red-500"
+                            : "border-slate-200 focus:ring-emerald-500"
+                        }`}
                       >
                         <option value="USA">USA</option>
                         <option value="Canada">Canada</option>
@@ -417,13 +496,17 @@ export default function PartnerHub() {
                         <option value="Mexico">Mexico</option>
                         <option value="Other">Other</option>
                       </select>
+                      {errors.country && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.country}
+                        </p>
+                      )}
                     </div>
                     <div>
                       <label className="block text-sm font-semibold text-[#0f172a] mb-1">
-                        Partnership Type *
+                        Partnership Type <span className="text-red-500">*</span>
                       </label>
                       <select
-                        required
                         value={formData.partnerType}
                         onChange={(e) =>
                           setFormData({
@@ -431,19 +514,29 @@ export default function PartnerHub() {
                             partnerType: e.target.value,
                           })
                         }
-                        className="w-full px-4 py-1.5 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all"
+                        className={`w-full px-4 py-1.5 rounded-lg border bg-white text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
+                          errors.partnerType
+                            ? "border-red-500 focus:ring-red-500"
+                            : "border-slate-200 focus:ring-emerald-500"
+                        }`}
                       >
                         <option value="">Select Partnership Type</option>
                         <option value="Reseller">Reseller</option>
                         <option value="Referral">Referral</option>
                         <option value="Technology">Technology</option>
                       </select>
+                      {errors.partnerType && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.partnerType}
+                        </p>
+                      )}
                     </div>
                   </div>
 
                   <div>
                     <label className="block text-sm font-semibold text-[#0f172a] mb-1">
-                      Tell us about your business
+                      Tell us about your business{" "}
+                      <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       rows={2}
@@ -451,9 +544,18 @@ export default function PartnerHub() {
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      className="w-full px-4 py-1.5 rounded-lg border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all resize-none"
+                      className={`w-full px-4 py-1.5 rounded-lg border bg-white text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all resize-none ${
+                        errors.message
+                          ? "border-red-500 focus:ring-red-500"
+                          : "border-slate-200 focus:ring-emerald-500"
+                      }`}
                       placeholder="Tell us about your business"
                     />
+                    {errors.message && (
+                      <p className="text-red-500 text-xs mt-1">
+                        {errors.message}
+                      </p>
+                    )}
                   </div>
 
                   <p className="text-xs text-slate-400 pt-0.5">

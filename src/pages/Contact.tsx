@@ -62,7 +62,9 @@ export default function Contact() {
     } catch (error) {
       console.error("Form submission error:", error);
       setSubmitError(
-        error instanceof Error ? error.message : "Failed to submit form. Please try again."
+        error instanceof Error
+          ? error.message
+          : "Failed to submit form. Please try again.",
       );
     } finally {
       setIsSubmitting(false);
@@ -70,22 +72,32 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#0f172a] font-sans" data-testid="page-contact">
+    <div
+      className="min-h-screen bg-white text-[#0f172a] font-sans"
+      data-testid="page-contact"
+    >
       <Navbar />
 
       {/* Hero */}
       <section className="pt-40 pb-16 px-6 bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
         <div className="max-w-3xl mx-auto relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-[#43AF57] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
               Get In Touch
             </div>
             <h1 className="text-4xl md:text-5xl font-bold font-display leading-[1.05] tracking-tight text-[#0f172a] mb-6">
-              Let's Build Something<br /><span className="text-[#43AF57]">Together</span>
+              Let's Build Something
+              <br />
+              <span className="text-[#43AF57]">Together</span>
             </h1>
             <p className="text-slate-500 text-base md:text-lg leading-relaxed font-normal">
-              Whether you're exploring our products or need expert Salesforce services, our team typically responds within 1 business day.
+              Whether you're exploring our products or need expert Salesforce
+              services, our team typically responds within 1 business day.
             </p>
           </motion.div>
         </div>
@@ -94,22 +106,33 @@ export default function Contact() {
       {/* Main */}
       <section className="py-20 px-6 pb-32">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-16">
-
           {/* Left info column */}
           <motion.div
-            initial={{ opacity: 0, x: -24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: -24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
             className="lg:col-span-2 flex flex-col h-full"
           >
             <div className="space-y-6">
-              <h2 className="text-2xl font-extrabold font-display text-[#0f172a]">Reach Out</h2>
+              <h2 className="text-2xl font-extrabold font-display text-[#0f172a]">
+                Reach Out
+              </h2>
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0">
                     <MapPin size={18} className="text-[#43AF57]" />
                   </div>
                   <div>
-                    <p className="font-semibold text-[#0f172a] mb-1">Headquarters</p>
-                    <p className="text-slate-500 text-sm leading-relaxed">2040 Martin Ave<br />Santa Clara, CA 95050<br />United States</p>
+                    <p className="font-semibold text-[#0f172a] mb-1">
+                      Headquarters
+                    </p>
+                    <p className="text-slate-500 text-sm leading-relaxed">
+                      2040 Martin Ave
+                      <br />
+                      Santa Clara, CA 95050
+                      <br />
+                      United States
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -118,7 +141,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-[#0f172a] mb-1">Phone</p>
-                    <a href="tel:16697776838" className="text-slate-500 text-sm hover:text-[#43AF57] transition-colors">1.669.777.6838</a>
+                    <a
+                      href="tel:16697776838"
+                      className="text-slate-500 text-sm hover:text-[#43AF57] transition-colors"
+                    >
+                      1.669.777.6838
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
@@ -127,7 +155,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-[#0f172a] mb-1">Email</p>
-                    <a href="mailto:info@ardira.com" className="text-slate-500 text-sm hover:text-[#43AF57] transition-colors">info@ardira.com</a>
+                    <a
+                      href="mailto:info@ardira.com"
+                      className="text-slate-500 text-sm hover:text-[#43AF57] transition-colors"
+                    >
+                      info@ardira.com
+                    </a>
                   </div>
                 </div>
               </div>
@@ -149,7 +182,9 @@ export default function Contact() {
 
           {/* Right form */}
           <motion.div
-            initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
             className="lg:col-span-3 flex flex-col h-full"
           >
             <div className="bg-white border border-slate-200 rounded-2xl p-8 md:p-10 shadow-sm h-full">
@@ -158,22 +193,34 @@ export default function Contact() {
                   <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto">
                     <CheckCircle size={32} className="text-[#43AF57]" />
                   </div>
-                  <h3 className="text-2xl font-extrabold font-display text-[#0f172a]">Message Sent!</h3>
-                  <p className="text-slate-500">Thank you for reaching out. We'll be in touch within 1 business day.</p>
+                  <h3 className="text-2xl font-extrabold font-display text-[#0f172a]">
+                    Message Sent!
+                  </h3>
+                  <p className="text-slate-500">
+                    Thank you for reaching out. We'll be in touch within 1
+                    business day.
+                  </p>
                 </div>
               ) : (
                 <>
                   {submitError && (
                     <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-                      <AlertCircle size={20} className="text-red-600 shrink-0 mt-0.5" />
+                      <AlertCircle
+                        size={20}
+                        className="text-red-600 shrink-0 mt-0.5"
+                      />
                       <div className="text-sm text-red-700">{submitError}</div>
                     </div>
                   )}
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                    <h3 className="text-xl font-extrabold font-display text-[#0f172a] mb-6">Send us a message</h3>
+                    <h3 className="text-xl font-extrabold font-display text-[#0f172a] mb-6">
+                      Send us a message
+                    </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Name</label>
+                        <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">
+                          Name <span className="text-red-500">*</span>
+                        </label>
                         <input
                           type="text"
                           placeholder="Your full name"
@@ -181,10 +228,16 @@ export default function Contact() {
                           {...register("fullName")}
                           disabled={isSubmitting}
                         />
-                        {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message as string}</p>}
+                        {errors.fullName && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.fullName.message as string}
+                          </p>
+                        )}
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Work Email</label>
+                        <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">
+                          Work Email <span className="text-red-500">*</span>
+                        </label>
                         <input
                           type="email"
                           placeholder="you@company.com"
@@ -192,12 +245,18 @@ export default function Contact() {
                           {...register("email")}
                           disabled={isSubmitting}
                         />
-                        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message as string}</p>}
+                        {errors.email && (
+                          <p className="text-red-500 text-xs mt-1">
+                            {errors.email.message as string}
+                          </p>
+                        )}
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Company</label>
+                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">
+                        Company <span className="text-red-500">*</span>
+                      </label>
                       <input
                         type="text"
                         placeholder="Your company name"
@@ -205,11 +264,18 @@ export default function Contact() {
                         {...register("company")}
                         disabled={isSubmitting}
                       />
-                      {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company.message as string}</p>}
+                      {errors.company && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.company.message as string}
+                        </p>
+                      )}
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">I'm interested in</label>
+                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">
+                        I'm interested in{" "}
+                        <span className="text-red-500">*</span>
+                      </label>
                       <select
                         className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all bg-white appearance-none"
                         {...register("interest")}
@@ -217,20 +283,36 @@ export default function Contact() {
                       >
                         <option value="">Select an option...</option>
                         <option value="SurveyVista">SurveyVista</option>
-                        <option value="RelationshipVista">RelationshipVista</option>
+                        <option value="RelationshipVista">
+                          RelationshipVista
+                        </option>
                         <option value="ComplianceVista">ComplianceVista</option>
                         <option value="AgentVista">AgentVista</option>
-                        <option value="Product Development">Product Development</option>
-                        <option value="Salesforce Admin">Salesforce Admin Services</option>
-                        <option value="Customization">Customization & Config</option>
-                        <option value="Integration">Integration & Data Migration</option>
+                        <option value="Product Development">
+                          Product Development
+                        </option>
+                        <option value="Salesforce Admin">
+                          Salesforce Admin Services
+                        </option>
+                        <option value="Customization">
+                          Customization & Config
+                        </option>
+                        <option value="Integration">
+                          Integration & Data Migration
+                        </option>
                         <option value="General">General Inquiry</option>
                       </select>
-                      {errors.interest && <p className="text-red-500 text-xs mt-1">{errors.interest.message as string}</p>}
+                      {errors.interest && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.interest.message as string}
+                        </p>
+                      )}
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Message</label>
+                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">
+                        Message <span className="text-red-500">*</span>
+                      </label>
                       <textarea
                         rows={4}
                         placeholder="Tell us about your project or question..."
@@ -238,7 +320,11 @@ export default function Contact() {
                         {...register("message")}
                         disabled={isSubmitting}
                       />
-                      {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message as string}</p>}
+                      {errors.message && (
+                        <p className="text-red-500 text-xs mt-1">
+                          {errors.message.message as string}
+                        </p>
+                      )}
                     </div>
 
                     <button
@@ -252,11 +338,21 @@ export default function Contact() {
                     {/* reCAPTCHA Badge Notice */}
                     <p className="text-xs text-slate-400 text-center mt-4">
                       This site is protected by reCAPTCHA and the Google{" "}
-                      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-slate-500 underline hover:text-slate-600">
+                      <a
+                        href="https://policies.google.com/privacy"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-500 underline hover:text-slate-600"
+                      >
                         Privacy Policy
                       </a>{" "}
                       and{" "}
-                      <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-slate-500 underline hover:text-slate-600">
+                      <a
+                        href="https://policies.google.com/terms"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-500 underline hover:text-slate-600"
+                      >
                         Terms of Service
                       </a>{" "}
                       apply.

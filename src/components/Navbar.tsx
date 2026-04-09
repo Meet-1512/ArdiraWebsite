@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
-import ardiraLogo from "@assets/ArdiraLogo.png";
+import ardiraLogo from "@assets/ArdiraLogo.webp";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -22,11 +22,19 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-white/95 backdrop-blur-[16px] shadow-sm border-b border-emerald-100 py-1" : "bg-transparent py-1"
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-[16px] shadow-sm border-b border-emerald-100 py-1"
+          : "bg-transparent py-1"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2" data-testid="link-logo">
+        <Link
+          href="/"
+          className="flex items-center gap-2"
+          data-testid="link-logo"
+        >
           <img src={ardiraLogo} alt="Ardira" className="h-20 w-auto" />
         </Link>
 
@@ -35,12 +43,14 @@ export default function Navbar() {
             const isActive = location === link.path;
             return (
               <Link
-                key={link.name} 
+                key={link.name}
                 href={link.path}
                 className={`text-sm font-medium transition-all duration-200 ${
-                  isActive ? "text-[#16a34a] font-semibold" : "text-slate-600 hover:text-[#16a34a]"
+                  isActive
+                    ? "text-[#16a34a] font-semibold"
+                    : "text-slate-600 hover:text-[#16a34a]"
                 }`}
-                data-testid={`link-nav-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
+                data-testid={`link-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {link.name}
               </Link>
@@ -68,7 +78,7 @@ export default function Navbar() {
                 href={link.path}
                 className={`text-lg font-semibold font-display ${isActive ? "text-[#16a34a]" : "text-slate-700"}`}
                 onClick={() => setIsMobileMenuOpen(false)}
-                data-testid={`link-mobile-nav-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
+                data-testid={`link-mobile-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {link.name}
               </Link>

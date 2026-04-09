@@ -4,35 +4,35 @@ import { ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
-import surveyVistaLogo from "@assets/ProductLogo/SurveyVistaLogo.png";
-import formVistaLogo from "@assets/ProductLogo/FormVistaLogo.png";
-import relationshipVistaLogo from "@assets/ProductLogo/RelationshipVistaLogo.png";
-import complianceVistaLogo from "@assets/ProductLogo/CompliancVistaLogo.png";
-import agentVistaLogo from "@assets/ProductLogo/AgentVistaLogo.png";
-import rvProductCard from "@assets/ProductCard/RV_ProductCard.png";
-import cvProductCard from "@assets/ProductCard/CV_ProductCard.jpg";
-import svProductCard from "@assets/ProductCard/SV_ProductCard.png";
-import fvProductCard from "@assets/ProductCard/FV_ProductCard.jpg";
-import avProductCard from "@assets/ProductCard/AV_ProductCard.png";
+import surveyVistaLogo from "@assets/ProductLogo/SurveyVistaLogo.webp";
+import formVistaLogo from "@assets/ProductLogo/FormVistaLogo.webp";
+import relationshipVistaLogo from "@assets/ProductLogo/RelationshipVistaLogo.webp";
+import complianceVistaLogo from "@assets/ProductLogo/ComplainceVistaLogo.webp";
+import agentVistaLogo from "@assets/ProductLogo/AgentVistaLogo.webp";
+import rvProductCard from "@assets/ProductCard/RV_ProductCard.webp";
+import cvProductCard from "@assets/ProductCard/CV_ProductCard.webp";
+import svProductCard from "@assets/ProductCard/SV_ProductCard.webp";
+import fvProductCard from "@assets/ProductCard/FV_ProductCard.webp";
+import avProductCard from "@assets/ProductCard/AV_ProductCard.webp";
 
-import svTestimonialLogo1 from "@assets/SVTestimonialLogo/ebayLogo.jpeg";
-import svTestimonialLogo2 from "@assets/SVTestimonialLogo/ArianeLogo.jpeg";
-import svTestimonialLogo3 from "@assets/SVTestimonialLogo/maxeonLogo.jpeg";
-import svTestimonialLogo4 from "@assets/SVTestimonialLogo/ALogo.jpeg";
-import svTestimonialLogo5 from "@assets/SVTestimonialLogo/VizergyLogo.jpeg";
+import svTestimonialLogo1 from "@assets/SVTestimonialLogo/SVTest1.webp";
+import svTestimonialLogo2 from "@assets/SVTestimonialLogo/SVTest2.webp";
+import svTestimonialLogo3 from "@assets/SVTestimonialLogo/SVTest3.webp";
+import svTestimonialLogo4 from "@assets/SVTestimonialLogo/SVTest4.webp";
+import svTestimonialLogo5 from "@assets/SVTestimonialLogo/SVTest5.webp";
 
-import fvTestimonialLogo1 from "@assets/FVTestimonialLogo/BedrockSuccess.jpeg";
-import fvTestimonialLogo2 from "@assets/FVTestimonialLogo/jcbLogo.jpeg";
-import fvTestimonialLogo3 from "@assets/FVTestimonialLogo/mentorLogo.jpeg";
+import fvTestimonialLogo1 from "@assets/FVTestimonialLogo/FVTest1.webp";
+import fvTestimonialLogo2 from "@assets/FVTestimonialLogo/FVTest2.webp";
+import fvTestimonialLogo3 from "@assets/FVTestimonialLogo/FVTest3.webp";
 
-import rvTestimonialLogo1 from "@assets/RVTestimonialLogo/SmiLogo.jpeg";
-import rvTestimonialLogo2 from "@assets/RVTestimonialLogo/SteamlineEdgeLogo.png";
+import rvTestimonialLogo1 from "@assets/RVTestimonialLogo/RVTest1.webp";
+import rvTestimonialLogo2 from "@assets/RVTestimonialLogo/RVTest2.webp";
 
-import cvTestimonialLogo1 from "@assets/CVTestimonialLogo/CIonDemandLogo.jpeg";
-import cvTestimonialLogo2 from "@assets/CVTestimonialLogo/FujifilmLogo.jpeg";
+import cvTestimonialLogo1 from "@assets/CVTestimonialLogo/TestLogo1.webp";
+import cvTestimonialLogo2 from "@assets/CVTestimonialLogo/TestLogo2.webp";
 
-import avTestimonialLogo1 from "@assets/AVTestimonialLogo/FortyCarrotsFamilyCenterLogo.jpeg";
-import avTestimonialLogo2 from "@assets/AVTestimonialLogo/WorkMotionLogo.jpeg";
+import avTestimonialLogo1 from "@assets/AVTestimonialLogo/AVTest1.webp";
+import avTestimonialLogo2 from "@assets/AVTestimonialLogo/AVTest2.webp";
 
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -228,9 +228,9 @@ export default function Products() {
               <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
                 SurveyVista Automate data collection and feedback management
                 solution. Boost response rates with branded Surveys, Forms, and
-                Assessments. 100% Native, no-code, Salesforce integration to gain
-                actionable insights that enhance customer, employee, and partner
-                experiences
+                Assessments. 100% Native, no-code, Salesforce integration to
+                gain actionable insights that enhance customer, employee, and
+                partner experiences
               </p>
               <div className="space-y-3">
                 {[
@@ -371,7 +371,6 @@ export default function Products() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-
                 </Carousel>
               </motion.div>
             </div>
@@ -450,7 +449,6 @@ export default function Products() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-
                 </Carousel>
               </motion.div>
             </div>
@@ -480,10 +478,10 @@ export default function Products() {
               </p>
               <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
                 FormVista is an all-in-one Salesforce-native solution for
-                creating, managing, and analyzing forms and surveys. Effortlessly
-                collect data, integrate with CRM for real-time insights, and act
-                on data to enhance experiences, leveraging dynamic forms and
-                robust security.
+                creating, managing, and analyzing forms and surveys.
+                Effortlessly collect data, integrate with CRM for real-time
+                insights, and act on data to enhance experiences, leveraging
+                dynamic forms and robust security.
               </p>
               <div className="space-y-3">
                 {[
@@ -592,11 +590,11 @@ export default function Products() {
                 Uncover & Visualize Your Salesforce Relationships
               </p>
               <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
-                RelationshipVista helps gain Insights into Complex Hierarchies and
-                Customer Relationships. Explore Salesforce Data with Ease for
-                Informed Decisions, Pattern Identification, and Process
-                Optimization. Customize Relationship Maps with Relationship Views,
-                similar to SF list views.
+                RelationshipVista helps gain Insights into Complex Hierarchies
+                and Customer Relationships. Explore Salesforce Data with Ease
+                for Informed Decisions, Pattern Identification, and Process
+                Optimization. Customize Relationship Maps with Relationship
+                Views, similar to SF list views.
               </p>
               <div className="space-y-3">
                 {[
@@ -690,7 +688,7 @@ export default function Products() {
                 transition={{ duration: 0.5 }}
                 className="lg:sticky lg:top-24 h-fit mb-100"
               >
-                <div className="w-full h-80 bg-slate-100 rounded-2xl overflow-hidden shadow-lg">
+                <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
                     src={rvProductCard}
                     alt="Relationship Vista Product Card"
@@ -744,7 +742,6 @@ export default function Products() {
                       </CarouselItem>
                     ))}
                   </CarouselContent>
-
                 </Carousel>
               </motion.div>
             </div>
@@ -834,98 +831,98 @@ export default function Products() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="space-y-7 lg:order-2"
-          >
-            <div className="flex items-center">
-              <img
-                src={complianceVistaLogo}
-                alt="Compliance Vista"
-                className="h-12 w-auto"
-              />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-              Compliance Vista – Assessment & Compliance Management – In your
-              Salesforce Org
-            </h2>
-            <p className="text-base md:text-lg font-medium text-violet-600">
-              Automate assessments, reduce risk, and ensure compliance inside
-              Salesforce
-            </p>
-            <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
-              ComplianceVista extends SurveyVista into a Salesforce-native
-              platform for 360 employee reviews, vendor due diligence,
-              compliance checks, and audits. Automate workflows, consolidate
-              scoring, and manage all assessments securely in Salesforce.
-            </p>
-            <div className="space-y-3">
-              {[
-                "Automated Task Assignment",
-                "Evidence Collection Workflows",
-                "Audit Trail Logging",
-                "Regulatory Reporting",
-                "Risk Assessment Matrices",
-              ].map((f) => (
-                <div key={f} className="flex items-start gap-3">
-                  <CheckCircle2
-                    size={17}
-                    className="text-violet-500 mt-0.5 shrink-0"
-                  />
-                  <span className="text-sm text-slate-600">{f}</span>
-                </div>
-              ))}
-            </div>
-            <div className="bg-violet-50 border border-violet-200 rounded-xl p-5 flex items-center justify-between">
-              <div>
-                <p className="font-bold text-[#0f172a]">
-                  Available on AppExchange
-                </p>
-                <p className="text-sm text-slate-500">
-                  Salesforce certified & security reviewed
-                </p>
+            >
+              <div className="flex items-center">
+                <img
+                  src={complianceVistaLogo}
+                  alt="Compliance Vista"
+                  className="h-12 w-auto"
+                />
               </div>
-              {/* <div className="text-right">
+              <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
+                Compliance Vista – Assessment & Compliance Management – In your
+                Salesforce Org
+              </h2>
+              <p className="text-base md:text-lg font-medium text-violet-600">
+                Automate assessments, reduce risk, and ensure compliance inside
+                Salesforce
+              </p>
+              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
+                ComplianceVista extends SurveyVista into a Salesforce-native
+                platform for 360 employee reviews, vendor due diligence,
+                compliance checks, and audits. Automate workflows, consolidate
+                scoring, and manage all assessments securely in Salesforce.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "Automated Task Assignment",
+                  "Evidence Collection Workflows",
+                  "Audit Trail Logging",
+                  "Regulatory Reporting",
+                  "Risk Assessment Matrices",
+                ].map((f) => (
+                  <div key={f} className="flex items-start gap-3">
+                    <CheckCircle2
+                      size={17}
+                      className="text-violet-500 mt-0.5 shrink-0"
+                    />
+                    <span className="text-sm text-slate-600">{f}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-violet-50 border border-violet-200 rounded-xl p-5 flex items-center justify-between">
+                <div>
+                  <p className="font-bold text-[#0f172a]">
+                    Available on AppExchange
+                  </p>
+                  <p className="text-sm text-slate-500">
+                    Salesforce certified & security reviewed
+                  </p>
+                </div>
+                {/* <div className="text-right">
                 <span className="text-3xl font-extrabold text-[#43AF57]"></span>
                 <p className="text-xs text-slate-500">verified reviews</p>
               </div> */}
-            </div>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
-                Use Cases
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Employee 360 Assessments",
-                  "Vendor Risk & Due Diligence (TPRM)",
-                  "Compliance & Control Testing",
-                  "Audit & Risk Assessments",
-                ].map((u) => (
-                  <span
-                    key={u}
-                    className="bg-violet-50 border border-violet-200 text-violet-700 px-3 py-1 rounded-full text-xs font-semibold"
-                  >
-                    {u}
-                  </span>
-                ))}
               </div>
-            </div>
-            <div className="flex flex-wrap gap-3 pt-2">
-              <a
-                href="https://compliance-quest-page.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-violet-700 transition-colors shadow-sm group"
-              >
-                Visit Website <ExternalLink size={15} />
-              </a>
-              <a
-                href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000J6DYBUA3"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-violet-300 text-violet-700 bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-violet-50 transition-colors"
-              >
-                View on AppExchange <ArrowRight size={15} />
-              </a>
-            </div>
-          </motion.div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
+                  Use Cases
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Employee 360 Assessments",
+                    "Vendor Risk & Due Diligence (TPRM)",
+                    "Compliance & Control Testing",
+                    "Audit & Risk Assessments",
+                  ].map((u) => (
+                    <span
+                      key={u}
+                      className="bg-violet-50 border border-violet-200 text-violet-700 px-3 py-1 rounded-full text-xs font-semibold"
+                    >
+                      {u}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://compliance-quest-page.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-violet-700 transition-colors shadow-sm group"
+                >
+                  Visit Website <ExternalLink size={15} />
+                </a>
+                <a
+                  href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000J6DYBUA3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-violet-300 text-violet-700 bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-violet-50 transition-colors"
+                >
+                  View on AppExchange <ArrowRight size={15} />
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -942,170 +939,171 @@ export default function Products() {
               transition={{ duration: 0.5 }}
               className="space-y-7 lg:order-1"
             >
-            <div className="flex items-center">
-              <img
-                src={agentVistaLogo}
-                alt="Agent Vista"
-                className="h-16 w-auto"
-              />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-              AgentVista – SurveyVista Copilot for Intelligent Surveys, Forms,
-              and Assessments
-            </h2>
-            <p className="text-base md:text-lg font-medium text-amber-600">
-              AI-Powered Feedback Automation with SurveyVista & Agentforce
-            </p>
-            <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
-              Harness the power of Agentforce with SurveyVista to drive
-              intelligent feedback operations through AI powered survey & form
-              generation, sentiment insights, and natural language actions for
-              survey distribution, analytics, and lifecycle feedback automation.
-            </p>
-            <div className="space-y-3">
-              {[
-                "AI Survey Generation",
-                "Form Creation from PDFs & Images",
-                "Natural Language Agent Actions",
-                "Sentiment Intelligence",
-                "AI-Generated Survey Insights",
-              ].map((f, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <CheckCircle2
-                    size={17}
-                    className="text-amber-500 mt-0.5 shrink-0"
-                  />
-                  <span className="text-sm text-slate-600">{f}</span>
-                </div>
-              ))}
-            </div>
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 flex items-center justify-between">
-              <div>
-                <p className="font-bold text-[#0f172a]">
-                  Available on AppExchange
-                </p>
-                <p className="text-sm text-slate-500">
-                  Salesforce certified & security reviewed
-                </p>
+              <div className="flex items-center">
+                <img
+                  src={agentVistaLogo}
+                  alt="Agent Vista"
+                  className="h-16 w-auto"
+                />
               </div>
-              {/* <div className="text-right">
+              <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
+                AgentVista – SurveyVista Copilot for Intelligent Surveys, Forms,
+                and Assessments
+              </h2>
+              <p className="text-base md:text-lg font-medium text-amber-600">
+                AI-Powered Feedback Automation with SurveyVista & Agentforce
+              </p>
+              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
+                Harness the power of Agentforce with SurveyVista to drive
+                intelligent feedback operations through AI powered survey & form
+                generation, sentiment insights, and natural language actions for
+                survey distribution, analytics, and lifecycle feedback
+                automation.
+              </p>
+              <div className="space-y-3">
+                {[
+                  "AI Survey Generation",
+                  "Form Creation from PDFs & Images",
+                  "Natural Language Agent Actions",
+                  "Sentiment Intelligence",
+                  "AI-Generated Survey Insights",
+                ].map((f, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <CheckCircle2
+                      size={17}
+                      className="text-amber-500 mt-0.5 shrink-0"
+                    />
+                    <span className="text-sm text-slate-600">{f}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 flex items-center justify-between">
+                <div>
+                  <p className="font-bold text-[#0f172a]">
+                    Available on AppExchange
+                  </p>
+                  <p className="text-sm text-slate-500">
+                    Salesforce certified & security reviewed
+                  </p>
+                </div>
+                {/* <div className="text-right">
                 <span className="text-3xl font-extrabold text-[#43AF57]"></span>
                 <p className="text-xs text-slate-500">verified reviews</p>
               </div> */}
-            </div>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
-                Use Cases
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Customer Experience",
-                  "Employee Engagement",
-                  "Sales Enablement",
-                  "Webinar & Event Feedback",
-                  "Sales & Revenue",
-                  "Marketing & Campaign",
-                  "Partner & Vendor",
-                  "Knowledge & Insight",
-                  "Platform Admin & Ops",
-                  "Cross Industry",
-                ].map((u) => (
-                  <span
-                    key={u}
-                    className="bg-amber-50 border border-amber-200 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold"
-                  >
-                    {u}
-                  </span>
-                ))}
               </div>
-            </div>
-            <div className="flex flex-wrap gap-3 pt-2">
-              <a
-                href="https://agentvista-design.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-amber-500 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-amber-600 transition-colors shadow-sm group"
-              >
-                Visit Website <ExternalLink size={15} />
-              </a>
-              <a
-                href="https://appexchange.salesforce.com/appxListingDetail?listingId=c088b22e-a28b-4d93-bdf7-b950546b6e80"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-amber-300 text-amber-700 bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-amber-50 transition-colors"
-              >
-                View on AppExchange <ArrowRight size={15} />
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Right Column - Sticky Image and Testimonial */}
-          <div className="flex flex-col lg:order-2">
-            {/* Sticky Product Card - stays at top */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="lg:sticky lg:top-24 h-fit mb-88"
-            >
-              <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
-                <img
-                  src={avProductCard}
-                  alt="AgentVista Product Card"
-                  className="w-full h-full object-cover rounded-2xl shadow-md"
-                />
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">
+                  Use Cases
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    "Customer Experience",
+                    "Employee Engagement",
+                    "Sales Enablement",
+                    "Webinar & Event Feedback",
+                    "Sales & Revenue",
+                    "Marketing & Campaign",
+                    "Partner & Vendor",
+                    "Knowledge & Insight",
+                    "Platform Admin & Ops",
+                    "Cross Industry",
+                  ].map((u) => (
+                    <span
+                      key={u}
+                      className="bg-amber-50 border border-amber-200 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold"
+                    >
+                      {u}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <a
+                  href="https://agentvista-design.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-amber-500 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-amber-600 transition-colors shadow-sm group"
+                >
+                  Visit Website <ExternalLink size={15} />
+                </a>
+                <a
+                  href="https://appexchange.salesforce.com/appxListingDetail?listingId=c088b22e-a28b-4d93-bdf7-b950546b6e80"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 border border-amber-300 text-amber-700 bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-amber-50 transition-colors"
+                >
+                  View on AppExchange <ArrowRight size={15} />
+                </a>
               </div>
             </motion.div>
 
-            {/* Testimonial Carousel - starts at AppExchange level */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="-mt-25"
-            >
-              <Carousel
-                opts={{
-                  align: "start",
-                  loop: true,
-                }}
-                plugins={[
-                  Autoplay({
-                    delay: 3500,
-                  }),
-                ]}
-                className="w-full"
+            {/* Right Column - Sticky Image and Testimonial */}
+            <div className="flex flex-col lg:order-2">
+              {/* Sticky Product Card - stays at top */}
+              <motion.div
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="lg:sticky lg:top-24 h-fit mb-88"
               >
-                <CarouselContent>
-                  {avTestimonials.map((testimonial) => (
-                    <CarouselItem key={testimonial.id}>
-                      <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full">
-                        <div className="space-y-6">
-                          <div>
-                            <h3 className="text-xl font-semibold text-[#0f172a] mb-4">
-                              {testimonial.title}
-                            </h3>
-                            <p className="text-slate-600 text-sm leading-relaxed">
-                              {testimonial.description}
-                            </p>
-                          </div>
-                          <div className="flex items-center pt-4 border-t border-slate-100">
-                            <img
-                              src={testimonial.logo}
-                              alt="Company Logo"
-                              className="h-12 w-auto object-contain"
-                            />
+                <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
+                  <img
+                    src={avProductCard}
+                    alt="AgentVista Product Card"
+                    className="w-full h-full object-cover rounded-2xl shadow-md"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Testimonial Carousel - starts at AppExchange level */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="-mt-25"
+              >
+                <Carousel
+                  opts={{
+                    align: "start",
+                    loop: true,
+                  }}
+                  plugins={[
+                    Autoplay({
+                      delay: 3500,
+                    }),
+                  ]}
+                  className="w-full"
+                >
+                  <CarouselContent>
+                    {avTestimonials.map((testimonial) => (
+                      <CarouselItem key={testimonial.id}>
+                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full">
+                          <div className="space-y-6">
+                            <div>
+                              <h3 className="text-xl font-semibold text-[#0f172a] mb-4">
+                                {testimonial.title}
+                              </h3>
+                              <p className="text-slate-600 text-sm leading-relaxed">
+                                {testimonial.description}
+                              </p>
+                            </div>
+                            <div className="flex items-center pt-4 border-t border-slate-100">
+                              <img
+                                src={testimonial.logo}
+                                alt="Company Logo"
+                                className="h-12 w-auto object-contain"
+                              />
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-              </Carousel>
-            </motion.div>
-          </div>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                </Carousel>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
