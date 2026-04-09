@@ -15,7 +15,7 @@ export default function Privacy() {
       <StructuredData type="WebPage" data={{ name: "Privacy Policy" }} />
       <Navbar />
 
-      <main className="flex-grow pt-32 pb-24 px-6 max-w-3xl mx-auto w-full">
+      <main className="flex-grow pt-40 pb-32 px-6 max-w-7xl mx-auto w-full ml-[130px]">
         <h1 className="text-3xl md:text-4xl font-bold font-display mb-10 text-[#43AF57]">Privacy Policy</h1>
         
         <div className="space-y-8 text-slate-600 leading-relaxed text-sm md:text-base font-normal">

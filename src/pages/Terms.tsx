@@ -18,7 +18,7 @@ export default function Terms() {
       <StructuredData type="WebPage" data={{ name: "Terms of Use" }} />
       <Navbar />
 
-      <main className="flex-grow pt-32 pb-24 px-6 max-w-3xl mx-auto w-full">
+      <main className="flex-grow pt-40 pb-32 px-6 max-w-7xl mx-auto w-full ml-[130px]">
         <h1 className="text-3xl md:text-4xl font-bold font-display mb-10 text-[#43AF57]">
           Terms of Use
         </h1>
