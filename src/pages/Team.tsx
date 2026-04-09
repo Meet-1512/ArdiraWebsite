@@ -115,7 +115,7 @@ export default function About() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-40 pb-20 px-6 bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] relative overflow-hidden">
+      <section className="pt-40 pb-20 px-6 bg-linear-to-br from-[#f0fdf4] via-white to-[#ecfdf5] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Badge */}
@@ -261,22 +261,12 @@ export default function About() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="flex flex-col items-center text-center group cursor-pointer"
               >
-                {member.image ? (
+                {member.image && (
                   <img
                     src={member.image}
                     alt={member.name}
                     className={`w-50 h-54 object-cover rounded-lg mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}
                   />
-                ) : (
-                  <div
-                    className={`w-40 h-48 rounded-lg ${member.bg} flex items-center justify-center mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}
-                  >
-                    <span
-                      className={`text-2xl font-extrabold font-display ${member.text}`}
-                    >
-                      {member.initials}
-                    </span>
-                  </div>
                 )}
                 <h3 className="text-base font-extrabold font-display text-[#0f172a] mb-1">
                   {member.name}
