@@ -54,6 +54,7 @@ const svTestimonials = [
   {
     id: 1,
     title: "Perfect survey app for our needs",
+    company: "eBay",
     description:
       "I was evaluating 5 of the most well knowns apps for survey fully integrated with salesforce,and we decided to go with survey vista,The tool is really easy to use,it has morden user interface and is fully integrated with salesforce...",
     logo: svTestimonialLogo1,
@@ -61,6 +62,7 @@ const svTestimonials = [
   {
     id: 2,
     title: "Great Product for a great price!",
+    company: "Ariane Aerospace",
     description:
       "we were looking for a simple survey tool to measure out CSAT and NPS guest satisfaction.we saw different pricing but clearly the SurveyVista tool was the one we needed...",
     logo: svTestimonialLogo2,
@@ -68,6 +70,7 @@ const svTestimonials = [
   {
     id: 3,
     title: "very good tool!",
+    company: "Maxeon",
     description:
       "we have been working in SFDC in combination with an external survey tool for many years, changing to SurveyVista which is embedded into SFDC directly has turned out to be much more user-friendly for all of our key users...",
     logo: svTestimonialLogo3,
@@ -75,6 +78,7 @@ const svTestimonials = [
   {
     id: 4,
     title: "Exceptional Service",
+    company: "Analog Devices",
     description:
       "Service provided was quite exceptional from the initial contact right through installation and assistance with configuration. Highly recommended.",
     logo: svTestimonialLogo4,
@@ -82,6 +86,7 @@ const svTestimonials = [
   {
     id: 5,
     title: "Fantastic surveys app",
+    company: "Vizergy",
     description:
       "I would highly recommended SurveyVista to anyone looking for a top notch survey solution. SurveyVista had all of the features we needed plus additional advanced features that we could leverage if needed one day...",
     logo: svTestimonialLogo5,
@@ -92,6 +97,7 @@ const fvTestimonials = [
   {
     id: 1,
     title: "Amazing app: it's so powerful yet so easy to customise",
+    company: "Bedrock Success",
     description:
       "It's been an amazing journey with Ardira's FormVista: it started with very simple feedback forms for our students, then we created online assessment tests for them (in Latin, Greek and Hebrew!!), and now we design all our online application/registration forms for the various programs and courses using FormVista ...",
     logo: fvTestimonialLogo1,
@@ -99,6 +105,7 @@ const fvTestimonials = [
   {
     id: 2,
     title: "Knowledge Articles, Support and Capability",
+    company: "JCB",
     description:
       "As a new customer I am more than impressed with the knowledge articles that are provided. The articles are in depth and allow you to maximize the capability of the system. After I submitted a support ticket, the agent was not only responive and helpful but he walked me through the solution. Great system, and overall great customer resources. Looking forward to futher utlizing the tool.",
     logo: fvTestimonialLogo2,
@@ -106,6 +113,7 @@ const fvTestimonials = [
   {
     id: 3,
     title: "A very flexible survey platform with fantastic support",
+    company: "Mentor",
     description:
       "We moved to this from SurveyMonkey as we wanted to move our data to within Salesforce. The platform has even more survey options with question types for every use case. The support team are also excellent, I recently had a question regarding reporting and the team spent 30 minutes on a call with me explaining all the different options I have available and even offer to build custom dashboards for you for an additional one time fee.",
     logo: fvTestimonialLogo3,
@@ -116,6 +124,7 @@ const rvTestimonials = [
   {
     id: 1,
     title: "Great product!",
+    company: "SMI",
     description:
       "This component does exactly what it says, and is very easy to configure. Also want to say thank you to Reddy with helping us troubleshoot our installation. Their support is very responsive and easy to work with.",
     logo: rvTestimonialLogo1,
@@ -123,6 +132,7 @@ const rvTestimonials = [
   {
     id: 2,
     title: "Exceptional Service",
+    company: "Steamline Edge",
     description:
       "Service provided was quite exceptional from the initial contact right through installation and assistance with configuration. Highly recommended.",
     logo: rvTestimonialLogo2,
@@ -133,6 +143,7 @@ const cvTestimonials = [
   {
     id: 1,
     title: "The technical support is excellent!",
+    company: "CIon Demand",
     description:
       "The technical support is excellent and professional. They provided the best solution for our needs and were extremely patient throughout the process.",
     logo: cvTestimonialLogo1,
@@ -140,6 +151,7 @@ const cvTestimonials = [
   {
     id: 2,
     title: "Exceptional Service and Outstanding Value",
+    company: "Fujifilm",
     description:
       "SurveyVista has been a game-changer for our team. From day one, their customer service stood out—fast responses, clear guidance, and proactive check-ins that made setup and rollout painless. The onboarding materials were concise, and support was always just a message away.Functionally, the platform delivers more than expected for the price...",
     logo: cvTestimonialLogo2,
@@ -150,6 +162,7 @@ const avTestimonials = [
   {
     id: 1,
     title: "Amazing Partner",
+    company: "Forty Carrots Family Center",
     description:
       "We are a non-profit organization using Survey Vista to measure our impact in the community. SurveyVista is easy to use and has made such a huge difference in our program measurement data. In addition the team at SurveyVista has been amazing in helping us with set up and integration. We highly recommend this App.",
     logo: avTestimonialLogo1,
@@ -157,6 +170,7 @@ const avTestimonials = [
   {
     id: 2,
     title: "Great product & team",
+    company: "WorkMotion",
     description:
       "Since we started using SurveyVista, the support team has been exceptionally helpful and proactive, the tool is very useful & customizable.I highly recommend it.",
     logo: avTestimonialLogo2,
@@ -376,7 +390,7 @@ export default function Products() {
                             <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
-                                alt="Company Logo"
+                                alt={`${testimonial.company} Logo`}
                                 className="h-12 w-auto object-contain"
                               />
                             </div>
@@ -474,7 +488,7 @@ export default function Products() {
                             <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
-                                alt="Company Logo"
+                                alt={`${testimonial.company} Logo`}
                                 className="h-12 w-auto object-contain"
                               />
                             </div>
@@ -784,7 +798,7 @@ export default function Products() {
                             <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
-                                alt="Company Logo"
+                                alt={`${testimonial.company} Logo`}
                                 className="h-12 w-auto object-contain"
                               />
                             </div>
@@ -882,7 +896,7 @@ export default function Products() {
                             <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
-                                alt="Company Logo"
+                                alt={`${testimonial.company} Logo`}
                                 className="h-12 w-auto object-contain"
                               />
                             </div>
@@ -1183,7 +1197,7 @@ export default function Products() {
                             <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
-                                alt="Company Logo"
+                                alt={`${testimonial.company} Logo`}
                                 className="h-12 w-auto object-contain"
                               />
                             </div>

@@ -135,6 +135,9 @@ export default function PartnerHub() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
+            <h1 className="text-4xl md:text-5xl font-bold font-display text-[#0f172a] leading-tight mb-4">
+              Partner Hub
+            </h1>
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-4">
               Why Partner With Us
             </p>
