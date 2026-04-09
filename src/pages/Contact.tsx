@@ -294,23 +294,13 @@ export default function Contact() {
                       >
                         <option value="">Select an option...</option>
                         <option value="SurveyVista">SurveyVista</option>
+                         <option value="AgentVista">FormVista</option>
                         <option value="RelationshipVista">
                           RelationshipVista
                         </option>
                         <option value="ComplianceVista">ComplianceVista</option>
                         <option value="AgentVista">AgentVista</option>
-                        <option value="Product Development">
-                          Product Development
-                        </option>
-                        <option value="Salesforce Admin">
-                          Salesforce Admin Services
-                        </option>
-                        <option value="Customization">
-                          Customization & Config
-                        </option>
-                        <option value="Integration">
-                          Integration & Data Migration
-                        </option>
+                        
                         <option value="General">General Inquiry</option>
                       </select>
                       {errors.interest && (

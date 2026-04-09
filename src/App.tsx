@@ -32,12 +32,18 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/products" component={Products} />
-      <Route path="/relationship-vista-user-guide" component={RelationshipVistaUserGuide} />
-      <Route path="/relationship-vista-installation-guide" component={RelationshipVistaInstallationGuide} />
+      <Route
+        path="/relationship-vista-user-guide"
+        component={RelationshipVistaUserGuide}
+      />
+      <Route
+        path="/relationship-vista-installation-guide"
+        component={RelationshipVistaInstallationGuide}
+      />
       <Route path="/partners" component={PartnerHub} />
       <Route path="/team" component={Team} />
       <Route path="/contact" component={Contact} />
-      <Route path="/terms" component={Terms} />
+      <Route path="/terms-of-use" component={Terms} />
       <Route path="/privacy-policy" component={Privacy} />
       <Route component={NotFound} />
     </Switch>
