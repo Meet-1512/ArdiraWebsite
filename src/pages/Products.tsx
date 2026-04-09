@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowRight, CheckCircle2, ExternalLink } from "lucide-react";
+import { ArrowRight, CheckCircle2, ExternalLink, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
@@ -315,7 +315,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit mb-80"
+                className="lg:sticky lg:top-24 h-fit mb-90"
               >
                 <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
@@ -332,7 +332,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="-mt-21"
+                className="-mt-30"
               >
                 <Carousel
                   opts={{
@@ -349,17 +349,35 @@ export default function Products() {
                   <CarouselContent>
                     {svTestimonials.map((testimonial) => (
                       <CarouselItem key={testimonial.id}>
-                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full">
-                          <div className="space-y-6">
-                            <div>
-                              <h3 className="text-xl font-semibold text-[#0f172a] mb-4">
+                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full relative">
+                          <div className="space-y-4">
+                            {/* Star Rating - Centered */}
+                            <div className="flex justify-center gap-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  size={18}
+                                  className="fill-yellow-400 text-yellow-400"
+                                />
+                              ))}
+                            </div>
+                            {/* Horizontal Line */}
+                            <div className="border-t border-slate-200"></div>
+                            {/* Quotation Mark and Title */}
+                            <div className="flex items-center justify-center gap-2">
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
-                              <p className="text-slate-600 text-sm leading-relaxed">
+                            </div>
+                            {/* Description */}
+                            <div className="relative">
+                              <p className="text-slate-600 text-sm leading-relaxed text-center">
                                 {testimonial.description}
                               </p>
                             </div>
-                            <div className="flex items-center pt-4 border-t border-slate-100">
+                            {/* Logo Center Aligned */}
+                            <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
                                 alt="Company Logo"
@@ -367,6 +385,8 @@ export default function Products() {
                               />
                             </div>
                           </div>
+                          {/* Closing Decorator - Bottom Right */}
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
                         </div>
                       </CarouselItem>
                     ))}
@@ -393,7 +413,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit mb-95"
+                className="lg:sticky lg:top-24 h-fit mb-110"
               >
                 <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
@@ -410,7 +430,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="-mt-29"
+                className="-mt-43"
               >
                 <Carousel
                   opts={{
@@ -427,17 +447,35 @@ export default function Products() {
                   <CarouselContent>
                     {fvTestimonials.map((testimonial) => (
                       <CarouselItem key={testimonial.id}>
-                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full">
-                          <div className="space-y-6">
-                            <div>
-                              <h3 className="text-xl font-semibold text-[#0f172a] mb-4">
+                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full relative">
+                          <div className="space-y-4">
+                            {/* Star Rating - Centered */}
+                            <div className="flex justify-center gap-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  size={18}
+                                  className="fill-yellow-400 text-yellow-400"
+                                />
+                              ))}
+                            </div>
+                            {/* Horizontal Line */}
+                            <div className="border-t border-slate-200"></div>
+                            {/* Quotation Mark and Title */}
+                            <div className="flex items-center justify-center gap-2">
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
-                              <p className="text-slate-600 text-sm leading-relaxed">
+                            </div>
+                            {/* Description */}
+                            <div className="relative">
+                              <p className="text-slate-600 text-sm leading-relaxed text-center">
                                 {testimonial.description}
                               </p>
                             </div>
-                            <div className="flex items-center pt-4 border-t border-slate-100">
+                            {/* Logo Center Aligned */}
+                            <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
                                 alt="Company Logo"
@@ -445,6 +483,8 @@ export default function Products() {
                               />
                             </div>
                           </div>
+                          {/* Closing Decorator - Bottom Right */}
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
                         </div>
                       </CarouselItem>
                     ))}
@@ -703,7 +743,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="-mt-24"
+                className="-mt-31"
               >
                 <Carousel
                   opts={{
@@ -720,17 +760,35 @@ export default function Products() {
                   <CarouselContent>
                     {rvTestimonials.map((testimonial) => (
                       <CarouselItem key={testimonial.id}>
-                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full">
-                          <div className="space-y-6">
-                            <div>
-                              <h3 className="text-xl font-semibold text-[#0f172a] mb-4">
+                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full relative">
+                          <div className="space-y-4">
+                            {/* Star Rating - Centered */}
+                            <div className="flex justify-center gap-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  size={18}
+                                  className="fill-yellow-400 text-yellow-400"
+                                />
+                              ))}
+                            </div>
+                            {/* Horizontal Line */}
+                            <div className="border-t border-slate-200"></div>
+                            {/* Quotation Mark and Title */}
+                            <div className="flex items-center justify-center gap-2">
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
-                              <p className="text-slate-600 text-sm leading-relaxed">
+                            </div>
+                            {/* Description */}
+                            <div className="relative">
+                              <p className="text-slate-600 text-sm leading-relaxed text-center">
                                 {testimonial.description}
                               </p>
                             </div>
-                            <div className="flex items-center pt-4 border-t border-slate-100">
+                            {/* Logo Center Aligned */}
+                            <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
                                 alt="Company Logo"
@@ -738,6 +796,8 @@ export default function Products() {
                               />
                             </div>
                           </div>
+                          {/* Closing Decorator - Bottom Right */}
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
                         </div>
                       </CarouselItem>
                     ))}
@@ -764,7 +824,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit mb-88"
+                className="lg:sticky lg:top-24 h-fit mb-100"
               >
                 <div className="bg-gradient-to-br from-violet-50 to-purple-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
@@ -781,7 +841,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="-mt-22"
+                className="-mt-34"
               >
                 <Carousel
                   opts={{
@@ -798,17 +858,35 @@ export default function Products() {
                   <CarouselContent>
                     {cvTestimonials.map((testimonial) => (
                       <CarouselItem key={testimonial.id}>
-                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full">
-                          <div className="space-y-6">
-                            <div>
-                              <h3 className="text-xl font-semibold text-[#0f172a] mb-4">
+                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full relative">
+                          <div className="space-y-4">
+                            {/* Star Rating - Centered */}
+                            <div className="flex justify-center gap-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  size={18}
+                                  className="fill-yellow-400 text-yellow-400"
+                                />
+                              ))}
+                            </div>
+                            {/* Horizontal Line */}
+                            <div className="border-t border-slate-200"></div>
+                            {/* Quotation Mark and Title */}
+                            <div className="flex items-center justify-center gap-2">
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
-                              <p className="text-slate-600 text-sm leading-relaxed">
+                            </div>
+                            {/* Description */}
+                            <div className="relative">
+                              <p className="text-slate-600 text-sm leading-relaxed text-center">
                                 {testimonial.description}
                               </p>
                             </div>
-                            <div className="flex items-center pt-4 border-t border-slate-100">
+                            {/* Logo Center Aligned */}
+                            <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
                                 alt="Company Logo"
@@ -816,6 +894,8 @@ export default function Products() {
                               />
                             </div>
                           </div>
+                          {/* Closing Decorator - Bottom Right */}
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
                         </div>
                       </CarouselItem>
                     ))}
@@ -1045,7 +1125,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit mb-88"
+                className="lg:sticky lg:top-24 h-fit mb-100"
               >
                 <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
@@ -1062,7 +1142,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="-mt-25"
+                className="-mt-37"
               >
                 <Carousel
                   opts={{
@@ -1079,17 +1159,35 @@ export default function Products() {
                   <CarouselContent>
                     {avTestimonials.map((testimonial) => (
                       <CarouselItem key={testimonial.id}>
-                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full">
-                          <div className="space-y-6">
-                            <div>
-                              <h3 className="text-xl font-semibold text-[#0f172a] mb-4">
+                        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-md transition-shadow h-full relative">
+                          <div className="space-y-4">
+                            {/* Star Rating - Centered */}
+                            <div className="flex justify-center gap-1">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  size={18}
+                                  className="fill-yellow-400 text-yellow-400"
+                                />
+                              ))}
+                            </div>
+                            {/* Horizontal Line */}
+                            <div className="border-t border-slate-200"></div>
+                            {/* Quotation Mark and Title */}
+                            <div className="flex items-center justify-center gap-2">
+                              <span className="text-4xl text-slate-300 leading-none shrink-0">"</span>
+                              <h3 className="text-lg font-bold text-[#0f172a]">
                                 {testimonial.title}
                               </h3>
-                              <p className="text-slate-600 text-sm leading-relaxed">
+                            </div>
+                            {/* Description */}
+                            <div className="relative">
+                              <p className="text-slate-600 text-sm leading-relaxed text-center">
                                 {testimonial.description}
                               </p>
                             </div>
-                            <div className="flex items-center pt-4 border-t border-slate-100">
+                            {/* Logo Center Aligned */}
+                            <div className="flex justify-center pt-8">
                               <img
                                 src={testimonial.logo}
                                 alt="Company Logo"
@@ -1097,6 +1195,8 @@ export default function Products() {
                               />
                             </div>
                           </div>
+                          {/* Closing Decorator - Bottom Right */}
+                          <span className="absolute bottom-3 right-4 text-8xl text-slate-100 leading-none">"</span>
                         </div>
                       </CarouselItem>
                     ))}
