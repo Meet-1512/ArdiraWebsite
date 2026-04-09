@@ -8,7 +8,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
-import { useRecaptcha } from "@/hooks/use-recaptcha";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Full Name is required"),
@@ -22,7 +21,6 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const { executeRecaptcha } = useRecaptcha();
 
   const {
     register,
@@ -38,19 +36,13 @@ export default function Contact() {
     setSubmitError(null);
 
     try {
-      // Get reCAPTCHA token
-      const recaptchaToken = await executeRecaptcha("contact_form");
-
-      // Submit form with reCAPTCHA token
+      // Submit form to Vercel serverless function
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          ...data,
-          recaptchaToken,
-        }),
+        body: JSON.stringify(data),
       });
 
       const result = await response.json();
@@ -335,27 +327,15 @@ export default function Contact() {
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
 
-                    {/* reCAPTCHA Badge Notice */}
                     <p className="text-xs text-slate-400 text-center mt-4">
-                      This site is protected by reCAPTCHA and the Google{" "}
+                      By submitting this form, you agree to our{" "}
                       <a
-                        href="https://policies.google.com/privacy"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        href="/privacy-policy"
                         className="text-slate-500 underline hover:text-slate-600"
                       >
                         Privacy Policy
-                      </a>{" "}
-                      and{" "}
-                      <a
-                        href="https://policies.google.com/terms"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-slate-500 underline hover:text-slate-600"
-                      >
-                        Terms of Service
-                      </a>{" "}
-                      apply.
+                      </a>
+                      .
                     </p>
                   </form>
                 </>

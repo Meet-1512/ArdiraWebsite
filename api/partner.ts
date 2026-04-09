@@ -1,10 +1,10 @@
 /**
- * Vercel Serverless Function — Contact Form Mail Handler
- * POST /api/contact
+ * Vercel Serverless Function — Partner Hub Form Mail Handler
+ * POST /api/partner
  *
  * Sends two emails via Gmail SMTP (Nodemailer):
  *   1. Internal notification  → GMAIL_USER (pateljeni3110@gmail.com)
- *   2. Auto-reply confirmation → submitter's email
+ *   2. Auto-reply confirmation → partner applicant's email
  *
  * Required Vercel Environment Variables:
  *   GMAIL_USER         = pateljeni3110@gmail.com
@@ -15,11 +15,13 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import nodemailer from "nodemailer";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
-interface ContactFormData {
+interface PartnerFormData {
   fullName: string;
   email: string;
   company: string;
-  interest: string;
+  phone: string;
+  country: string;
+  partnerType: string;
   message: string;
 }
 
@@ -37,8 +39,7 @@ function createTransporter() {
 // ─── HTML Email Template Builder ──────────────────────────────────────────────
 function buildEmailTemplate(
   headingText: string,
-  rows: { label: string; value: string }[],
-  footerNote?: string
+  rows: { label: string; value: string }[]
 ): string {
   const rowsHtml = rows
     .map(
@@ -94,13 +95,6 @@ function buildEmailTemplate(
                     </table>
                   </td>
                 </tr>
-                ${
-                  footerNote
-                    ? `<tr>
-                  <td style="padding:12px 0 0;font-size:12px;color:#888;">${footerNote}</td>
-                </tr>`
-                    : ""
-                }
               </table>
             </td>
           </tr>
@@ -154,10 +148,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // ── Parse & validate body ────────────────────────────────────────────────
-  const { fullName, email, company, interest, message } =
-    req.body as ContactFormData;
+  const { fullName, email, company, phone, country, partnerType, message } =
+    req.body as PartnerFormData;
 
-  if (!fullName || !email || !company || !interest || !message) {
+  if (!fullName || !email || !company || !phone || !country || !partnerType || !message) {
     return res.status(400).json({ error: "All fields are required" });
   }
 
@@ -173,13 +167,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     // ── Mail 1: Internal team notification ──────────────────────────────────
     const internalHtml = buildEmailTemplate(
-      "New contact inquiry received via Ardira Website",
+      "New partner application received via Ardira Partner Hub",
       [
-        { label: "Name",         value: fullName },
-        { label: "Email",        value: `<a href="mailto:${email}" style="color:#43AF57;">${email}</a>` },
-        { label: "Company",      value: company },
-        { label: "Interested In", value: interest },
-        { label: "Message",      value: message.replace(/\n/g, "<br>") },
+        { label: "Name",             value: fullName },
+        { label: "Email",            value: `<a href="mailto:${email}" style="color:#43AF57;">${email}</a>` },
+        { label: "Company",          value: company },
+        { label: "Phone",            value: phone },
+        { label: "Country",          value: country },
+        { label: "Partnership Type", value: partnerType },
+        { label: "Message",          value: message.replace(/\n/g, "<br>") },
       ]
     );
 
@@ -187,19 +183,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       from:     `"Ardira Website" <${TEAM_EMAIL}>`,
       to:        TEAM_EMAIL,
       replyTo:   email,
-      subject:  "New Contact Inquiry – Ardira",
+      subject:  "New Partner Application – Ardira",
       html:      internalHtml,
     });
 
-    // ── Mail 2: Auto-reply to submitter ─────────────────────────────────────
+    // ── Mail 2: Auto-reply to partner applicant ─────────────────────────────
     const autoReplyHtml = buildEmailTemplate(
-      "We have received your details. One of our representatives will get in touch with you shortly.",
+      "We have received your partner application. Our partnerships team will review and reach out within 2 business days.",
       [
-        { label: "Name",         value: fullName },
-        { label: "Email",        value: email },
-        { label: "Company",      value: company },
-        { label: "Interested In", value: interest },
-        { label: "Message",      value: message.replace(/\n/g, "<br>") },
+        { label: "Name",             value: fullName },
+        { label: "Email",            value: email },
+        { label: "Company",          value: company },
+        { label: "Phone",            value: phone },
+        { label: "Country",          value: country },
+        { label: "Partnership Type", value: partnerType },
       ]
     );
 
@@ -207,13 +204,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       from:     `"Ardira" <${TEAM_EMAIL}>`,
       to:        email,
       replyTo:   TEAM_EMAIL,
-      subject:  "Thank You for Contacting Ardira",
+      subject:  "Thank You for Your Partner Application – Ardira",
       html:      autoReplyHtml,
     });
 
-    return res.status(200).json({ success: true, message: "Form submitted successfully" });
+    return res.status(200).json({ success: true, message: "Application submitted successfully" });
   } catch (error) {
-    console.error("Contact form email error:", error);
+    console.error("Partner form email error:", error);
     return res.status(500).json({
       error: "Failed to send email. Please try again.",
       details: error instanceof Error ? error.message : "Unknown error",

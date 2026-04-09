@@ -10,6 +10,7 @@ import {
   ClipboardCheck,
   Users,
   Rocket,
+  AlertCircle,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -77,9 +78,11 @@ export default function PartnerHub() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: { [key: string]: string } = {};
 
@@ -116,7 +119,33 @@ export default function PartnerHub() {
     }
 
     setErrors({});
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/partner", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit application");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Partner form submission error:", error);
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : "Failed to submit. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -362,8 +391,15 @@ export default function PartnerHub() {
                     </p>
                   </div>
                 </div>
-              ) : (
+                ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Error Banner */}
+                  {submitError && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+                      <AlertCircle size={18} className="text-red-600 shrink-0 mt-0.5" />
+                      <p className="text-sm text-red-700">{submitError}</p>
+                    </div>
+                  )}
                   <div>
                     <label className="block text-sm font-semibold text-[#0f172a] mb-1">
                       Full Name <span className="text-red-500">*</span>
@@ -572,13 +608,16 @@ export default function PartnerHub() {
 
                   <button
                     type="submit"
-                    className="w-full bg-[#43AF57] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-emerald-600 transition-colors shadow-md flex items-center justify-center gap-2 group"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#43AF57] text-white px-6 py-3 rounded-lg font-semibold text-base hover:bg-emerald-600 disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors shadow-md flex items-center justify-center gap-2 group"
                   >
-                    Submit Application{" "}
-                    <Send
-                      size={20}
-                      className="group-hover:translate-x-0.5 transition-transform"
-                    />
+                    {isSubmitting ? "Submitting..." : "Submit Application"}{" "}
+                    {!isSubmitting && (
+                      <Send
+                        size={20}
+                        className="group-hover:translate-x-0.5 transition-transform"
+                      />
+                    )}
                   </button>
                 </form>
               )}
