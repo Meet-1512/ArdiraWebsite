@@ -11,6 +11,7 @@ import rajesh from "@assets/ArdiraMind/rajesh.webp";
 import hitesh from "@assets/ArdiraMind/hitesh.webp";
 import brijesh from "@assets/ArdiraMind/brijesh.webp";
 import qRegan from "@assets/ArdiraMind/Ll-photo.webp";
+import reddy from "@assets/ArdiraMind/Reddy.webp"
 
 import devAdvisor from "@assets/AdvisoryBoard/dev-advisor.webp";
 import robertAdvisor from "@assets/AdvisoryBoard/robert.webp";
@@ -43,41 +44,31 @@ const team = [
   {
     name: "Rajesh Unadkat",
     title: "Founder and CEO",
-    bio: "Former Salesforce VP with 15+ years in cloud strategy.",
     initials: "RU",
-    bg: "bg-emerald-100",
-    text: "text-emerald-700",
-    ring: "ring-emerald-200",
     image: rajesh,
+  },
+  {
+    name: "Reddy Rachamallu",
+    title: "Co-Founder and CTO",
+    initials: "RR",
+    image: reddy,
   },
   {
     name: "Hitesh Malkan",
     title: "General Manager - India Operations",
-    bio: "Architect of award-winning enterprise CRM platforms.",
     initials: "HM",
-    bg: "bg-sky-100",
-    text: "text-sky-700",
-    ring: "ring-sky-200",
     image: hitesh,
   },
   {
     name: "Brijesh Popat",
     title: "VP of Software Services",
-    bio: "Leading our global development teams with precision.",
     initials: "BP",
-    bg: "bg-teal-100",
-    text: "text-teal-700",
-    ring: "ring-teal-200",
     image: brijesh,
   },
   {
     name: "Quinn Regan",
     title: "Senior Account Executive",
-    bio: "Dedicated to creating user-centric Salesforce solutions.",
     initials: "QR",
-    bg: "bg-violet-100",
-    text: "text-violet-700",
-    ring: "ring-violet-200",
     image: qRegan,
   },
 ];
@@ -260,8 +251,8 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
-            {team.slice(0, 4).map((member, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-8">
+            {team.map((member, i) => (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, y: 24 }}
