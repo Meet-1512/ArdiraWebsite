@@ -30,44 +30,28 @@ import tedLogo from "@/assets/TrustedEnterprise/ted.webp";
 
 const carouselSlides = [
   {
-    headline: ["Best 100% Native ", "Salesforce", " Intelligence & Action Platform"],
-    sub: "SurveyVista — Collect insights, run assessments, and build forms directly inside Salesforce.",
+    headline: ["Turn customer signals ", "into results—natively ", "within Salesforce"],
+    sub: "SurveyVista helps you collect insights, run assessments, and automate actions—all 100% native to Salesforce.",
   },
   {
     headline: [
-      "",
-      "Salesforce",
-      " App Development: From Concept to Development",
+      "Turn ",
+      "Data Collection ",
+      "Into Action — natively within Salesforce.",
     ],
-    sub: "We build enterprise-grade AppExchange applications from ideation through security review.",
+    sub: "RelationshipVista helps you visualize and understand complex relationships across your Salesforce data—instantly and intuitively.",
   },
   {
-    headline: ["", "Salesforce", " Administration: Manage your Environment"],
-    sub: "Certified admins keeping your org healthy, secure, and running at peak performance.",
-  },
-  {
-    headline: [
-      "We Are Experts At Building and Tuning ",
-      "Force.com",
-      " Applications",
-    ],
-    sub: "50+ years of combined experience on the world's leading CRM platform.",
+    headline: ["Turn ", "Compliance Into Confidence ", "Directly Inside Salesforce."],
+    sub: "ComplianceVista streamlines assessments, tracks risk, and ensures compliance—all within your Salesforce environment.",
   },
   {
     headline: [
-      "Visualize your ",
-      "Salesforce",
-      " Records Relationships & Hierarchies",
+      "Turn ",
+      "Feedback Into Intelligence ",
+      "Directly Inside Salesforce",
     ],
-    sub: "RelationshipVista — Interactive relationship maps with zero code required.",
-  },
-  {
-    headline: [
-      "",
-      "Salesforce",
-      " Application: Tuning Functionality and Performance",
-    ],
-    sub: "Customization, integration, and optimization services to get the most from your org.",
+    sub: "AgentVista uses AI to automate feedback analysis and actions—enhancing performance and customer experience within Salesforce.",
   },
 ];
 
@@ -315,10 +299,10 @@ export default function Home() {
             className="mb-16"
           >
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-4">
-              Why Choose Us
+              Why Ardira
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a] leading-tight max-w-xl">
-              What Sets Ardira Apart
+              What Sets our products apart
             </h2>
           </motion.div>
 
@@ -399,7 +383,9 @@ export default function Home() {
               transition={{ duration: 0.5 }}
             >
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-5">
-                About Us
+                About Ardira
+                <br></br>
+                Building powerful, native products for Salesforce
               </p>
               <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-7">
                 Salesforce ISV Partner

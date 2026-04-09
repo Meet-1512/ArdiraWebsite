@@ -107,8 +107,7 @@ export default function Contact() {
               <span className="text-[#43AF57]">Together</span>
             </h1>
             <p className="text-slate-500 text-base md:text-lg leading-relaxed font-normal">
-              Whether you're exploring our products or need expert Salesforce
-              services, our team typically responds within 1 business day.
+              Whether you're exploring our products or want to see them in action, we’re here to help.
             </p>
           </motion.div>
         </div>

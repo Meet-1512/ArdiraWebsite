@@ -141,12 +141,10 @@ export default function About() {
                 The People Behind <span className="text-[#43AF57]">Ardira</span>
               </h1>
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal mb-4">
-                Our team has Salesforce Certified Developers &amp;
-                Administrators located in the US &amp; India — working with you
-                24×7 and cost-effectively. We combine years of experience across
-                information security, compliance &amp; risk management, cloud
-                computing, enterprise software, SaaS services, and large-scale
-                software infrastructure.
+                Our team has Salesforce Certified Developers & Administrators located in the US & India, 
+                working with you 24×7 and cost-effectively. 
+                We combine years of experience across information security, compliance & risk management, 
+                cloud computing, enterprise software, SaaS services, and large-scale software infrastructure.
               </p>
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
                 Behind Ardira's success is our dynamic and collaborative team of
@@ -197,9 +195,9 @@ export default function About() {
               scratching the surface of what it can do.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed">
-              Our mission is to close that gap — with native products that
-              extend Salesforce capabilities, and expert services that ensure
-              your org is configured, integrated, and running at its best.
+              Our mission is to extend Salesforce with powerful, 
+              native products that help organizations collect better data, gain deeper insights, 
+              and act with confidence.
             </p>
           </motion.div>
 

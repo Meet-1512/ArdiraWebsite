@@ -302,10 +302,10 @@ export default function Products() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     "Customer Experience",
-                    "Marketing",
-                    "Sales",
-                    "Operations",
-                    "Employee Experience",
+                    "Marketing Campaigns",
+                    "Sales Insights",
+                    "Operational Assessments",
+                    "Employee Feedback",
                     "Compliance & Risk",
                   ].map((u) => (
                     <span
@@ -591,11 +591,11 @@ export default function Products() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Service & Support",
-                    "Sales",
-                    "Marketing",
-                    "Non Profit",
-                    "Product Discovery",
+                    "Lead Capture",
+                    "Customer Support",
+                    "Event Registrations",
+                    "Donations & Non-Profit",
+                    "Product Feedback",
                   ].map((u) => (
                     <span
                       key={u}
@@ -660,11 +660,9 @@ export default function Products() {
                 Uncover & Visualize Your Salesforce Relationships
               </p>
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
-                RelationshipVista helps gain Insights into Complex Hierarchies
-                and Customer Relationships. Explore Salesforce Data with Ease
-                for Informed Decisions, Pattern Identification, and Process
-                Optimization. Customize Relationship Maps with Relationship
-                Views, similar to SF list views.
+                RelationshipVista gives you a clear view of complex hierarchies and customer relationships 
+                inside Salesforce. Visualize, explore, and understand your data through customizable relationship 
+                maps that make it easier to identify patterns, optimize processes, and make informed decisions faster.
               </p>
               <div className="space-y-3">
                 {[
@@ -699,11 +697,11 @@ export default function Products() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Hierarchy Visualization",
-                    "Opportunity Grouping",
-                    "Record Filtering",
-                    "Quick Record Access",
-                    "Case Intelligence",
+                    "Relationship Mapping",
+                    "Account & Opportunity Insights",
+                    "Case & Support Intelligence",
+                    "Data Exploration",
+                    "Faster Record Navigation",
                   ].map((u) => (
                     <span
                       key={u}
@@ -999,9 +997,9 @@ export default function Products() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Employee 360 Assessments",
-                    "Vendor Risk & Due Diligence (TPRM)",
-                    "Compliance & Control Testing",
+                    "Employee Assessments",
+                    "Vendor Risk (TPRM)",
+                    "Compliance Testing",
                     "Audit & Risk Assessments",
                   ].map((u) => (
                     <span
@@ -1108,15 +1106,11 @@ export default function Products() {
                 <div className="flex flex-wrap gap-2">
                   {[
                     "Customer Experience",
-                    "Employee Engagement",
-                    "Sales Enablement",
-                    "Webinar & Event Feedback",
-                    "Sales & Revenue",
-                    "Marketing & Campaign",
-                    "Partner & Vendor",
-                    "Knowledge & Insight",
-                    "Platform Admin & Ops",
-                    "Cross Industry",
+                    "Employee Insights",
+                    "Sales Intelligence",
+                    "Marketing Optimization",
+                    "Event Feedback",
+                    "Partner Feedback",
                   ].map((u) => (
                     <span
                       key={u}

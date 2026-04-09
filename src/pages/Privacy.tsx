@@ -22,7 +22,12 @@ export default function Privacy() {
           <section>
             <h2 className="text-xl md:text-2xl font-semibold text-[#0f172a] mb-4">Privacy Notice</h2>
             <p className="mb-4">
-              The website located at www.ardira.com, (the "Website") is published, owned, and operated by Ardira Corporation, its affiliates and related entities ("Ardira," "the Company," "we," "us," and "our"). Ardira respects your privacy and is committed to protecting your privacy through our compliance with this website privacy policy (the "Policy"). This Policy should be read in conjunction with our website Terms of Use, into which this Policy is incorporated by reference.
+              The website located at <a
+                href="https://www.ardira.com"
+                className="text-emerald-600 hover:text-emerald-700 underline"
+              >
+                www.ardira.com
+              </a>, (the "Website") is published, owned, and operated by Ardira Corporation, its affiliates and related entities ("Ardira," "the Company," "we," "us," and "our"). Ardira respects your privacy and is committed to protecting your privacy through our compliance with this website privacy policy (the "Policy"). This Policy should be read in conjunction with our website Terms of Use, into which this Policy is incorporated by reference.
             </p>
             <p className="font-semibold text-slate-800 mb-2">This Policy describes:</p>
             <ul className="list-disc pl-6 space-y-2 mb-4">
@@ -141,7 +146,12 @@ export default function Privacy() {
               We strive to maintain and process your information accurately. We have processes in place to maintain all of our information in accordance with relevant data governance frameworks and legal requirements. We employ technologies designed to help us maintain information accuracy on input and processing.
             </p>
             <p>
-              Should you have any questions about your Personal Information, please e-mail us at privacy@ardira.com.
+              Should you have any questions about your Personal Information, please e-mail us at <a
+                href="mailto:privacy@ardira.com"
+                className="text-emerald-600 hover:text-emerald-700 underline"
+              >
+                privacy@ardira.com
+              </a>.
             </p>
           </section>
 
