@@ -113,43 +113,57 @@ export default function About() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-40 pb-20 px-6 bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] text-center relative overflow-hidden">
+      <section className="pt-40 pb-20 px-6 bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-6xl mx-auto relative z-10">
+          {/* Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-[#43AF57] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6"
           >
-            <div className="inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-[#43AF57] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6">
-              Our Team
-            </div>
-            <h1 className="text-3xl md:text-4xl font-bold font-display text-[#0f172a] leading-tight mb-6">
-              The People Behind <span className="text-[#43AF57]">Ardira</span>
-            </h1>
-            <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed max-w-3xl mx-auto font-normal">
-              Our team has Salesforce Certified Developers &amp; Administrators
-              located in the US &amp; India — working with you 24×7 and
-              cost-effectively. We combine years of experience across
-              information security, compliance &amp; risk management, cloud
-              computing, enterprise software, SaaS services, and large-scale
-              software infrastructure.
-            </p>
+            Our Team
           </motion.div>
 
-          {/* Team Photo */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mt-12 max-w-4xl mx-auto"
-          >
-            <img
-              src={ardiraTeam}
-              alt="The Ardira Team"
-              className="w-full rounded-2xl shadow-lg border border-slate-100"
-            />
-          </motion.div>
+          {/* Main Grid - Heading and Image aligned */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Text Content - Left */}
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="lg:text-left"
+            >
+              <h1 className="text-3xl md:text-4xl font-bold font-display text-[#0f172a] leading-tight mb-6">
+                The People Behind <span className="text-[#43AF57]">Ardira</span>
+              </h1>
+              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal mb-4">
+                Our team has Salesforce Certified Developers &amp; Administrators
+                located in the US &amp; India — working with you 24×7 and
+                cost-effectively. We combine years of experience across
+                information security, compliance &amp; risk management, cloud
+                computing, enterprise software, SaaS services, and large-scale
+                software infrastructure.
+              </p>
+              <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
+                Behind Ardira's success is our dynamic and collaborative team of professionals. From talented developers and data analysts to creative designers and dedicated support staff, our diverse team brings a wealth of skills and expertise to the table. We thrive on innovation and teamwork, consistently pushing the boundaries of what's possible. Our shared passion for delivering unparalleled solutions and providing exceptional service defines our culture.
+              </p>
+            </motion.div>
+
+            {/* Team Photo - Right */}
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <img
+                src={ardiraTeam}
+                alt="The Ardira Team"
+                className="w-full rounded-2xl shadow-lg border border-slate-100"
+              />
+            </motion.div>
+          </div>
         </div>
       </section>
 
