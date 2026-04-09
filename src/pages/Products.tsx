@@ -185,11 +185,10 @@ export default function Products() {
               Our Products
             </div>
             <h1 className="text-4xl md:text-5xl font-bold font-display leading-[1.05] tracking-tight text-[#0f172a] mb-7">
-              Native. Powerful. <span className="text-[#43AF57]">Proven.</span>
+              Native. Secure. <span className="text-[#43AF57]">Powerful.</span>
             </h1>
             <p className="text-slate-500 text-base md:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
-              Five products built entirely on Salesforce. No data leaves your
-              org — just immediate, integrated value.
+              Five products built 100% on Salesforce — your data stays in your org, delivering seamless, instant value.
             </p>
           </motion.div>
         </div>
@@ -218,27 +217,24 @@ export default function Products() {
                 />
               </div>
               <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-                Survey Vista: Forms, Surveys, Quizzes, and Checklists – 100%
-                Native Salesforce
+                100% Salesforce Native Intelligence & Action Platform
               </h2>
               <p className="text-base md:text-lg font-medium text-[#43AF57]">
-                Turn Survey & Form Data into Actionable Insights That Drive
-                Results!
+                Turn customer signals into results — inside Salesforce.
               </p>
               <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
-                SurveyVista Automate data collection and feedback management
-                solution. Boost response rates with branded Surveys, Forms, and
-                Assessments. 100% Native, no-code, Salesforce integration to
-                gain actionable insights that enhance customer, employee, and
-                partner experiences
+                SurveyVista helps organizations collect high-quality feedback, understand customer and 
+                employee sentiment, and drive action — all natively within Salesforce. 
+                Whether you're improving CSAT, running NPS surveys, managing checklists, or 
+                automating lifecycle engagement, SurveyVista turns feedback into outcomes without 
+                integrations or data sync delays.
               </p>
               <div className="space-y-3">
                 {[
-                  "Surveys, Quizzes, Checklists & Assessments",
-                  "100% Native & Secure",
-                  "NPS Tracking & CSAT",
-                  "Multi-language Support",
-                  "Advanced Logic & Routing",
+                  "Fully native to Salesforce — no external data warehouse or integration required",
+                  "CSAT, NPS, EX, compliance forms, assessments, checklists, and more",
+                  "Richer survey logic, personalization, and automation — without needing code",
+                  "More scalable analytics, smarter automation, and better design flexibility",
                 ].map((f) => (
                   <div key={f} className="flex items-start gap-3">
                     <CheckCircle2
@@ -509,19 +505,16 @@ export default function Products() {
                 />
               </div>
               <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-                Form Vista: 100% Native Forms, Surveys, Quizzes, Checklists, and
-                Assessments
+                FormVista: 100% Native Forms, Surveys, Quizzes, Checklists, and Assessments
               </h2>
               <p className="text-base md:text-lg font-medium text-[#28aae1]">
-                Endless Applications: The 5-star rated Data Collection Solution
-                You Need.
+                Endless Applications: The 5-star rated Data Collection Solution You Need.
               </p>
               <p className="text-slate-500 text-justify text-sm md:text-base leading-relaxed font-normal">
-                FormVista is an all-in-one Salesforce-native solution for
-                creating, managing, and analyzing forms and surveys.
-                Effortlessly collect data, integrate with CRM for real-time
-                insights, and act on data to enhance experiences, leveraging
-                dynamic forms and robust security.
+                FormVista is an all-in-one Salesforce-native solution for creating, managing, 
+                and analyzing forms and surveys. Effortlessly collect data, integrate 
+                with CRM for real-time insights, and act on data to enhance experiences, 
+                leveraging dynamic forms and robust security.
               </p>
               <div className="space-y-3">
                 {[
@@ -565,7 +558,7 @@ export default function Products() {
                     "Service & Support",
                     "Sales",
                     "Marketing",
-                    "Human Resource",
+                    "Non Profit",
                     "Product Discovery",
                   ].map((u) => (
                     <span

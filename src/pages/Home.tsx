@@ -387,16 +387,16 @@ export default function Home() {
                 Salesforce ISV Partner
               </h2>
               <p className="text-slate-600 text-justify text-lg leading-relaxed mb-10">
-                Ardira was founded in 2019 with a mission to revolutionize the
-                technology landscape. What began as a small startup that has
-                grown into a global leader in this Industry.
+                Founded in 2019, Ardira set out with a clear mission to build powerful, 
+                100% native Salesforce applications that enterprises can trust. 
+                What began as a small startup has grown into a recognized Salesforce ISV partner, 
+                delivering a suite of applications available on the Salesforce AppExchange.
               </p>
               <p className="text-slate-600 text-justify text-lg leading-relaxed mb-10">
-                Ardira is a Salesforce ISV partner. We offer custom apps on
-                Salesforce AppExchange. We also provide Salesforce
-                implementation (configuration, customization, administration,
-                and integration) services to businesses of all sizes and
-                Salesforce Consulting organizations.
+                Everything we build lives natively inside Salesforce, 
+                designed from the ground up to help enterprises work better, move faster, 
+                and scale with confidence. As a Salesforce ISV partner, 
+                we are committed to building products that are secure, reliable, and built to grow with your business.
               </p>
               <Link
                 href="/team"

@@ -11,7 +11,7 @@ interface ContactCtaProps {
 
 export default function ContactCta({
   headline = "Ready to Transform Your Salesforce?",
-  description = "Talk to our team and discover how Ardira's native apps and expert services can unlock new value in your org.",
+  description = "Talk to our team and discover how Ardira's 100% native Salesforce applications can unlock new value in your org.",
   buttonText = "Get a Free Consultation",
   buttonLink = "/contact",
 }: ContactCtaProps) {

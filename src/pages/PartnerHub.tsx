@@ -30,22 +30,22 @@ import zenyusLogo from "@/assets/TrustedPartner/zenyus.webp";
 const whyPartner = [
   {
     title: "Tailored Partner Tiers",
-    desc: "Programs designed to match your growth stage — whether you're just starting or scaling rapidly.",
+    desc: "Programs designed to match where you are today and grow with you as you scale.",
     icon: Layers,
   },
   {
     title: "Collaborative Marketing",
-    desc: "Co-branded campaigns, case studies, and joint webinars to amplify your reach and credibility.",
+    desc: "Co-branded campaigns, case studies, and joint webinars that expand your reach and strengthen your credibility.",
     icon: Share2,
   },
   {
     title: "Flexible Models",
-    desc: "Choose from referral, reseller, or technology partnership — whichever fits your business model.",
+    desc: "Referral, reseller, or technology partnership. Choose the model that fits how your business works.",
     icon: Sliders,
   },
   {
     title: "Shared Leads & GTM Support",
-    desc: "Access to shared leads, joint go-to-market planning, and dedicated partner success resources.",
+    desc: "Joint go-to-market planning, shared leads, and dedicated partner success resources to help you win together.",
     icon: TrendingUp,
   },
 ];
@@ -299,20 +299,19 @@ export default function PartnerHub() {
                   Become a Partner
                 </h2>
                 <p className="text-lg text-green-50 mb-8 leading-relaxed">
-                  Apply to Join Our Partner Network
+                  Grow Faster with Ardira
                 </p>
 
                 <p className="text-lg leading-relaxed text-green-50 mb-8 pb-8">
-                  Complete the form and a member of the Ardira Partnerships team
-                  will be in touch to explore how we can accelerate your growth
-                  together.
+                  Apply to join our partner network and unlock new opportunities 
+                  to scale your business with Salesforce-native solutions
                 </p>
 
                 <div className="space-y-4">
                   {[
-                    "Access exclusive partner-only resources and GTM support",
-                    "Generous revenue sharing and referral programs",
-                    "Dedicated partner success manager for your journey",
+                    "Exclusive partner-only resources and GTM support",
+                    "Competitive revenue sharing and referral incentives",
+                    "Personalized guidance from a dedicated Partner Success Manager",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <CheckCircle
