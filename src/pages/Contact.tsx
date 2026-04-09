@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { MapPin, Phone, Mail, CheckCircle } from "lucide-react";
+import { MapPin, Phone, Mail, CheckCircle, AlertCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useRecaptcha } from "@/hooks/use-recaptcha";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Full Name is required"),
@@ -17,17 +18,55 @@ const formSchema = z.object({
 
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const { executeRecaptcha } = useRecaptcha();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (_data: unknown) => {
-    setIsSubmitted(true);
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      // Get reCAPTCHA token
+      const recaptchaToken = await executeRecaptcha("contact_form");
+
+      // Submit form with reCAPTCHA token
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          recaptchaToken,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit form");
+      }
+
+      setIsSubmitted(true);
+      reset();
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitError(
+        error instanceof Error ? error.message : "Failed to submit form. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -123,80 +162,107 @@ export default function Contact() {
                   <p className="text-slate-500">Thank you for reaching out. We'll be in touch within 1 business day.</p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
-                  <h3 className="text-xl font-extrabold font-display text-[#0f172a] mb-6">Send us a message</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <>
+                  {submitError && (
+                    <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+                      <AlertCircle size={20} className="text-red-600 shrink-0 mt-0.5" />
+                      <div className="text-sm text-red-700">{submitError}</div>
+                    </div>
+                  )}
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                    <h3 className="text-xl font-extrabold font-display text-[#0f172a] mb-6">Send us a message</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Name</label>
+                        <input
+                          type="text"
+                          placeholder="Your full name"
+                          className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-[#43AF57] focus:ring-2 focus:ring-emerald-100 transition-all"
+                          {...register("fullName")}
+                          disabled={isSubmitting}
+                        />
+                        {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message as string}</p>}
+                      </div>
+                      <div>
+                        <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Work Email</label>
+                        <input
+                          type="email"
+                          placeholder="you@company.com"
+                          className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-[#43AF57] focus:ring-2 focus:ring-emerald-100 transition-all"
+                          {...register("email")}
+                          disabled={isSubmitting}
+                        />
+                        {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message as string}</p>}
+                      </div>
+                    </div>
+
                     <div>
-                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Name</label>
+                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Company</label>
                       <input
                         type="text"
-                        placeholder="Your full name"
-                        className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-[#43AF57] focus:ring-2 focus:ring-emerald-100 transition-all"
-                        {...register("fullName")}
+                        placeholder="Your company name"
+                        className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all"
+                        {...register("company")}
+                        disabled={isSubmitting}
                       />
-                      {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message as string}</p>}
+                      {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company.message as string}</p>}
                     </div>
+
                     <div>
-                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Work Email</label>
-                      <input
-                        type="email"
-                        placeholder="you@company.com"
-                        className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-[#43AF57] focus:ring-2 focus:ring-emerald-100 transition-all"
-                        {...register("email")}
-                      />
-                      {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message as string}</p>}
+                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">I'm interested in</label>
+                      <select
+                        className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all bg-white appearance-none"
+                        {...register("interest")}
+                        disabled={isSubmitting}
+                      >
+                        <option value="">Select an option...</option>
+                        <option value="SurveyVista">SurveyVista</option>
+                        <option value="RelationshipVista">RelationshipVista</option>
+                        <option value="ComplianceVista">ComplianceVista</option>
+                        <option value="AgentVista">AgentVista</option>
+                        <option value="Product Development">Product Development</option>
+                        <option value="Salesforce Admin">Salesforce Admin Services</option>
+                        <option value="Customization">Customization & Config</option>
+                        <option value="Integration">Integration & Data Migration</option>
+                        <option value="General">General Inquiry</option>
+                      </select>
+                      {errors.interest && <p className="text-red-500 text-xs mt-1">{errors.interest.message as string}</p>}
                     </div>
-                  </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Company</label>
-                    <input
-                      type="text"
-                      placeholder="Your company name"
-                      className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all"
-                      {...register("company")}
-                    />
-                    {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company.message as string}</p>}
-                  </div>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Message</label>
+                      <textarea
+                        rows={4}
+                        placeholder="Tell us about your project or question..."
+                        className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all resize-none"
+                        {...register("message")}
+                        disabled={isSubmitting}
+                      />
+                      {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message as string}</p>}
+                    </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">I'm interested in</label>
-                    <select
-                      className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all bg-white appearance-none"
-                      {...register("interest")}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-[#16a34a] text-white py-4 rounded-lg font-bold text-base hover:bg-[#15803d] disabled:bg-slate-400 disabled:cursor-not-allowed transition-colors shadow-sm mt-2"
                     >
-                      <option value="">Select an option...</option>
-                      <option value="SurveyVista">SurveyVista</option>
-                      <option value="RelationshipVista">RelationshipVista</option>
-                      <option value="ComplianceVista">ComplianceVista</option>
-                      <option value="AgentVista">AgentVista</option>
-                      <option value="Product Development">Product Development</option>
-                      <option value="Salesforce Admin">Salesforce Admin Services</option>
-                      <option value="Customization">Customization & Config</option>
-                      <option value="Integration">Integration & Data Migration</option>
-                      <option value="General">General Inquiry</option>
-                    </select>
-                    {errors.interest && <p className="text-red-500 text-xs mt-1">{errors.interest.message as string}</p>}
-                  </div>
+                      {isSubmitting ? "Sending..." : "Send Message"}
+                    </button>
 
-                  <div>
-                    <label className="block text-xs font-semibold text-slate-600 uppercase tracking-widest mb-2">Message</label>
-                    <textarea
-                      rows={4}
-                      placeholder="Tell us about your project or question..."
-                      className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] placeholder:text-slate-400 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all resize-none"
-                      {...register("message")}
-                    />
-                    {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message as string}</p>}
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-[#16a34a] text-white py-4 rounded-lg font-bold text-base hover:bg-[#15803d] transition-colors shadow-sm mt-2"
-                  >
-                    Send Message
-                  </button>
-                </form>
+                    {/* reCAPTCHA Badge Notice */}
+                    <p className="text-xs text-slate-400 text-center mt-4">
+                      This site is protected by reCAPTCHA and the Google{" "}
+                      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-slate-500 underline hover:text-slate-600">
+                        Privacy Policy
+                      </a>{" "}
+                      and{" "}
+                      <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="text-slate-500 underline hover:text-slate-600">
+                        Terms of Service
+                      </a>{" "}
+                      apply.
+                    </p>
+                  </form>
+                </>
               )}
             </div>
           </motion.div>
