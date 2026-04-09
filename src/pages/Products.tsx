@@ -337,16 +337,17 @@ export default function Products() {
               </div>
             </motion.div>
 
-            {/* Right Column - Sticky Image and Testimonial */}
+            {/* Right Column - Sticky Container for Image and Testimonial */}
             <div className="flex flex-col">
-              {/* Sticky Product Card - stays at top */}
+              {/* Combined Sticky Section */}
               <motion.div
                 initial={{ opacity: 0, x: 24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit mb-90"
+                className="lg:sticky lg:top-24 h-fit space-y-4"
               >
+                {/* Product Card */}
                 <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
                     src={svProductCard}
@@ -355,16 +356,8 @@ export default function Products() {
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
-              </motion.div>
 
-              {/* Testimonial Carousel - starts at AppExchange level */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="-mt-30"
-              >
+                {/* Testimonial Carousel */}
                 <Carousel
                   opts={{
                     align: "start",
@@ -441,16 +434,17 @@ export default function Products() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left Column - Sticky Image and Testimonial */}
+            {/* Left Column - Sticky Container for Image and Testimonial */}
             <div className="flex flex-col lg:order-1">
-              {/* Sticky Product Card - stays at top */}
+              {/* Combined Sticky Section */}
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit mb-110"
+                className="lg:sticky lg:top-24 h-fit space-y-4"
               >
+                {/* Product Card */}
                 <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
                     src={fvProductCard}
@@ -459,16 +453,8 @@ export default function Products() {
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
-              </motion.div>
 
-              {/* Testimonial Carousel - starts at AppExchange level */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="-mt-43"
-              >
+                {/* Testimonial Carousel */}
                 <Carousel
                   opts={{
                     align: "start",
@@ -762,16 +748,17 @@ export default function Products() {
               </div>
             </motion.div>
 
-            {/* Right Column - Sticky Image and Testimonial */}
+            {/* Right Column - Sticky Container for Image and Testimonial */}
             <div className="flex flex-col lg:order-2">
-              {/* Sticky Product Card */}
+              {/* Combined Sticky Section */}
               <motion.div
                 initial={{ opacity: 0, x: 24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit mb-100"
+                className="lg:sticky lg:top-24 h-fit space-y-4"
               >
+                {/* Product Card */}
                 <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
                     src={rvProductCard}
@@ -780,16 +767,8 @@ export default function Products() {
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
-              </motion.div>
 
-              {/* Testimonial Carousel - starts at AppExchange level */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="-mt-31"
-              >
+                {/* Testimonial Carousel */}
                 <Carousel
                   opts={{
                     align: "start",
@@ -866,16 +845,17 @@ export default function Products() {
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left Column - Sticky Image and Testimonial */}
+            {/* Left Column - Sticky Container for Image and Testimonial */}
             <div className="flex flex-col lg:order-1">
-              {/* Sticky Product Card - stays at top */}
+              {/* Combined Sticky Section */}
               <motion.div
                 initial={{ opacity: 0, x: -24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit mb-100"
+                className="lg:sticky lg:top-24 h-fit space-y-4"
               >
+                {/* Product Card */}
                 <div className="bg-gradient-to-br from-violet-50 to-purple-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
                     src={cvProductCard}
@@ -884,16 +864,8 @@ export default function Products() {
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
-              </motion.div>
 
-              {/* Testimonial Carousel - starts at AppExchange level */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="-mt-34"
-              >
+                {/* Testimonial Carousel */}
                 <Carousel
                   opts={{
                     align: "start",
@@ -1175,16 +1147,17 @@ export default function Products() {
               </div>
             </motion.div>
 
-            {/* Right Column - Sticky Image and Testimonial */}
+            {/* Right Column - Sticky Container for Image and Testimonial */}
             <div className="flex flex-col lg:order-2">
-              {/* Sticky Product Card - stays at top */}
+              {/* Combined Sticky Section */}
               <motion.div
                 initial={{ opacity: 0, x: 24 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit mb-100"
+                className="lg:sticky lg:top-24 h-fit space-y-4"
               >
+                {/* Product Card */}
                 <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
                     src={avProductCard}
@@ -1193,16 +1166,8 @@ export default function Products() {
                     className="w-full h-full object-cover rounded-2xl shadow-md"
                   />
                 </div>
-              </motion.div>
 
-              {/* Testimonial Carousel - starts at AppExchange level */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="-mt-37"
-              >
+                {/* Testimonial Carousel */}
                 <Carousel
                   opts={{
                     align: "start",
