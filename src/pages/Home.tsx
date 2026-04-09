@@ -30,8 +30,8 @@ import tedLogo from "@/assets/TrustedEnterprise/ted.webp";
 
 const carouselSlides = [
   {
-    headline: ["Turn customer signals ", "into results—natively ", "within Salesforce"],
-    sub: "SurveyVista helps you collect insights, run assessments, and automate actions—all 100% native to Salesforce.",
+    headline: ["Turn ", "customer signals ", "into results - natively within Salesforce"],
+    sub: "SurveyVista helps you collect insights, run assessments, and automate actions — all 100% native to Salesforce.",
   },
   {
     headline: [
@@ -39,16 +39,24 @@ const carouselSlides = [
       "Data Collection ",
       "Into Action — natively within Salesforce.",
     ],
+    sub: "FormVista enables you to capture, validate, and process data seamlessly — fully native to Salesforce with no integrations.",
+  },
+  {
+    headline: [
+      "Uncover and ",
+      "visualize relationships ",
+      "across your Salesforce data.",
+    ],
     sub: "RelationshipVista helps you visualize and understand complex relationships across your Salesforce data—instantly and intuitively.",
   },
   {
-    headline: ["Turn ", "Compliance Into Confidence ", "Directly Inside Salesforce."],
+    headline: ["Turn ", "Compliance Into Confidence -- ", "Directly Inside Salesforce."],
     sub: "ComplianceVista streamlines assessments, tracks risk, and ensures compliance—all within your Salesforce environment.",
   },
   {
     headline: [
       "Turn ",
-      "Feedback Into Intelligence ",
+      "Feedback Into Intelligence -- ",
       "Directly Inside Salesforce",
     ],
     sub: "AgentVista uses AI to automate feedback analysis and actions—enhancing performance and customer experience within Salesforce.",
