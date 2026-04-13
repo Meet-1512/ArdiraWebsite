@@ -15,6 +15,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
+import { useRecaptcha } from "@/hooks/use-recaptcha";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Full Name is required"),
@@ -28,6 +29,7 @@ export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const { executeRecaptcha } = useRecaptcha();
 
   const {
     register,
@@ -44,13 +46,19 @@ export default function Contact() {
     setSubmitError(null);
 
     try {
-      // Submit form to Vercel serverless function
+      // Execute reCAPTCHA
+      const token = await executeRecaptcha("submit");
+
+      // Submit form to Vercel serverless function with reCAPTCHA token
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          recaptchaToken: token,
+        }),
       });
 
       const result = await response.json();

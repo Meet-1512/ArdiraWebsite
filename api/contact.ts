@@ -21,6 +21,7 @@ interface ContactFormData {
   company: string;
   interest: string;
   message: string;
+  recaptchaToken?: string;
 }
 
 // ─── SMTP Transporter ─────────────────────────────────────────────────────────
@@ -33,7 +34,30 @@ function createTransporter() {
     },
   });
 }
+// ─── Verify reCAPTCHA Token ───────────────────────────────────────────────────
+async function verifyRecaptchaToken(token: string): Promise<boolean> {
+  try {
+    const response = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams({
+        secret: process.env.RECAPTCHA_SECRET_KEY || "6Ldcda4sAAAAAPLoYwQxS7FblRmjhJjmaL-hx9Nl",
+        response: token,
+      }).toString(),
+    });
 
+    const data = await response.json() as { success: boolean; score?: number };
+    
+    // reCAPTCHA v3 returns a score from 0.0 to 1.0
+    // Accept if score is above 0.5 (more likely to be human)
+    return data.success && (data.score ?? 0) > 0.5;
+  } catch (error) {
+    console.error("reCAPTCHA verification error:", error);
+    return false;
+  }
+}
 // ─── HTML Email Template Builder ──────────────────────────────────────────────
 function buildEmailTemplate(
   headingText: string,
@@ -154,11 +178,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   // ── Parse & validate body ────────────────────────────────────────────────
-  const { fullName, email, company, interest, message } =
+  const { fullName, email, company, interest, message, recaptchaToken } =
     req.body as ContactFormData;
 
   if (!fullName || !email || !company || !interest || !message) {
     return res.status(400).json({ error: "All fields are required" });
+  }
+
+  // ── Verify reCAPTCHA ─────────────────────────────────────────────────────
+  if (recaptchaToken) {
+    const isValidCaptcha = await verifyRecaptchaToken(recaptchaToken);
+    if (!isValidCaptcha) {
+      return res.status(400).json({ error: "reCAPTCHA verification failed" });
+    }
   }
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
