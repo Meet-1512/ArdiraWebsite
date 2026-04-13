@@ -20,6 +20,13 @@ html {
   background: transparent !important;
   border: none !important;
   cursor: pointer !important;
+  overflow: visible !important; /* Allow custom slide-out to overflow */
+}
+
+/* Restrict the iframe strictly to 60px so it doesn't spill out */
+.grecaptcha-badge iframe {
+  max-width: 60px !important;
+  border-radius: 4px;
 }
 
 /* Hide the text content, show only logo */
@@ -33,27 +40,35 @@ html {
   line-height: initial !important;
 }
 
-/* Create tooltip on hover */
+/* Create slide-out text on hover */
 .grecaptcha-badge::after {
   content: "protected by reCAPTCHA";
   position: absolute;
-  bottom: 70px;
-  right: 0;
+  top: 0;
+  bottom: 0;
+  right: 60px;
   background: #0066cc;
   color: white;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 12px;
-  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  font-size: 13px;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   white-space: nowrap;
+  border-radius: 4px 0 0 4px;
+  max-width: 0;
+  overflow: hidden;
   opacity: 0;
+  transition: all 0.3s ease;
   pointer-events: none;
-  transition: opacity 0.2s ease-in-out;
-  z-index: 10000;
+  z-index: -1;
 }
 
 .grecaptcha-badge:hover::after {
+  max-width: 200px;
+  padding: 0 16px;
   opacity: 1;
 }
 
