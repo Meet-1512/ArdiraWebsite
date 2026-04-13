@@ -47,7 +47,14 @@ export default function Contact() {
 
     try {
       // Execute reCAPTCHA
-      const token = await executeRecaptcha("submit");
+      let token = "";
+      try {
+        token = await executeRecaptcha("submit");
+        console.log("reCAPTCHA token received");
+      } catch (recaptchaError) {
+        console.error("reCAPTCHA error:", recaptchaError);
+        throw new Error("reCAPTCHA verification failed. Please refresh the page and try again.");
+      }
 
       // Submit form to Vercel serverless function with reCAPTCHA token
       const response = await fetch("/api/contact", {

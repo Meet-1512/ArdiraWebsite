@@ -8,19 +8,31 @@ export const useRecaptcha = () => {
     return new Promise((resolve, reject) => {
       // Check if reCAPTCHA is loaded
       if (!window.grecaptcha) {
+        console.error("reCAPTCHA not loaded. Make sure the script is included in HTML.");
         reject(new Error("reCAPTCHA script not loaded"));
         return;
       }
 
       try {
-        window.grecaptcha.ready(async () => {
-          const token = await window.grecaptcha.execute(
-            "6Ldcda4sAAAAAMAof1CCwVXkxNDYmuxF3CLuKvwM",
-            { action }
-          );
-          resolve(token);
+        window.grecaptcha.ready(() => {
+          try {
+            window.grecaptcha.execute(
+              "6Ldcda4sAAAAAMAof1CCwVXkxNDYmuxF3CLuKvwM",
+              { action }
+            ).then((token: string) => {
+              console.log("reCAPTCHA token generated successfully");
+              resolve(token);
+            }).catch((error: Error) => {
+              console.error("reCAPTCHA execution error:", error);
+              reject(error);
+            });
+          } catch (error) {
+            console.error("reCAPTCHA ready callback error:", error);
+            reject(error);
+          }
         });
       } catch (error) {
+        console.error("reCAPTCHA setup error:", error);
         reject(error);
       }
     });
