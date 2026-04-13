@@ -115,9 +115,9 @@ export default function About() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-40 pb-20 px-6 bg-linear-to-br from-[#f0fdf4] via-white to-[#ecfdf5] relative overflow-hidden">
+      <section className="pt-40 pb-20 bg-linear-to-br from-[#f0fdf4] via-white to-[#ecfdf5] relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
-        <div className="max-w-6xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: -12 }}
@@ -140,7 +140,7 @@ export default function About() {
               <h1 className="text-3xl md:text-4xl font-bold font-display text-[#0f172a] leading-tight mb-6">
                 The People Behind <span className="text-[#43AF57]">Ardira</span>
               </h1>
-              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal mb-4">
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal mb-4 text-justify">
                 Our team has Salesforce Certified Developers & Administrators
                 located in the US & India, working with you 24×7 and
                 cost-effectively. We combine years of experience across
@@ -148,7 +148,7 @@ export default function About() {
                 computing, enterprise software, SaaS services, and large-scale
                 software infrastructure.
               </p>
-              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
+              <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal text-justify">
                 Behind Ardira's success is our dynamic and collaborative team of
                 professionals. From talented developers and data analysts to
                 creative designers and dedicated support staff, our diverse team
@@ -177,8 +177,8 @@ export default function About() {
       </section>
 
       {/* Mission */}
-      <section className="py-24 px-6 bg-[#f8fafc]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="py-24 bg-[#f8fafc]">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -191,12 +191,12 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-6">
               Making Salesforce Work Harder for You
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6">
+            <p className="text-slate-500 text-lg leading-relaxed mb-6 text-justify">
               Ardira was founded on a simple belief: Salesforce is the world's
               most powerful business platform, and most organizations are only
               scratching the surface of what it can do.
             </p>
-            <p className="text-slate-500 text-lg leading-relaxed">
+            <p className="text-slate-500 text-lg leading-relaxed text-justify">
               Our mission is to extend Salesforce with powerful, native products
               that help organizations collect better data, gain deeper insights,
               and act with confidence.
@@ -230,8 +230,8 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-16 sm:py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -281,8 +281,8 @@ export default function About() {
       </section>
 
       {/* Advisory Board */}
-      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 border-t border-slate-100">
-        <div className="max-w-5xl mx-auto">
+      <section className="py-16 sm:py-20 md:py-28 border-t border-slate-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

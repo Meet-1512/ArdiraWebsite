@@ -3,6 +3,19 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import ardiraLogo from "@assets/ArdiraLogo.webp";
 
+const scrollToTop = () => {
+  window.dispatchEvent(new Event("scroll-to-top"));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const retries = [50, 100, 200, 300, 500];
+  retries.forEach((ms) => {
+    setTimeout(() => {
+      if (window.scrollY !== 0) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, ms);
+  });
+};
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,6 +47,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-2"
           data-testid="link-logo"
+          onClick={scrollToTop}
         >
           <img src={ardiraLogo} alt="Ardira" className="h-20 w-auto" />
         </Link>

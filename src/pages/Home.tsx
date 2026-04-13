@@ -118,13 +118,30 @@ export default function Home() {
   const [manuallyOpened, setManuallyOpened] = useState<number | null>(null);
   const whyContainerRef = useRef<HTMLDivElement>(null);
 
+  const [isScrollingToTop, setIsScrollingToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScrollToTop = () => setIsScrollingToTop(true);
+    const handleNativeScroll = () => {
+      if (window.scrollY === 0) setIsScrollingToTop(false);
+    };
+    
+    window.addEventListener("scroll-to-top", handleScrollToTop);
+    window.addEventListener("scroll", handleNativeScroll);
+
+    return () => {
+      window.removeEventListener("scroll-to-top", handleScrollToTop);
+      window.removeEventListener("scroll", handleNativeScroll);
+    };
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: whyContainerRef,
     offset: ["start start", "end end"]
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (manuallyOpened !== null) return; // Skip scroll updates if manually interacting
+    if (manuallyOpened !== null || isScrollingToTop) return; // Skip scroll updates if manually interacting or scrolling to top
     
     if (latest === 0) {
       if (activeWhy !== -1) setActiveWhy(-1);
@@ -429,17 +446,17 @@ export default function Home() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-5">
                 About Ardira
               </p>
-              <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-7">
+              <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-7 text-justify">
                 Building powerful, native products for Salesforce
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-10">
+              <p className="text-slate-600 text-lg leading-relaxed mb-10 text-justify">
                 Founded in 2019, Ardira set out with a clear mission to build
                 powerful, 100% native Salesforce applications that enterprises
                 can trust. What began as a small startup has grown into a
                 recognized Salesforce ISV partner, delivering a suite of
                 applications available on the Salesforce AppExchange.
               </p>
-              <p className="text-slate-600 text-lg leading-relaxed mb-10">
+              <p className="text-slate-600 text-lg leading-relaxed mb-10 text-justify">
                 Everything we build lives natively inside Salesforce, designed
                 from the ground up to help enterprises work better, move faster,
                 and scale with confidence. As a Salesforce ISV partner, we are

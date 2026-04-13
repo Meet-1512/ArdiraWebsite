@@ -2,17 +2,33 @@ import { Link } from "wouter";
 import { Phone, Mail, Globe } from "lucide-react";
 import ardiraFooterLogo from "@assets/ArdiraFooterLogo.webp";
 import sfPartnerLogo from "@assets/SalesForcePartnerLogo.webp";
+
+const scrollToTop = () => {
+  window.dispatchEvent(new Event("scroll-to-top"));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  // Retry to overcome scroll-linked animations that fight the scroll position
+  const retries = [50, 100, 200, 300];
+  retries.forEach((ms) => {
+    setTimeout(() => {
+      if (window.scrollY !== 0) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }, ms);
+  });
+};
+
 export default function Footer() {
   return (
     <footer className="bg-[#0F263C] text-slate-400 pt-16 pb-8 mt-auto">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-57 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 items-start">
           {/* Brand */}
           <div className="flex flex-col space-y-4">
             <Link
               href="/"
               className="inline-block"
               data-testid="footer-link-logo"
+              onClick={scrollToTop}
             >
               <img
                 src={ardiraFooterLogo}
@@ -32,51 +48,50 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col space-y-4 flex-1">
-            <h3 className="text-xs font-bold text-white uppercase tracking-widest">
-              Quick Links
-            </h3>
+          <div className="flex justify-center">
             <div className="flex flex-col space-y-3">
-              <Link
-                href="/"
-                className="text-sm hover:text-[#43AF57] transition-colors"
-                data-testid="footer-link-home"
-              >
-                Home
-              </Link>
-              <Link
-                href="/products"
-                className="text-sm hover:text-[#43AF57] transition-colors"
-                data-testid="footer-link-products"
-              >
-                Products
-              </Link>
-              <Link
-                href="/partners"
-                className="text-sm hover:text-[#43AF57] transition-colors"
-                data-testid="footer-link-partners"
-              >
-                Partner Hub
-              </Link>
-              <Link
-                href="/team"
-                className="text-sm hover:text-[#43AF57] transition-colors"
-                data-testid="footer-link-team"
-              >
-                Team
-              </Link>
-              <Link
-                href="/contact"
-                className="text-sm hover:text-[#43AF57] transition-colors"
-                data-testid="footer-link-contact"
-              >
-                Contact Us
-              </Link>
+              <h3 className="text-xs font-bold text-white uppercase tracking-widest">
+                Quick Links
+              </h3>
+              <div className="flex flex-col space-y-3">
+                <Link
+                  href="/products"
+                  className="text-sm hover:text-[#43AF57] transition-colors"
+                  data-testid="footer-link-products"
+                  onClick={scrollToTop}
+                >
+                  Products
+                </Link>
+                <Link
+                  href="/partners"
+                  className="text-sm hover:text-[#43AF57] transition-colors"
+                  data-testid="footer-link-partners"
+                  onClick={scrollToTop}
+                >
+                  Partner Hub
+                </Link>
+                <Link
+                  href="/team"
+                  className="text-sm hover:text-[#43AF57] transition-colors"
+                  data-testid="footer-link-team"
+                  onClick={scrollToTop}
+                >
+                  Team
+                </Link>
+                <Link
+                  href="/contact"
+                  className="text-sm hover:text-[#43AF57] transition-colors"
+                  data-testid="footer-link-contact"
+                  onClick={scrollToTop}
+                >
+                  Contact Us
+                </Link>
+              </div>
             </div>
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col space-y-4 flex-1">
+          <div className="flex flex-col space-y-4 ml-auto">
             <h3 className="text-xs font-bold text-white uppercase tracking-widest">
               Contact Info
             </h3>
@@ -120,6 +135,7 @@ export default function Footer() {
               href="/terms-of-use"
               className="hover:text-slate-300 transition-colors"
               data-testid="footer-link-terms"
+              onClick={scrollToTop}
             >
               Terms of Use
             </Link>
@@ -127,6 +143,7 @@ export default function Footer() {
               href="/privacy-policy"
               className="hover:text-slate-300 transition-colors"
               data-testid="footer-link-privacy"
+              onClick={scrollToTop}
             >
               Privacy Policy
             </Link>

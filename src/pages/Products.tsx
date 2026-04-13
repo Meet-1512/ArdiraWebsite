@@ -203,9 +203,9 @@ export default function Products() {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-40 pb-20 px-6 bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] text-center relative overflow-hidden">
+      <section className="pt-40 pb-20 bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] text-center relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
-        <div className="max-w-4xl mx-auto relative z-10">
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
           <motion.div
             variants={fadeUp}
             custom={0}
@@ -230,9 +230,9 @@ export default function Products() {
       {/* ── SurveyVista ─────────────────────────────── */}
       <section
         id="surveyvista"
-        className="py-24 px-6 border-t border-slate-100"
+        className="py-24 border-t border-slate-100"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left Column - Product Info */}
             <motion.div
@@ -430,9 +430,9 @@ export default function Products() {
       {/* ── FormVista ─────────────────────────────── */}
       <section
         id="formvista"
-        className="py-24 px-6 bg-[#f8fafc] border-t border-slate-100"
+        className="py-24 bg-[#f8fafc] border-t border-slate-100"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left Column - Sticky Container for Image and Testimonial */}
             <div className="flex flex-col lg:order-1">
@@ -632,9 +632,9 @@ export default function Products() {
       {/* ── RelationshipVista ─────────────────────── */}
       <section
         id="relationshipvista"
-        className="py-24 px-6 border-t border-slate-100"
+        className="py-24 border-t border-slate-100"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left Column - Product Info */}
             <motion.div
@@ -839,9 +839,9 @@ export default function Products() {
       {/* ── ComplianceVista ───────────────────────── */}
       <section
         id="compliancevista"
-        className="py-24 px-6 bg-[#f8fafc] border-t border-slate-100"
+        className="py-24 bg-[#f8fafc] border-t border-slate-100"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left Column - Sticky Container for Image and Testimonial */}
             <div className="flex flex-col lg:order-1">
@@ -854,7 +854,7 @@ export default function Products() {
                 className="lg:sticky lg:top-24 h-fit space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-violet-50 to-purple-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
+                <div className="bg-gradient-to-br from-[#c1e9c3] via-#c1e9c3 to-[#c1e9c3] rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
                   <img
                     src={cvProductCard}
                     alt="ComplianceVista Product Card"
@@ -950,7 +950,7 @@ export default function Products() {
                 Compliance Vista – Assessment & Compliance Management – In your
                 Salesforce Org
               </h2>
-              <p className="text-base md:text-lg font-medium text-violet-600">
+              <p className="text-base md:text-lg font-medium text-[#43AF57]">
                 Automate assessments, reduce risk, and ensure compliance inside
                 Salesforce
               </p>
@@ -971,13 +971,13 @@ export default function Products() {
                   <div key={f} className="flex items-start gap-3">
                     <CheckCircle2
                       size={17}
-                      className="text-violet-500 mt-0.5 shrink-0"
+                      className="text-[#43AF57] mt-0.5 shrink-0"
                     />
                     <span className="text-sm text-slate-600">{f}</span>
                   </div>
                 ))}
               </div>
-              <div className="bg-violet-50 border border-violet-200 rounded-xl p-5 flex items-center justify-between">
+              <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-5 flex items-center justify-between">
                 <div>
                   <p className="font-bold text-[#0f172a]">
                     Available on AppExchange
@@ -1004,7 +1004,7 @@ export default function Products() {
                   ].map((u) => (
                     <span
                       key={u}
-                      className="bg-violet-50 border border-violet-200 text-violet-700 px-3 py-1 rounded-full text-xs font-semibold"
+                      className="bg-emerald-50 border border-emerald-200 text-[#43AF57] px-3 py-1 rounded-full text-xs font-semibold"
                     >
                       {u}
                     </span>
@@ -1016,7 +1016,7 @@ export default function Products() {
                   href="https://compliance-quest-page.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-violet-600 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-violet-700 transition-colors shadow-sm group"
+                  className="inline-flex items-center gap-2 bg-[#43AF57] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#43AF57] transition-colors shadow-sm group"
                 >
                   Visit Website <ExternalLink size={15} />
                 </a>
@@ -1024,7 +1024,7 @@ export default function Products() {
                   href="https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000J6DYBUA3"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-violet-300 text-violet-700 bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-violet-50 transition-colors"
+                  className="inline-flex items-center gap-2 border border-[#43AF57] text-[#43AF57] bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-emerald-50 transition-colors"
                 >
                   View on AppExchange <ArrowRight size={15} />
                 </a>
@@ -1035,8 +1035,8 @@ export default function Products() {
       </section>
 
       {/* ── AgentVista ────────────────────────────── */}
-      <section id="agentvista" className="py-24 px-6 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto">
+      <section id="agentvista" className="py-24 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Left Column - Product Info */}
             <motion.div
@@ -1058,7 +1058,7 @@ export default function Products() {
                 AgentVista – SurveyVista Copilot for Intelligent Surveys, Forms,
                 and Assessments
               </h2>
-              <p className="text-base md:text-lg font-medium text-amber-600">
+              <p className="text-base md:text-lg font-medium text-blue-400">
                 AI-Powered Feedback Automation with SurveyVista & Agentforce
               </p>
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
@@ -1079,13 +1079,13 @@ export default function Products() {
                   <div key={i} className="flex items-start gap-3">
                     <CheckCircle2
                       size={17}
-                      className="text-amber-500 mt-0.5 shrink-0"
+                      className="text-blue-500 mt-0.5 shrink-0"
                     />
                     <span className="text-sm text-slate-600">{f}</span>
                   </div>
                 ))}
               </div>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 flex items-center justify-between">
+              <div className="bg-blue-50 border border-blue-200 rounded-xl p-5 flex items-center justify-between">
                 <div>
                   <p className="font-bold text-[#0f172a]">
                     Available on AppExchange
@@ -1114,7 +1114,7 @@ export default function Products() {
                   ].map((u) => (
                     <span
                       key={u}
-                      className="bg-amber-50 border border-amber-200 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold"
+                      className="bg-blue-50 border border-blue-200 text-blue-600 px-3 py-1 rounded-full text-xs font-semibold"
                     >
                       {u}
                     </span>
@@ -1126,7 +1126,7 @@ export default function Products() {
                   href="https://agentvista-design.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-amber-500 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-amber-600 transition-colors shadow-sm group"
+                  className="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors shadow-sm group"
                 >
                   Visit Website <ExternalLink size={15} />
                 </a>
@@ -1134,7 +1134,7 @@ export default function Products() {
                   href="https://appexchange.salesforce.com/appxListingDetail?listingId=c088b22e-a28b-4d93-bdf7-b950546b6e80"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 border border-amber-300 text-amber-700 bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-amber-50 transition-colors"
+                  className="inline-flex items-center gap-2 border border-blue-300 text-blue-700 bg-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50 transition-colors"
                 >
                   View on AppExchange <ArrowRight size={15} />
                 </a>

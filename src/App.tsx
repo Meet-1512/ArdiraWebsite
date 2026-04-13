@@ -21,7 +21,27 @@ function ScrollToTop() {
   const [location] = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    // When changing routes we want an instant jump, not a smooth animation
+    // Override the CSS 'scroll-behavior: smooth' temporarily
+    document.documentElement.style.scrollBehavior = "auto";
+    
+    window.dispatchEvent(new Event("scroll-to-top"));
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as any });
+    
+    // Multiple retries for strict enforcement, still using instant
+    const retries = [50, 100, 200];
+    retries.forEach((ms) => {
+      setTimeout(() => {
+        if (window.scrollY !== 0) {
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" as any });
+        }
+      }, ms);
+    });
+
+    // Restore smooth scroll behavior for in-page anchors
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = "smooth";
+    }, 400);
   }, [location]);
 
   return null;
