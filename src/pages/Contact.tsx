@@ -15,6 +15,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
+import { RecaptchaBadge } from "@/components/RecaptchaBadge";
 import { useRecaptcha } from "@/hooks/use-recaptcha";
 
 const formSchema = z.object({
@@ -53,7 +54,9 @@ export default function Contact() {
         console.log("reCAPTCHA token received");
       } catch (recaptchaError) {
         console.error("reCAPTCHA error:", recaptchaError);
-        throw new Error("reCAPTCHA verification failed. Please refresh the page and try again.");
+        throw new Error(
+          "reCAPTCHA verification failed. Please refresh the page and try again.",
+        );
       }
 
       // Submit form to Vercel serverless function with reCAPTCHA token
@@ -372,7 +375,9 @@ export default function Contact() {
                       {isSubmitting ? "Sending..." : "Send Message"}
                     </button>
 
-                    <p className="text-xs text-slate-400 text-center mt-4">
+                    <RecaptchaBadge />
+
+                    <p className="text-xs text-slate-400 text-center mt-2">
                       By submitting this form, you agree to our{" "}
                       <a
                         href="/privacy-policy"
