@@ -1,16 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const RecaptchaBadge = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    // Wait for reCAPTCHA to load
+    // Wait for reCAPTCHA to load - ensures script is ready
     const checkRecaptcha = () => {
       if (window.grecaptcha) {
-        setIsVisible(true);
-      } else {
-        setTimeout(checkRecaptcha, 100);
+        return;
       }
+      setTimeout(checkRecaptcha, 100);
     };
     checkRecaptcha();
   }, []);
