@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { MapPin, Phone, Mail, CheckCircle, AlertCircle } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -24,6 +31,7 @@ export default function Contact() {
 
   const {
     register,
+    control,
     handleSubmit,
     formState: { errors },
     reset,
@@ -99,7 +107,8 @@ export default function Contact() {
               <span className="text-[#43AF57]">Together</span>
             </h1>
             <p className="text-slate-500 text-base md:text-lg leading-relaxed font-normal">
-              Whether you're exploring our products or want to see them in action, we’re here to help.
+              Whether you're exploring our products or want to see them in
+              action, we’re here to help.
             </p>
           </motion.div>
         </div>
@@ -278,22 +287,43 @@ export default function Contact() {
                         I'm interested in{" "}
                         <span className="text-red-500">*</span>
                       </label>
-                      <select
-                        className="w-full border border-slate-200 rounded-lg px-4 py-3 text-sm text-[#0f172a] focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 transition-all bg-white appearance-none"
-                        {...register("interest")}
-                        disabled={isSubmitting}
-                      >
-                        <option value="">Select an option...</option>
-                        <option value="SurveyVista">SurveyVista</option>
-                         <option value="AgentVista">FormVista</option>
-                        <option value="RelationshipVista">
-                          RelationshipVista
-                        </option>
-                        <option value="ComplianceVista">ComplianceVista</option>
-                        <option value="AgentVista">AgentVista</option>
-                        
-                        <option value="General">General Inquiry</option>
-                      </select>
+                      <Controller
+                        name="interest"
+                        control={control}
+                        render={({ field }) => (
+                          <Select
+                            value={field.value}
+                            onValueChange={field.onChange}
+                            disabled={isSubmitting}
+                          >
+                            <SelectTrigger
+                              className={`w-full text-sm ${errors.interest ? "border-red-500" : "border-slate-200"}`}
+                            >
+                              <SelectValue placeholder="Select an option..." />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="SurveyVista">
+                                SurveyVista
+                              </SelectItem>
+                              <SelectItem value="FormVista">
+                                FormVista
+                              </SelectItem>
+                              <SelectItem value="RelationshipVista">
+                                RelationshipVista
+                              </SelectItem>
+                              <SelectItem value="ComplianceVista">
+                                ComplianceVista
+                              </SelectItem>
+                              <SelectItem value="AgentVista">
+                                AgentVista
+                              </SelectItem>
+                              <SelectItem value="General">
+                                General Inquiry
+                              </SelectItem>
+                            </SelectContent>
+                          </Select>
+                        )}
+                      />
                       {errors.interest && (
                         <p className="text-red-500 text-xs mt-1">
                           {errors.interest.message as string}

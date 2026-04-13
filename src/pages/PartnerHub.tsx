@@ -12,6 +12,13 @@ import {
   Rocket,
   AlertCircle,
 } from "lucide-react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
@@ -141,7 +148,7 @@ export default function PartnerHub() {
       setSubmitError(
         error instanceof Error
           ? error.message
-          : "Failed to submit. Please try again."
+          : "Failed to submit. Please try again.",
       );
     } finally {
       setIsSubmitting(false);
@@ -343,7 +350,7 @@ export default function PartnerHub() {
                 </p>
 
                 <p className="text-lg leading-relaxed text-green-50 mb-8 pb-8">
-                  Apply to join our partner network and unlock new opportunities 
+                  Apply to join our partner network and unlock new opportunities
                   to scale your business with Salesforce-native solutions
                 </p>
 
@@ -363,8 +370,6 @@ export default function PartnerHub() {
                   ))}
                 </div>
               </div>
-
-              
             </motion.div>
 
             {/* Right Form Section */}
@@ -391,12 +396,15 @@ export default function PartnerHub() {
                     </p>
                   </div>
                 </div>
-                ) : (
+              ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   {/* Error Banner */}
                   {submitError && (
                     <div className="p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
-                      <AlertCircle size={18} className="text-red-600 shrink-0 mt-0.5" />
+                      <AlertCircle
+                        size={18}
+                        className="text-red-600 shrink-0 mt-0.5"
+                      />
                       <p className="text-sm text-red-700">{submitError}</p>
                     </div>
                   )}
@@ -509,33 +517,34 @@ export default function PartnerHub() {
                       <label className="block text-sm font-semibold text-[#0f172a] mb-1">
                         Country / Region <span className="text-red-500">*</span>
                       </label>
-                      <select
+                      <Select
                         value={formData.country}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            country: e.target.value,
-                          })
+                        onValueChange={(value) =>
+                          setFormData({ ...formData, country: value })
                         }
-                        className={`w-full px-4 py-1.5 rounded-lg border bg-white text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                          errors.country
-                            ? "border-red-500 focus:ring-red-500"
-                            : "border-slate-200 focus:ring-emerald-500"
-                        }`}
                       >
-                        <option value="USA">USA</option>
-                        <option value="Canada">Canada</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Germany">Germany</option>
-                        <option value="France">France</option>
-                        <option value="India">India</option>
-                        <option value="Singapore">Singapore</option>
-                        <option value="Japan">Japan</option>
-                        <option value="Brazil">Brazil</option>
-                        <option value="Mexico">Mexico</option>
-                        <option value="Other">Other</option>
-                      </select>
+                        <SelectTrigger
+                          className={`w-full text-sm ${errors.country ? "border-red-500" : "border-slate-200"}`}
+                        >
+                          <SelectValue placeholder="Select country" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="USA">USA</SelectItem>
+                          <SelectItem value="Canada">Canada</SelectItem>
+                          <SelectItem value="United Kingdom">
+                            United Kingdom
+                          </SelectItem>
+                          <SelectItem value="Australia">Australia</SelectItem>
+                          <SelectItem value="Germany">Germany</SelectItem>
+                          <SelectItem value="France">France</SelectItem>
+                          <SelectItem value="India">India</SelectItem>
+                          <SelectItem value="Singapore">Singapore</SelectItem>
+                          <SelectItem value="Japan">Japan</SelectItem>
+                          <SelectItem value="Brazil">Brazil</SelectItem>
+                          <SelectItem value="Mexico">Mexico</SelectItem>
+                          <SelectItem value="Other">Other</SelectItem>
+                        </SelectContent>
+                      </Select>
                       {errors.country && (
                         <p className="text-red-500 text-xs mt-1">
                           {errors.country}
@@ -546,25 +555,23 @@ export default function PartnerHub() {
                       <label className="block text-sm font-semibold text-[#0f172a] mb-1">
                         Partnership Type <span className="text-red-500">*</span>
                       </label>
-                      <select
+                      <Select
                         value={formData.partnerType}
-                        onChange={(e) =>
-                          setFormData({
-                            ...formData,
-                            partnerType: e.target.value,
-                          })
+                        onValueChange={(value) =>
+                          setFormData({ ...formData, partnerType: value })
                         }
-                        className={`w-full px-4 py-1.5 rounded-lg border bg-white text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-all ${
-                          errors.partnerType
-                            ? "border-red-500 focus:ring-red-500"
-                            : "border-slate-200 focus:ring-emerald-500"
-                        }`}
                       >
-                        <option value="">Select Partnership Type</option>
-                        <option value="Reseller">Reseller</option>
-                        <option value="Referral">Referral</option>
-                        <option value="Technology">Technology</option>
-                      </select>
+                        <SelectTrigger
+                          className={`w-full text-sm ${errors.partnerType ? "border-red-500" : "border-slate-200"}`}
+                        >
+                          <SelectValue placeholder="Select Partnership Type" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="Reseller">Reseller</SelectItem>
+                          <SelectItem value="Referral">Referral</SelectItem>
+                          <SelectItem value="Technology">Technology</SelectItem>
+                        </SelectContent>
+                      </Select>
                       {errors.partnerType && (
                         <p className="text-red-500 text-xs mt-1">
                           {errors.partnerType}
