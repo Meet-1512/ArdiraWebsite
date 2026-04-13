@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { Link } from "wouter";
 import {
   ArrowRight,
@@ -30,7 +31,11 @@ import tedLogo from "@/assets/TrustedEnterprise/ted.webp";
 
 const carouselSlides = [
   {
-    headline: ["Turn ", "customer signals ", "into results - natively within Salesforce"],
+    headline: [
+      "Turn ",
+      "customer signals ",
+      "into results - natively within Salesforce",
+    ],
     sub: "SurveyVista helps you collect insights, run assessments, and automate actions - all 100% native to Salesforce.",
   },
   {
@@ -50,7 +55,11 @@ const carouselSlides = [
     sub: "RelationshipVista helps you visualize and understand complex relationships across your Salesforce data - instantly and intuitively.",
   },
   {
-    headline: ["Turn ", "Compliance Into Confidence ", "- Directly Inside Salesforce."],
+    headline: [
+      "Turn ",
+      "Compliance Into Confidence ",
+      "- Directly Inside Salesforce.",
+    ],
     sub: "ComplianceVista streamlines assessments, tracks risk, and ensures compliance - all within your Salesforce environment.",
   },
   {
@@ -105,35 +114,58 @@ const customers = [
 export default function Home() {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
-  const [activeWhy, setActiveWhy] = useState(0);
+  const [activeWhy, setActiveWhy] = useState(-1);
+  const [manuallyOpened, setManuallyOpened] = useState<number | null>(null);
+  const whyContainerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: whyContainerRef,
+    offset: ["start start", "end end"]
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (manuallyOpened !== null) return; // Skip scroll updates if manually interacting
+    
+    if (latest === 0) {
+      if (activeWhy !== -1) setActiveWhy(-1);
+      return;
+    }
+    
+    // Calculate which item should be active based on scroll progress
+    let newIndex = Math.floor(latest * whyChooseUs.length);
+    if (newIndex >= whyChooseUs.length) newIndex = whyChooseUs.length - 1;
+    if (newIndex < 0) newIndex = 0;
+    
+    if (activeWhy !== newIndex) {
+      setActiveWhy(newIndex);
+    }
+  });
+
+  // Reset manual override if scroll moves significantly outside section
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (manuallyOpened !== null) {
+       if (latest <= 0 || latest >= 1) {
+           setManuallyOpened(null);
+       }
+    }
+  });
+
+  // Handle click to open item manually
+  const handleAccordionClick = (index: number) => {
+    setActiveWhy(index);
+    setManuallyOpened(index);
+    setTimeout(() => setManuallyOpened(null), 3000); // Resume auto scroll behavior after 3 seconds
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
       setDirection(1);
-      setCurrent((c) => (c + 1) % carouselSlides.length);
+      setCurrent((c: number) => (c + 1) % carouselSlides.length);
     }, 4500);
     return () => clearInterval(timer);
   }, []);
 
-  // @ts-ignore
-  const goTo = (idx: number) => {
-    setDirection(idx > current ? 1 : -1);
-    setCurrent(idx);
-  };
-
-  // @ts-ignore
-  const prev = () => {
-    setDirection(-1);
-    setCurrent((c) => (c - 1 + carouselSlides.length) % carouselSlides.length);
-  };
-
-  // @ts-ignore
-  const next = () => {
-    setDirection(1);
-    setCurrent((c) => (c + 1) % carouselSlides.length);
-  };
-
-  const slideVariants = {
+  const slideVariants: Variants = {
     enter: (dir: number) => ({ y: dir > 0 ? 32 : -32, opacity: 0 }),
     center: {
       y: 0,
@@ -171,10 +203,7 @@ export default function Home() {
       <Navbar />
 
       {/* ── Hero Carousel ───────────────────────── */}
-      <section
-        className="relative bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] pt-32 pb-20 px-6"
-        style={{ height: "100vh" }}
-      >
+      <section className="relative bg-gradient-to-br from-[#f0fdf4] via-white to-[#ecfdf5] pt-24 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 min-h-screen">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_50%_-5%,rgba(34,197,94,0.12),transparent)] pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col h-full justify-between">
@@ -193,33 +222,36 @@ export default function Home() {
             </motion.div>
 
             {/* Headline - Fixed height with larger container */}
-            <div
-              className="relative"
-              style={{ height: "13rem", marginBottom: "2rem" }}
-            >
-              <AnimatePresence custom={direction} mode="wait">
-                <motion.h1
-                  key={current}
-                  custom={direction}
-                  variants={slideVariants as any}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  className="text-4xl sm:text-5xl md:text-6xl font-bold font-display leading-[1.1] tracking-tight text-[#0f172a]"
-                >
-                  {carouselSlides[current].headline[0]}
-                  {carouselSlides[current].headline[1] && (
-                    <span className="text-[#43AF57]">
-                      {carouselSlides[current].headline[1]}
-                    </span>
-                  )}
-                  {carouselSlides[current].headline[2] && carouselSlides[current].headline[2]}
-                </motion.h1>
-              </AnimatePresence>
+            <div className="relative" style={{ marginBottom: "2rem" }}>
+              <div className="min-h-[8rem] sm:min-h-[10rem] md:min-h-[13rem]">
+                <AnimatePresence custom={direction} mode="wait">
+                  <motion.h1
+                    key={current}
+                    custom={direction}
+                    variants={slideVariants}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    className="text-4xl sm:text-5xl md:text-6xl font-bold font-display leading-[1.1] tracking-tight text-[#0f172a]"
+                  >
+                    {carouselSlides[current].headline[0]}
+                    {carouselSlides[current].headline[1] && (
+                      <span className="text-[#43AF57]">
+                        {carouselSlides[current].headline[1]}
+                      </span>
+                    )}
+                    {carouselSlides[current].headline[2] &&
+                      carouselSlides[current].headline[2]}
+                  </motion.h1>
+                </AnimatePresence>
+              </div>
             </div>
 
             {/* Subtitle - Fixed height with larger container */}
-            <div style={{ height: "4rem", marginBottom: "0" }}>
+            <div
+              className="min-h-[3rem] sm:min-h-[4rem]"
+              style={{ marginBottom: "0" }}
+            >
               <AnimatePresence mode="wait">
                 <motion.p
                   key={`sub-${current}`}
@@ -267,10 +299,13 @@ export default function Home() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">
                 Trusted by global enterprises
               </p>
-              <div className="relative w-full overflow-hidden mx-auto">
-                {/* Fade edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-r from-[#f0fdf4] to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 md:w-48 bg-gradient-to-l from-[#f0fdf4] to-transparent z-10 pointer-events-none" />
+              <div 
+                className="relative w-full overflow-hidden mx-auto"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 15%, black 85%, transparent)"
+                }}
+              >
                 <div
                   className="flex items-center animate-marquee py-2 w-max"
                   style={{ animationDuration: "35s" }}
@@ -297,22 +332,23 @@ export default function Home() {
       </section>
 
       {/* ── Why Choose Us (editorial list) ──────── */}
-      <section className="py-28 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-16"
-          >
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-4">
-              Why Ardira
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a] leading-tight max-w-xl">
-              What Sets our products apart
-            </h2>
-          </motion.div>
+      <section ref={whyContainerRef} className="relative h-[300vh] bg-white">
+        <div className="sticky top-0 min-h-screen py-16 sm:py-20 md:py-28 px-4 sm:px-6 flex flex-col justify-center">
+          <div className="max-w-6xl mx-auto w-full">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mb-16"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-4">
+                Why Ardira
+              </p>
+              <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a] leading-tight max-w-xl">
+                What sets our products apart
+              </h2>
+            </motion.div>
 
           <div className="divide-y divide-slate-100">
             {whyChooseUs.map((item, i) => (
@@ -324,27 +360,26 @@ export default function Home() {
                 transition={{ duration: 0.4, delay: i * 0.06 }}
               >
                 <button
-                  onMouseEnter={() => setActiveWhy(i)}
-                  onMouseLeave={() => setActiveWhy(-1)}
-                  className="w-full group py-8 flex gap-8 md:gap-16 items-start"
+                  onClick={() => handleAccordionClick(i)}
+                  className="w-full py-6 sm:py-8 flex gap-4 sm:gap-8 md:gap-16 items-start text-left"
                 >
                   {/* Icon */}
                   <span
-                    className={`text-3xl transition-colors duration-300 shrink-0 w-16 flex items-center justify-center ${activeWhy === i ? "text-[#43AF57]" : "text-slate-300 group-hover:text-emerald-300"}`}
+                    className={`text-3xl transition-colors duration-300 shrink-0 w-10 sm:w-16 flex items-center justify-center ${activeWhy === i ? "text-[#43AF57]" : "text-slate-300"}`}
                   >
                     <item.icon size={32} />
                   </span>
 
                   <div className="flex-1 min-w-0">
                     {/* Title row */}
-                    <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center justify-between gap-2 sm:gap-4">
                       <h3
-                        className={`text-xl md:text-2xl font-bold font-display transition-colors duration-200 ${activeWhy === i ? "text-[#43AF57]" : "text-[#0f172a] group-hover:text-[#43AF57]"}`}
+                        className={`text-lg sm:text-xl md:text-2xl font-bold font-display transition-colors duration-200 ${activeWhy === i ? "text-[#43AF57]" : "text-[#0f172a]"}`}
                       >
                         {item.title}
                       </h3>
                       <div
-                        className={`shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${activeWhy === i ? "bg-[#43AF57] border-[#43AF57] text-white rotate-45" : "border-slate-200 text-slate-400 group-hover:border-[#43AF57] group-hover:text-[#43AF57]"}`}
+                        className={`shrink-0 w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300 ${activeWhy === i ? "bg-[#43AF57] border-[#43AF57] text-white rotate-45" : "border-slate-200 text-slate-400"}`}
                       >
                         <ChevronRight size={16} />
                       </div>
@@ -362,10 +397,10 @@ export default function Home() {
                           }}
                           exit={{ height: 0, opacity: 0, marginTop: 0 }}
                           transition={{
-                            duration: 0.35,
+                            duration: 0.5,
                             ease: [0.22, 1, 0.36, 1],
                           }}
-                          className="text-slate-500 text-base leading-relaxed overflow-hidden"
+                          className="text-slate-500 text-sm sm:text-base leading-relaxed overflow-hidden"
                         >
                           {item.desc}
                         </motion.p>
@@ -377,12 +412,13 @@ export default function Home() {
             ))}
           </div>
         </div>
+        </div>
       </section>
 
       {/* ── About Us ────────────────────────────── */}
-      <section className="py-28 px-6 bg-[#f8fafc]">
+      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-[#f8fafc]">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-20 items-center">
             <motion.div
               className="lg:col-span-3"
               initial={{ opacity: 0, x: -24 }}
@@ -397,16 +433,18 @@ export default function Home() {
                 Building powerful, native products for Salesforce
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed mb-10">
-                Founded in 2019, Ardira set out with a clear mission to build powerful, 
-                100% native Salesforce applications that enterprises can trust. 
-                What began as a small startup has grown into a recognized Salesforce ISV partner, 
-                delivering a suite of applications available on the Salesforce AppExchange.
+                Founded in 2019, Ardira set out with a clear mission to build
+                powerful, 100% native Salesforce applications that enterprises
+                can trust. What began as a small startup has grown into a
+                recognized Salesforce ISV partner, delivering a suite of
+                applications available on the Salesforce AppExchange.
               </p>
               <p className="text-slate-600 text-lg leading-relaxed mb-10">
-                Everything we build lives natively inside Salesforce, 
-                designed from the ground up to help enterprises work better, move faster, 
-                and scale with confidence. As a Salesforce ISV partner, 
-                we are committed to building products that are secure, reliable, and built to grow with your business.
+                Everything we build lives natively inside Salesforce, designed
+                from the ground up to help enterprises work better, move faster,
+                and scale with confidence. As a Salesforce ISV partner, we are
+                committed to building products that are secure, reliable, and
+                built to grow with your business.
               </p>
               <Link
                 href="/team"

@@ -1,13 +1,12 @@
 import { Link } from "wouter";
-import { MapPin, Phone, Mail } from "lucide-react";
-import sfPartnerLogo from "@assets/SalesForcePartnerLogo.webp";
+import { Phone, Mail, Globe } from "lucide-react";
 import ardiraFooterLogo from "@assets/ArdiraFooterLogo.webp";
-
+import sfPartnerLogo from "@assets/SalesForcePartnerLogo.webp";
 export default function Footer() {
   return (
     <footer className="bg-[#0F263C] text-slate-400 pt-16 pb-8 mt-auto">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-57 mb-12">
           {/* Brand */}
           <div className="flex flex-col space-y-4">
             <Link
@@ -33,62 +32,63 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col space-y-3">
-            <h3 className="text-xs font-bold text-white uppercase tracking-widest mb-3">
+          <div className="flex flex-col space-y-4 flex-1">
+            <h3 className="text-xs font-bold text-white uppercase tracking-widest">
               Quick Links
             </h3>
-            <Link
-              href="/products"
-              className="text-sm hover:text-[#43AF57] transition-colors"
-              data-testid="footer-link-products"
-            >
-              Products
-            </Link>
-            <Link
-              href="/partners"
-              className="text-sm hover:text-[#43AF57] transition-colors"
-              data-testid="footer-link-partners"
-            >
-              Partner Hub
-            </Link>
-            <Link
-              href="/team"
-              className="text-sm hover:text-[#43AF57] transition-colors"
-              data-testid="footer-link-team"
-            >
-              Team
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm hover:text-[#43AF57] transition-colors"
-              data-testid="footer-link-contact"
-            >
-              Contact
-            </Link>
+            <div className="flex flex-col space-y-3">
+              <Link
+                href="/"
+                className="text-sm hover:text-[#43AF57] transition-colors"
+                data-testid="footer-link-home"
+              >
+                Home
+              </Link>
+              <Link
+                href="/products"
+                className="text-sm hover:text-[#43AF57] transition-colors"
+                data-testid="footer-link-products"
+              >
+                Products
+              </Link>
+              <Link
+                href="/partners"
+                className="text-sm hover:text-[#43AF57] transition-colors"
+                data-testid="footer-link-partners"
+              >
+                Partner Hub
+              </Link>
+              <Link
+                href="/team"
+                className="text-sm hover:text-[#43AF57] transition-colors"
+                data-testid="footer-link-team"
+              >
+                Team
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm hover:text-[#43AF57] transition-colors"
+                data-testid="footer-link-contact"
+              >
+                Contact Us
+              </Link>
+            </div>
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col space-y-4">
-            <h3 className="text-xs font-bold text-white uppercase tracking-widest mb-3">
+          <div className="flex flex-col space-y-4 flex-1">
+            <h3 className="text-xs font-bold text-white uppercase tracking-widest">
               Contact Info
             </h3>
-            <div className="flex items-start gap-3 text-sm">
-              <MapPin size={15} className="text-[#43AF57] mt-0.5 shrink-0" />
-              <span>
-                2040 Martin Ave
-                <br />
-                Santa Clara, CA 95050
-                <br />
-                United States
-              </span>
-            </div>
             <div className="flex items-center gap-3 text-sm">
-              <Phone size={15} className="text-[#43AF57] shrink-0" />
+              <Globe size={15} className="text-[#43AF57] shrink-0" />
               <a
-                href="tel:16697776838"
+                href="https://www.ardira.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-[#43AF57] transition-colors"
               >
-                1.669.777.6838
+                www.ardira.com
               </a>
             </div>
             <div className="flex items-center gap-3 text-sm">
@@ -98,6 +98,15 @@ export default function Footer() {
                 className="hover:text-[#43AF57] transition-colors"
               >
                 info@ardira.com
+              </a>
+            </div>
+            <div className="flex items-center gap-3 text-sm">
+              <Phone size={15} className="text-[#43AF57] shrink-0" />
+              <a
+                href="tel:16697776838"
+                className="hover:text-[#43AF57] transition-colors"
+              >
+                1.669.777.6838
               </a>
             </div>
           </div>

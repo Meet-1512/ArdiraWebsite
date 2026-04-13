@@ -332,7 +332,7 @@ export default function PartnerHub() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-[#43AF57] rounded-l-3xl p-8 flex flex-col justify-between text-white"
+              className="bg-[#43AF57] rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none p-8 flex flex-col justify-between text-white"
             >
               <div>
                 <h2 className="text-3xl md:text-4xl font-extrabold font-display leading-tight mb-2">
@@ -373,7 +373,7 @@ export default function PartnerHub() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-r-3xl p-6"
+              className="bg-white rounded-b-3xl lg:rounded-r-3xl lg:rounded-bl-none p-6"
             >
               {submitted ? (
                 <div className="flex items-center justify-center">

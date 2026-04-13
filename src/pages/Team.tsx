@@ -11,7 +11,7 @@ import rajesh from "@assets/ArdiraMind/rajesh.webp";
 import hitesh from "@assets/ArdiraMind/hitesh.webp";
 import brijesh from "@assets/ArdiraMind/brijesh.webp";
 import qRegan from "@assets/ArdiraMind/Ll-photo.webp";
-import reddy from "@assets/ArdiraMind/Reddy.webp"
+import reddy from "@assets/ArdiraMind/Reddy.webp";
 
 import devAdvisor from "@assets/AdvisoryBoard/dev-advisor.webp";
 import robertAdvisor from "@assets/AdvisoryBoard/robert.webp";
@@ -141,10 +141,12 @@ export default function About() {
                 The People Behind <span className="text-[#43AF57]">Ardira</span>
               </h1>
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal mb-4">
-                Our team has Salesforce Certified Developers & Administrators located in the US & India, 
-                working with you 24×7 and cost-effectively. 
-                We combine years of experience across information security, compliance & risk management, 
-                cloud computing, enterprise software, SaaS services, and large-scale software infrastructure.
+                Our team has Salesforce Certified Developers & Administrators
+                located in the US & India, working with you 24×7 and
+                cost-effectively. We combine years of experience across
+                information security, compliance & risk management, cloud
+                computing, enterprise software, SaaS services, and large-scale
+                software infrastructure.
               </p>
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
                 Behind Ardira's success is our dynamic and collaborative team of
@@ -195,8 +197,8 @@ export default function About() {
               scratching the surface of what it can do.
             </p>
             <p className="text-slate-500 text-lg leading-relaxed">
-              Our mission is to extend Salesforce with powerful, 
-              native products that help organizations collect better data, gain deeper insights, 
+              Our mission is to extend Salesforce with powerful, native products
+              that help organizations collect better data, gain deeper insights,
               and act with confidence.
             </p>
           </motion.div>
@@ -228,7 +230,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="py-28 px-6">
+      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -249,7 +251,7 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 md:gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-10 md:gap-8">
             {team.map((member, i) => (
               <motion.div
                 key={member.name}
@@ -257,7 +259,7 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
-                className="flex flex-col items-center text-center group cursor-pointer"
+                className="flex flex-col items-center text-center group"
               >
                 {member.image && (
                   <img
@@ -279,7 +281,7 @@ export default function About() {
       </section>
 
       {/* Advisory Board */}
-      <section className="py-28 px-6 border-t border-slate-100">
+      <section className="py-16 sm:py-20 md:py-28 px-4 sm:px-6 border-t border-slate-100">
         <div className="max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
