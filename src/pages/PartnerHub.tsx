@@ -24,6 +24,7 @@ import Footer from "@/components/Footer";
 import ContactCta from "@/components/ContactCta";
 import SEO from "@/components/SEO";
 import StructuredData from "@/components/StructuredData";
+import { RecaptchaBadge } from "@/components/RecaptchaBadge";
 
 import eightSquadLogo from "@/assets/TrustedPartner/8squadlogo.webp";
 import accentureLogo from "@/assets/TrustedPartner/accenturelogo.webp";
@@ -626,6 +627,8 @@ export default function PartnerHub() {
                       />
                     )}
                   </button>
+
+                  <RecaptchaBadge />
                 </form>
               )}
             </motion.div>

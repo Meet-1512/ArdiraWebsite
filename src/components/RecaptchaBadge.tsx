@@ -1,16 +1,28 @@
-import { useEffect } from "react";
-
 export const RecaptchaBadge = () => {
-  useEffect(() => {
-    // Wait for reCAPTCHA to load - ensures script is ready
-    const checkRecaptcha = () => {
-      if (window.grecaptcha) {
-        return;
-      }
-      setTimeout(checkRecaptcha, 100);
-    };
-    checkRecaptcha();
-  }, []);
-
-  return null; // Let Google's reCAPTCHA v3 script handle the badge display
+  return (
+    <div className="recaptcha-container">
+      {/* Google reCAPTCHA badge will appear here automatically */}
+      <p className="text-xs text-slate-400 text-center mt-4">
+        This site is protected by reCAPTCHA and the Google{" "}
+        <a
+          href="https://policies.google.com/privacy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-slate-500"
+        >
+          Privacy Policy
+        </a>{" "}
+        and{" "}
+        <a
+          href="https://policies.google.com/terms"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline hover:text-slate-500"
+        >
+          Terms of Service
+        </a>{" "}
+        apply.
+      </p>
+    </div>
+  );
 };
