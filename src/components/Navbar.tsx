@@ -65,6 +65,7 @@ export default function Navbar() {
                     : "text-slate-600 hover:text-[#16a34a]"
                 }`}
                 data-testid={`link-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
+                onClick={scrollToTop}
               >
                 {link.name}
               </Link>
@@ -91,7 +92,10 @@ export default function Navbar() {
                 key={link.name}
                 href={link.path}
                 className={`text-lg font-semibold font-display ${isActive ? "text-[#16a34a]" : "text-slate-700"}`}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  scrollToTop();
+                  setIsMobileMenuOpen(false);
+                }}
                 data-testid={`link-mobile-nav-${link.name.toLowerCase().replace(/\s+/g, "-")}`}
               >
                 {link.name}
