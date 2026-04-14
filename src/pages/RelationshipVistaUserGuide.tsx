@@ -235,7 +235,7 @@ export default function RelationshipVistaUserGuide() {
                     </p>
 
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={arvcImage1}
                         alt="Adding RelationshipVista component to record detail page"
                         className="w-full h-auto"
@@ -245,14 +245,14 @@ export default function RelationshipVistaUserGuide() {
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-3xl">
                       <div className="flex gap-0 bg-white">
                         <div className="flex-[2] overflow-hidden">
-                          <img
+                          <img loading="lazy"
                             src={arvcImage2}
                             alt="Salesforce interface"
                             className="w-full h-auto object-contain"
                           />
                         </div>
                         <div className="flex-1 overflow-hidden bg-slate-50">
-                          <img
+                          <img loading="lazy"
                             src={arvcImage3}
                             alt="Configuration panel"
                             className="w-full h-auto object-contain"
@@ -262,7 +262,7 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={arvcImage4}
                         alt="Saving and activating the record detail page with RelationshipVista component"
                         className="w-full h-auto"
@@ -473,7 +473,7 @@ export default function RelationshipVistaUserGuide() {
                     </p>
 
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage1}
                         alt="Relationship view selector interface for creating custom visualizations"
                         className="w-full h-auto"
@@ -507,7 +507,7 @@ export default function RelationshipVistaUserGuide() {
                       </li>
 
                       <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                        <img
+                        <img loading="lazy"
                           src={rvImage2}
                           alt="RelationshipVista Getting Started tab in Salesforce app launcher"
                           className="w-full h-100"
@@ -519,7 +519,7 @@ export default function RelationshipVistaUserGuide() {
                         play around and experience RelationshipVista.
                       </li>
                       <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                        <img
+                        <img loading="lazy"
                           src={rvImage3}
                           alt="Load Sample Data button in RelationshipVista Getting Started"
                           className="w-full h-auto"
@@ -530,7 +530,7 @@ export default function RelationshipVistaUserGuide() {
                         following sample data.
                       </p>
                       <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                        <img
+                        <img loading="lazy"
                           src={rvImage4}
                           alt="Sample account relationship data structure with related contacts, cases, and opportunities"
                           className="w-full h-auto"
@@ -557,14 +557,14 @@ export default function RelationshipVistaUserGuide() {
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-4xl">
                       <div className="flex gap-0 bg-white">
                         <div className="flex-1 overflow-hidden min-w-0">
-                          <img
+                          <img loading="lazy"
                             src={rvImage5}
                             alt="Salesforce interface"
                             className="w-full h-auto object-contain"
                           />
                         </div>
                         <div className="flex-1 overflow-hidden bg-slate-50 min-w-0">
-                          <img
+                          <img loading="lazy"
                             src={rvImage6}
                             alt="Configuration panel"
                             className="w-full h-auto object-contain"
@@ -654,7 +654,7 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                   </div>
                   <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                    <img
+                    <img loading="lazy"
                       src={rvImage7}
                       alt="View Configuration properties showing Name, Show, Pinned, and other settings"
                       className="w-full h-auto"
@@ -672,7 +672,7 @@ export default function RelationshipVistaUserGuide() {
                       node. It will open the root node configuration dialog with the following configuration options:
                     </p>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage8}
                         alt="Root node configuration interface with Record Node Label Field and Auto Expand settings"
                         className="w-full h-auto"
@@ -729,7 +729,7 @@ export default function RelationshipVistaUserGuide() {
                       Click on gear icon and click on Edit.
                     </p>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage9}
                         alt="Relationship view showing gear icon for accessing node configuration settings"
                         className="w-full h-auto"
@@ -737,7 +737,7 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage10}
                         alt="Node configuration dialog showing edit and delete options"
                         className="w-full h-auto"
@@ -745,7 +745,7 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage11}
                         alt="Node configuration properties including Object Node Label and Record Node Label Field"
                         className="w-full h-auto"
@@ -884,7 +884,7 @@ export default function RelationshipVistaUserGuide() {
                       Configuration for Junction Object
                     </h4>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage12}
                         alt="Account Contact Relationship junction object configuration setup"
                         className="w-full h-auto"
@@ -929,7 +929,7 @@ export default function RelationshipVistaUserGuide() {
                     </p>
 
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage13}
                         alt="Relationship graph demonstrating Cascade Auto Expand with junction object visible"
                         className="w-full h-auto"
@@ -944,7 +944,7 @@ export default function RelationshipVistaUserGuide() {
                     </p>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage14}
                         alt="Relationship graph with Display Record Node hidden showing direct contact-to-account relationship"
                         className="w-full h-auto"
@@ -967,7 +967,7 @@ export default function RelationshipVistaUserGuide() {
                           https://www.lightningdesignsystem.com/icons/
                         </a>
                         <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl mt-3">
-                          <img
+                          <img loading="lazy"
                             src={rvImage15}
                             alt="Lightning Design System website showing Icons section with Standard and Custom filters"
                             className="w-full h-auto"
@@ -986,7 +986,7 @@ export default function RelationshipVistaUserGuide() {
                               /img/icon/t4v35/standard/your_standard_icon_name.svg
                             </p>
                             <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                              <img
+                              <img loading="lazy"
                                 src={rvImage16}
                                 alt="Lightning Design System standard icons browsing interface with icon names"
                                 className="w-full h-auto"
@@ -1003,7 +1003,7 @@ export default function RelationshipVistaUserGuide() {
                               /img/icon/t4v35/custom/your_custom_icon_name.svg
                             </p>
                         <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                          <img
+                          <img loading="lazy"
                             src={rvImage17}
                             alt="Lightning Design System custom icons browsing interface with custom icon options"
                             className="w-full h-auto"
@@ -1039,7 +1039,7 @@ export default function RelationshipVistaUserGuide() {
                         </li>
 
                         <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                          <img
+                          <img loading="lazy"
                             src={rvImage18}
                             alt="Click Get It Now button"
                             className="w-full h-auto"
@@ -1056,7 +1056,7 @@ export default function RelationshipVistaUserGuide() {
                         </li>
 
                         <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                          <img
+                          <img loading="lazy"
                             src={rvImage19}
                             alt="Click Get It Now button"
                             className="w-full h-auto"
@@ -1076,7 +1076,7 @@ export default function RelationshipVistaUserGuide() {
                     </p>
 
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage20}
                         alt="Click Get It Now button"
                         className="w-full h-auto"
@@ -1084,7 +1084,7 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage21}
                         alt="Click Get It Now button"
                         className="w-full h-auto"
@@ -1140,7 +1140,7 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage22}
                         alt="Click Get It Now button"
                         className="w-full h-auto"
@@ -1148,7 +1148,7 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={rvImage23}
                         alt="Click Get It Now button"
                         className="w-full h-auto"
@@ -1186,7 +1186,7 @@ export default function RelationshipVistaUserGuide() {
                     </p>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-sm">
-                      <img
+                      <img loading="lazy"
                         src={mfImage1}
                         alt="Restricting the View Selector"
                         className="w-full h-auto"
@@ -1205,7 +1205,7 @@ export default function RelationshipVistaUserGuide() {
                     </p>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={mfImage2}
                         alt="Configuring User View Options"
                         className="w-full h-auto"
@@ -1225,7 +1225,7 @@ export default function RelationshipVistaUserGuide() {
                     </p>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
+                      <img loading="lazy"
                         src={mfImage3}
                         alt="Setting a Default View"
                         className="w-full h-auto"
@@ -1245,7 +1245,7 @@ export default function RelationshipVistaUserGuide() {
                     </p>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-sm">
-                      <img
+                      <img loading="lazy"
                         src={mfImage4}
                         alt="User View Creation Control"
                         className="w-full h-auto"
@@ -1253,7 +1253,7 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                     <br></br>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-sm">
-                      <img
+                      <img loading="lazy"
                         src={mfImage4}
                         alt="User View Creation Control"
                         className="w-full h-auto"

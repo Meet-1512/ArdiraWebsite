@@ -333,7 +333,7 @@ export default function Home() {
                         key={`${c.name}-${i}`}
                         className="flex items-center justify-center mx-10 md:mx-14 flex-shrink-0 h-12 md:h-14"
                       >
-                        <img
+                        <img loading="lazy"
                           src={c.logo}
                           alt={c.name}
                           className="max-h-full max-w-[120px] object-contain opacity-80 hover:opacity-100 transition-opacity"

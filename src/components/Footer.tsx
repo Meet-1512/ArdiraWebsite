@@ -30,7 +30,7 @@ export default function Footer() {
               data-testid="footer-link-logo"
               onClick={scrollToTop}
             >
-              <img
+              <img loading="lazy"
                 src={ardiraFooterLogo}
                 alt="Ardira"
                 className="h-auto w-32 object-contain"
@@ -40,7 +40,7 @@ export default function Footer() {
               100% native Salesforce applications that power how enterprises
               work.
             </p>
-            <img
+            <img loading="lazy"
               src={sfPartnerLogo}
               alt="Salesforce Partner"
               className="h-12 w-auto mt-2 object-contain self-start rounded-xl"

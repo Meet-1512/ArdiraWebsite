@@ -135,7 +135,7 @@ export default function RelationshipVistaInstallationGuide() {
               </div>
               <div className="my-8 flex justify-center">
                 <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                  <img
+                  <img loading="lazy"
                     src={rvInstallImage1}
                     alt="Click Get It Now button"
                     className="w-full h-auto"
@@ -163,7 +163,7 @@ export default function RelationshipVistaInstallationGuide() {
               </div>
               <div className="my-8 flex justify-center">
                 <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                  <img
+                  <img loading="lazy"
                     src={rvInstallImage2}
                     alt="Login to Salesforce"
                     className="w-full h-auto"
@@ -190,7 +190,7 @@ export default function RelationshipVistaInstallationGuide() {
               </div>
               <div className="my-8 flex justify-center">
                 <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                  <img
+                  <img loading="lazy"
                     src={rvInstallImage3}
                     alt="Choose Installation Org"
                     className="w-full h-auto"
@@ -217,7 +217,7 @@ export default function RelationshipVistaInstallationGuide() {
               </div>
               <div className="my-8 flex justify-center">
                 <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                  <img
+                  <img loading="lazy"
                     src={rvInstallImage4}
                     alt="Accept Terms & Install"
                     className="w-full h-auto"
@@ -237,7 +237,7 @@ export default function RelationshipVistaInstallationGuide() {
             </div>
             <div className="my-8 flex justify-center">
               <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                <img
+                <img loading="lazy"
                   src={rvInstallImage5}
                   alt="Install for Admins Only option"
                   className="w-full h-auto"
@@ -277,7 +277,7 @@ export default function RelationshipVistaInstallationGuide() {
             <div className="space-y-8">
               <div className="flex justify-center">
                 <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                  <img
+                  <img loading="lazy"
                     src={rvInstallImage6}
                     alt="Permission Set Assignment"
                     className="w-full h-auto"
@@ -286,7 +286,7 @@ export default function RelationshipVistaInstallationGuide() {
               </div>
               <div className="flex justify-center">
                 <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                  <img
+                  <img loading="lazy"
                     src={rvInstallImage7}
                     alt="Permission Set Confirmation"
                     className="w-full h-auto"
@@ -315,7 +315,7 @@ export default function RelationshipVistaInstallationGuide() {
               </div>
               <div className="flex justify-center">
                 <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                  <img
+                  <img loading="lazy"
                     src={rvInstallImage8}
                     alt="Apex Class Access Configuration"
                     className="w-full h-auto"
@@ -357,7 +357,7 @@ export default function RelationshipVistaInstallationGuide() {
               </div>
               <div className="flex justify-center">
                 <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                  <img
+                  <img loading="lazy"
                     src={rvInstallImage9}
                     alt="Object Access Configuration"
                     className="w-full h-auto"
@@ -388,7 +388,7 @@ export default function RelationshipVistaInstallationGuide() {
               <div className="space-y-8">
                 <div className="flex justify-center">
                   <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                    <img
+                    <img loading="lazy"
                       src={rvInstallImage10}
                       alt="Fields Access Configuration"
                       className="w-full h-auto"
@@ -397,7 +397,7 @@ export default function RelationshipVistaInstallationGuide() {
                 </div>
                 <div className="flex justify-center">
                   <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                    <img
+                    <img loading="lazy"
                       src={rvInstallImage11}
                       alt="Additional Fields Configuration"
                       className="w-full h-auto"
@@ -406,7 +406,7 @@ export default function RelationshipVistaInstallationGuide() {
                 </div>
                 <div className="flex justify-center">
                   <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
-                    <img
+                    <img loading="lazy"
                       src={rvInstallImage12}
                       alt="Complete Fields Configuration"
                       className="w-full h-auto"

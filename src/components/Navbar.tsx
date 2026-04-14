@@ -49,7 +49,7 @@ export default function Navbar() {
           data-testid="link-logo"
           onClick={scrollToTop}
         >
-          <img src={ardiraLogo} alt="Ardira" className="h-20 w-auto" />
+          <img loading="lazy" src={ardiraLogo} alt="Ardira" className="h-20 w-auto" />
         </Link>
 
         <div className="hidden md:flex items-center space-x-8">

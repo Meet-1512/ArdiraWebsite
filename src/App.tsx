@@ -1,20 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { RecaptchaBadge } from "@/components/RecaptchaBadge";
 
-import NotFound from "@/pages/not-found";
-import Home from "@/pages/Home";
-import Products from "@/pages/Products";
-import Team from "@/pages/Team";
-import Contact from "@/pages/Contact";
-import PartnerHub from "@/pages/PartnerHub";
-import Terms from "@/pages/Terms";
-import Privacy from "@/pages/Privacy";
-import RelationshipVistaUserGuide from "@/pages/RelationshipVistaUserGuide";
-import RelationshipVistaInstallationGuide from "@/pages/RelationshipVistaInstallationGuide";
+const NotFound = lazy(() => import("@/pages/not-found"));
+const Home = lazy(() => import("@/pages/Home"));
+const Products = lazy(() => import("@/pages/Products"));
+const Team = lazy(() => import("@/pages/Team"));
+const Contact = lazy(() => import("@/pages/Contact"));
+const PartnerHub = lazy(() => import("@/pages/PartnerHub"));
+const Terms = lazy(() => import("@/pages/Terms"));
+const Privacy = lazy(() => import("@/pages/Privacy"));
+const RelationshipVistaUserGuide = lazy(() => import("@/pages/RelationshipVistaUserGuide"));
+const RelationshipVistaInstallationGuide = lazy(() => import("@/pages/RelationshipVistaInstallationGuide"));
 
 const queryClient = new QueryClient();
 
@@ -50,24 +50,26 @@ function ScrollToTop() {
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/products" component={Products} />
-      <Route
-        path="/relationship-vista-user-guide"
-        component={RelationshipVistaUserGuide}
-      />
-      <Route
-        path="/relationship-vista-installation-guide"
-        component={RelationshipVistaInstallationGuide}
-      />
-      <Route path="/partners" component={PartnerHub} />
-      <Route path="/team" component={Team} />
-      <Route path="/contact" component={Contact} />
-      <Route path="/terms-of-use" component={Terms} />
-      <Route path="/privacy-policy" component={Privacy} />
-      <Route component={NotFound} />
-    </Switch>
+    <Suspense fallback={<div className="flex h-screen w-full items-center justify-center"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#43AF57]"></div></div>}>
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/products" component={Products} />
+        <Route
+          path="/relationship-vista-user-guide"
+          component={RelationshipVistaUserGuide}
+        />
+        <Route
+          path="/relationship-vista-installation-guide"
+          component={RelationshipVistaInstallationGuide}
+        />
+        <Route path="/partners" component={PartnerHub} />
+        <Route path="/team" component={Team} />
+        <Route path="/contact" component={Contact} />
+        <Route path="/terms-of-use" component={Terms} />
+        <Route path="/privacy-policy" component={Privacy} />
+        <Route component={NotFound} />
+      </Switch>
+    </Suspense>
   );
 }
 

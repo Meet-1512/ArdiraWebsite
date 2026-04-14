@@ -243,7 +243,7 @@ export default function Products() {
               className="space-y-7"
             >
               <div className="flex items-center">
-                <img
+                <img loading="lazy"
                   src={surveyVistaLogo}
                   alt="Survey Vista"
                   className="h-12 w-auto"

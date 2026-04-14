@@ -166,7 +166,7 @@ export default function About() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <img
+              <img loading="lazy"
                 src={ardiraTeam}
                 alt="The Ardira Team"
                 className="w-full rounded-2xl shadow-lg border border-slate-100"
@@ -262,7 +262,7 @@ export default function About() {
                 className="flex flex-col items-center text-center group"
               >
                 {member.image && (
-                  <img
+                  <img loading="lazy"
                     src={member.image}
                     alt={member.name}
                     className={`w-50 h-54 object-cover rounded-lg mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}
@@ -309,7 +309,7 @@ export default function About() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="flex flex-col items-center text-center group"
               >
-                <img
+                <img loading="lazy"
                   src={member.image}
                   alt={member.name}
                   className={`w-50 h-54 object-cover rounded-lg mb-5 shadow-sm transition-all duration-300 group-hover:shadow-lg`}

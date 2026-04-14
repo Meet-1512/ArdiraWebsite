@@ -257,7 +257,7 @@ export default function PartnerHub() {
                     key={`${p.name}-${i}`}
                     className="flex items-center justify-center mx-10 md:mx-14 flex-shrink-0 h-14 md:h-16"
                   >
-                    <img
+                    <img loading="lazy"
                       src={p.logo}
                       alt={p.name}
                       className="max-h-full max-w-[140px] object-contain opacity-70 hover:opacity-100 transition-opacity"
