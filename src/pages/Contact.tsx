@@ -71,13 +71,15 @@ export default function Contact() {
         }),
       });
 
-      let result = {};
+      let result: { error?: string } = {};
       const contentType = response.headers.get("content-type");
       if (contentType && contentType.indexOf("application/json") !== -1) {
         result = await response.json();
       } else if (!response.ok) {
         // If it's an empty 404 (local Vite) or generic HTML 500 error
-        throw new Error(`Server execution failed (Status ${response.status}). If testing locally, ensure you are using Vercel Dev.`);
+        throw new Error(
+          `Server execution failed (Status ${response.status}). If testing locally, ensure you are using Vercel Dev.`,
+        );
       }
 
       if (!response.ok) {
