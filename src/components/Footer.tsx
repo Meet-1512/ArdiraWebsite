@@ -128,7 +128,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0 text-sm text-slate-500">
+        <div className="pt-2 border-t border-white/10 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0 text-sm text-slate-500">
           <p>© 2026 Ardira Corporation. All Rights Reserved.</p>
           <div className="flex space-x-6">
             <Link
