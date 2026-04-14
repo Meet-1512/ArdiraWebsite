@@ -21,9 +21,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#0F263C] text-slate-400 pt-16 pb-8 mt-auto">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 items-start">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-4 md:gap-12 mb-12 items-start">
           {/* Brand */}
-          <div className="flex flex-col space-y-4">
+          <div className="col-span-2 md:col-span-1 flex flex-col space-y-4">
             <Link
               href="/"
               className="inline-block"
@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="flex justify-center">
+          <div className="col-span-1 flex md:justify-center">
             <div className="flex flex-col space-y-3">
               <h3 className="text-xs font-bold text-white uppercase tracking-widest">
                 Quick Links
@@ -91,7 +91,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-col space-y-4 ml-auto">
+          <div className="col-span-1 flex flex-col space-y-4 md:ml-auto">
             <h3 className="text-xs font-bold text-white uppercase tracking-widest">
               Contact Info
             </h3>
@@ -125,7 +125,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-2 border-t border-white/10 flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0 text-sm text-slate-500">
+        <div className="pt-2 border-t border-white/10 flex flex-col-reverse md:flex-row justify-between items-center gap-y-3 md:gap-y-0 text-sm text-slate-500">
           <p>© 2026 Ardira Corporation. All Rights Reserved.</p>
           <div className="flex space-x-6">
             <Link
