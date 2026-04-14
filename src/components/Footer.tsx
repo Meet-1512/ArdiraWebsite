@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Phone, Mail, Globe } from "lucide-react";
+import { Phone, Mail, Globe, MapPin } from "lucide-react";
 import ardiraFooterLogo from "@assets/ArdiraFooterLogo.webp";
 import sfPartnerLogo from "@assets/SalesForcePartnerLogo.webp";
 
@@ -95,16 +95,13 @@ export default function Footer() {
             <h3 className="text-xs font-bold text-white uppercase tracking-widest">
               Contact Info
             </h3>
-            <div className="flex items-center gap-3 text-sm">
-              <Globe size={15} className="text-[#43AF57] shrink-0" />
-              <a
-                href="https://www.ardira.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#43AF57] transition-colors"
-              >
-                www.ardira.com
-              </a>
+            <div className="flex items-start gap-3 text-sm">
+              <MapPin size={15} className="text-[#43AF57] shrink-0 mt-0.5" />
+              <div>
+                <p>2040 Martin Ave</p>
+                <p>Santa Clara, CA 95050</p>
+                <p>United States</p>
+              </div>
             </div>
             <div className="flex items-center gap-3 text-sm">
               <Mail size={15} className="text-[#43AF57] shrink-0" />
