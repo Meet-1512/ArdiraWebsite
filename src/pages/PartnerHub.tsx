@@ -608,7 +608,7 @@ export default function PartnerHub() {
 
                   <p className="text-xs text-slate-400 pt-0.5">
                     By submitting this form, you agree to our{" "}
-                    <a href="#" className="text-[#43AF57] hover:underline">
+                    <a href="https://ardira-website.vercel.app/privacy-policy" className="text-[#43AF57] hover:underline">
                       privacy policy
                     </a>
                     .
