@@ -1,3 +1,4 @@
+import { useRef, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowLeft, Download, Mail } from "lucide-react";
@@ -56,6 +57,54 @@ const fadeUp = {
 };
 
 export default function RelationshipVistaUserGuide() {
+  const accordionRef = useRef<HTMLDivElement>(null);
+
+  const handleAccordionChange = useCallback((value: string) => {
+    if (!value) return; // collapsed, nothing to scroll to
+
+    // Disable smooth scroll for the duration so the browser doesn't fight us
+    const html = document.documentElement;
+    const prevBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = 'auto';
+
+    // Use rAF to let the DOM update with the new data-state
+    requestAnimationFrame(() => {
+      const container = accordionRef.current;
+      if (!container) return;
+
+      const openItem = container.querySelector(
+        '[data-state="open"]'
+      ) as HTMLElement | null;
+      if (!openItem) return;
+
+      // The desired viewport offset for the opened trigger
+      const desiredOffsetFromTop = 100;
+
+      // Continuously pin the trigger at the desired position during animation
+      const startTime = performance.now();
+      const animationDuration = 400; // slightly longer than the accordion animation
+
+      const pinScroll = () => {
+        const rect = openItem.getBoundingClientRect();
+        const drift = rect.top - desiredOffsetFromTop;
+
+        // Only adjust if it has drifted more than 1px
+        if (Math.abs(drift) > 1) {
+          window.scrollBy(0, drift);
+        }
+
+        if (performance.now() - startTime < animationDuration) {
+          requestAnimationFrame(pinScroll);
+        } else {
+          // Restore smooth scrolling after animation completes
+          html.style.scrollBehavior = prevBehavior;
+        }
+      };
+
+      pinScroll();
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-[#0f172a] font-sans">
       <SEO
@@ -153,13 +202,19 @@ export default function RelationshipVistaUserGuide() {
           </motion.div>
 
           {/* Accordion Sections */}
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion
+            ref={accordionRef}
+            type="single"
+            collapsible
+            className="space-y-3"
+            onValueChange={handleAccordionChange}
+          >
             {/* Section 1: Ardira RelationshipVista Component */}
             <AccordionItem
               value="component"
               className="border border-sky-200 rounded-lg overflow-hidden"
             >
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 focus-visible:outline-none scroll-behavior-auto" style={{scrollBehavior: "auto"}}>
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">
                   Ardira RelationshipVista Component
                 </h3>
@@ -214,7 +269,7 @@ export default function RelationshipVistaUserGuide() {
                       />
                     </div>
                     <br></br>
-                    {/* <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl"></div> */}
+                
 
                     <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 text-sm text-slate-700">
                       <p className="font-semibold text-sky-700 mb-2">
@@ -242,14 +297,17 @@ export default function RelationshipVistaUserGuide() {
               value="properties"
               className="border border-sky-200 rounded-lg overflow-hidden"
             >
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 focus-visible:outline-none" style={{scrollBehavior: "auto"}}>
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">
                   RVC Component Properties
                 </h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 bg-white">
                 <div className="space-y-6">
-                  <div>
+                RVC Component supports following public properties:
+                <br></br>
+                <br></br>
+                  <div className="border-l-2 border-sky-300 pl-4">
                     <h4 className="text-sm font-semibold text-sky-700 mb-3">
                       Record Id
                     </h4>
@@ -395,7 +453,7 @@ export default function RelationshipVistaUserGuide() {
               value="rviews"
               className="border border-sky-200 rounded-lg overflow-hidden"
             >
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 focus-visible:outline-none" style={{scrollBehavior: "auto"}}>
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">
                   Relationship Views ("R-Views")
                 </h3>
@@ -519,13 +577,16 @@ export default function RelationshipVistaUserGuide() {
                     <h4 className="text-sm font-semibold text-sky-700 mb-3">
                       View Configuration Properties
                     </h4>
+                    <h4 className="text-sm font-semibold text-[#0f172a] mb-3">
+                      A view configuration has following properties:
+                    </h4>
                     <div className="space-y-3">
                       <div>
                         <p className="text-sm font-semibold text-[#0f172a]">
                           Name
                         </p>
                         <p className="text-sm text-slate-600">
-                          Refers to the name of the View Configuration.
+                          This setting refers to the name of the View Configuration.
                         </p>
                       </div>
                       <div>
@@ -533,17 +594,29 @@ export default function RelationshipVistaUserGuide() {
                           Show
                         </p>
                         <p className="text-sm text-slate-600">
-                          Specify which records should be displayed: "My
-                          Records" (default) or "All Records".
+                          This setting allows you to specify which 
+                          records should be displayed in the visualization. The available options are:
                         </p>
+                        <br></br>
+                        <ul className="space-y-3 ml-4">
+                          <li className="text-slate-600 text-sm">
+                            <p className="font-semibold text-[#0f172a] mb-1">My Records</p>
+                            <p>This option displays only the records that are owned by the currently logged-in user. This is the default setting.</p>
+                          </li>
+                          <li className="text-slate-600 text-sm">
+                            <p className="font-semibold text-[#0f172a] mb-1">All Records</p>
+                            <p>This option displays all records that are accessible to the currently logged-in user.</p>
+                          </li>
+                        </ul>
                       </div>
+                      
                       <div>
                         <p className="text-sm font-semibold text-[#0f172a]">
                           Pinned
                         </p>
                         <p className="text-sm text-slate-600">
-                          If enabled, the view becomes the default view for any
-                          user who created the View Configuration.
+                          If this setting is enabled, the view will become 
+                          the default view for any user who created the View Configuration.
                         </p>
                       </div>
                       <div>
@@ -551,9 +624,11 @@ export default function RelationshipVistaUserGuide() {
                           Max Visible Records Limit
                         </p>
                         <p className="text-sm text-slate-600">
-                          Determines the maximum number of child records
-                          displayed. This overrides "Auto Expand Level"
-                          settings.
+                          This setting determines the maximum number of child records that will be 
+                          displayed for a parent record. Any additional records beyond this 
+                          limit can be viewed by clicking on the “View n more…” option. 
+                          Please note that this setting overrides any “Auto Expand Level” configurations 
+                          that are set for the component on the Page Layout.
                         </p>
                       </div>
                       <div>
@@ -561,9 +636,20 @@ export default function RelationshipVistaUserGuide() {
                           Sharing Setting
                         </p>
                         <p className="text-sm text-slate-600">
-                          Configure visibility: "Only Me" (visible only to
-                          creator) or "All Users" (visible to all).
+                          This setting allows you to configure the visibility of the View Configuration. 
+                          The available options are:
                         </p>
+                        <br></br>
+                        <ul className="space-y-3 ml-4">
+                          <li className="text-slate-600 text-sm">
+                            <p className="font-semibold text-[#0f172a] mb-1">Only Me</p>
+                            <p>This option restricts the View Configuration to be visible only to the user who created it.</p>
+                          </li>
+                          <li className="text-slate-600 text-sm">
+                            <p className="font-semibold text-[#0f172a] mb-1">All Users</p>
+                            <p>This option makes the View Configuration visible to all users in the organization.</p>
+                          </li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -583,7 +669,7 @@ export default function RelationshipVistaUserGuide() {
                       to navigate and visualize related records. To update the
                       node configuration, select the view and click edit. To
                       configure a root node, click the settings icon next to the
-                      node.
+                      node. It will open the root node configuration dialog with the following configuration options:
                     </p>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
                       <img
@@ -594,13 +680,17 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                     <br></br>
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
+                      <h4 className="text-base font-semibold text-[#0f172a] mb-3">
+                        This setting displays the object type that is configured by the current node configuration.
+                      </h4>
                       <div>
                         <p className="text-sm font-semibold text-slate-700">
                           Record Node Label Field
                         </p>
                         <p className="text-sm text-slate-600">
-                          Select a field that will be used as the label for the
-                          record nodes in the visualization.
+                          You can select a field that will be used as the label for the record nodes in the 
+                          visualization. The value of this field will be displayed next to the node 
+                          representing the record.
                         </p>
                       </div>
                       <div>
@@ -608,8 +698,9 @@ export default function RelationshipVistaUserGuide() {
                           Auto Expand
                         </p>
                         <p className="text-sm text-slate-600">
-                          When enabled, the node will automatically expand to
-                          show its child nodes when the visualization is loaded.
+                          This setting allows you to enable automatic expansion of a node when it is visualized. 
+                          When this setting is enabled, the node will automatically expand to show 
+                          its child nodes when the visualization is loaded.
                         </p>
                       </div>
                       <div>
@@ -617,8 +708,10 @@ export default function RelationshipVistaUserGuide() {
                           Show Objects
                         </p>
                         <p className="text-sm text-slate-600">
-                          Select a set of objects to limit the type of records
-                          displayed as children of the current node.
+                          This setting allows you to select a set of objects that will limit the type of records 
+                          displayed in the visualization as children of the current node.
+                          Please note that the “Show Objects” setting at the node level will override the 
+                          corresponding view-level setting.
                         </p>
                       </div>
                     </div>
@@ -673,8 +766,7 @@ export default function RelationshipVistaUserGuide() {
                           Object Node Label
                         </p>
                         <p className="text-sm text-slate-600">
-                          Modify the label used for the object node in the
-                          visualization.
+                          This configuration setting allows you to modify the label used for the object node in the visualization.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -682,8 +774,8 @@ export default function RelationshipVistaUserGuide() {
                           Record Node Label Field
                         </p>
                         <p className="text-sm text-slate-600">
-                          Choose a field whose value is used as the label for
-                          record nodes.
+                          This configuration setting enables you to choose a field whose value is utilized as the 
+                          label for the record nodes in the visualization.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -691,8 +783,9 @@ export default function RelationshipVistaUserGuide() {
                           Auto Expand
                         </p>
                         <p className="text-sm text-slate-600">
-                          Enable automatic expansion of the node when the
-                          visualization is displayed.
+                          This setting allows you to enable automatic expansion of a node when the visualization 
+                          is displayed. If enabled, the node and its immediate child records will be expanded by 
+                          default.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -700,8 +793,7 @@ export default function RelationshipVistaUserGuide() {
                           Display Configuration Node
                         </p>
                         <p className="text-sm text-slate-600">
-                          Enable to display the configuration node in the
-                          visualization layout.
+                          Enable this setting to display the configuration node in the visualization layout as a node.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -709,9 +801,10 @@ export default function RelationshipVistaUserGuide() {
                           Cascade Auto Expand
                         </p>
                         <p className="text-sm text-slate-600">
-                          When enabled, the visualization automatically expands
-                          one more level to the subsequent record node, useful
-                          for junction objects.
+                         If the Auto Expand setting is enabled, the visualization will automatically expand up to 
+                         the next record node. If Cascade Auto Expand is enabled, the visualization will automatically 
+                         expand one more level to the subsequent record node. This option is useful when you want to 
+                         expand past junction object records.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -719,8 +812,9 @@ export default function RelationshipVistaUserGuide() {
                           Display Record Node
                         </p>
                         <p className="text-sm text-slate-600">
-                          Show or hide record nodes. Useful for junction objects
-                          where IDs may not be relevant.
+                          This option allows you to show or hide record nodes in the visualization. 
+                          Hiding record nodes can be useful in the case of junction objects, 
+                          where the nodes may not provide relevant information for the user.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -728,8 +822,16 @@ export default function RelationshipVistaUserGuide() {
                           Record Icon URL
                         </p>
                         <p className="text-sm text-slate-600">
-                          Set icons from the Lightning Design System to be
-                          displayed for the node.
+                           You can set the standard or custom icon from the Lightning Design System (
+                           <a
+                             href="https://www.lightningdesignsystem.com/icons/#standard"
+                             target="_blank"
+                             rel="noopener noreferrer"
+                             className="text-sky-600 hover:text-sky-700 font-semibold underline"
+                           >
+                             https://www.lightningdesignsystem.com/icons/#standard
+                           </a>
+                           ) to be displayed for the node in the visualization.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -737,8 +839,7 @@ export default function RelationshipVistaUserGuide() {
                           Record Icon Background Color
                         </p>
                         <p className="text-sm text-slate-600">
-                          Set the background color of the icon using hex color
-                          codes.
+                         You can set the color of the icon using developer tools or by specifying a color code from an external source.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -746,8 +847,9 @@ export default function RelationshipVistaUserGuide() {
                           Show Objects
                         </p>
                         <p className="text-sm text-slate-600">
-                          Select objects to be displayed as children of this
-                          node. Overrides view-level settings.
+                          This configuration setting allows you to select the set of objects that will be 
+                          displayed as children of the node in the visualization. Note that the “Show Objects” 
+                          setting at the node level will override the corresponding view level setting.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -755,8 +857,7 @@ export default function RelationshipVistaUserGuide() {
                           Filter Records
                         </p>
                         <p className="text-sm text-slate-600">
-                          Configure filters to limit which child records are
-                          visualized.
+                          You can configure filters to limit which children records are visualized under this parent node.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -764,8 +865,8 @@ export default function RelationshipVistaUserGuide() {
                           Group Records
                         </p>
                         <p className="text-sm text-slate-600">
-                          Configure grouping of child records as sub-nodes under
-                          the parent node.
+                          You can configure to group children records as sub-nodes under this parent node. 
+                          This allows you to organize and visualize related records together in the hierarchy.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -773,15 +874,14 @@ export default function RelationshipVistaUserGuide() {
                           Sort Records By
                         </p>
                         <p className="text-sm text-slate-600">
-                          Configure how records should be sorted when they are
-                          children of a node.
+                          When a node contains Salesforce records as children, you can configure how they should be sorted.
                         </p>
                       </div>
                     </div>
                   </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-3">
-                      Junction Object Configuration
+                      Configuration for Junction Object
                     </h4>
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
                       <img
@@ -792,10 +892,9 @@ export default function RelationshipVistaUserGuide() {
                     </div>
                     <br></br>
                     <p className="text-slate-600 leading-relaxed text-sm mb-4">
-                      Account Contact Relationship is a junction object. It can
-                      be enabled in Account Settings. Just below the junction
-                      object is the id which represents the Account Contact
-                      Relation i.e., junction object.
+                      Account Contact Relationship is a junction object. It can be enabled in Account Settings.
+                      <br></br>
+                      Just below the junction object is the id which represents the Account Contact Relation i.e., junction object.
                     </p>
                     <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 space-y-3">
                       <div>
@@ -803,8 +902,8 @@ export default function RelationshipVistaUserGuide() {
                           Cascade Auto Expand
                         </p>
                         <p className="text-sm text-slate-600">
-                          Automatically expand child nodes of a junction object,
-                          particularly useful for visualizing them.
+                          This setting allows you to automatically expand the child nodes of a node.
+                          This is particularly useful for visualizing junction objects.
                         </p>
                       </div>
                       <div>
@@ -812,8 +911,8 @@ export default function RelationshipVistaUserGuide() {
                           Display Record Node
                         </p>
                         <p className="text-sm text-slate-600">
-                          Hide the record node of a junction object when you
-                          want to hide record IDs or associated information.
+                          This setting allows you to hide the record node of a junction object in the visualization. 
+                          This is useful when you want to hide the record IDs or any other information associated with a junction object.
                         </p>
                       </div>
                     </div>
@@ -856,61 +955,53 @@ export default function RelationshipVistaUserGuide() {
                     <h4 className="text-base font-semibold text-[#0f172a] mb-3">
                       Change Icons in Record URL from Lightning Design System
                     </h4>
-                    <p className="text-slate-600 leading-relaxed text-sm mb-4">
-                      Set custom icons from the Lightning Design System to be
-                      displayed for nodes in your visualization. Visit the{" "}
-                      <a
-                        href="https://www.lightningdesignsystem.com/icons/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-sky-600 hover:text-sky-700 font-semibold underline"
-                      >
-                        Lightning Design System Icons
-                      </a>{" "}
-                      page to browse and select icons.
-                      <br></br>
-                      <br></br>
-                      Go to the official website of lightning design system -
-                      Icons - Standard & Custom or click the below link
-                      https://www.lightningdesignsystem.com/icons/
-                    </p>
-                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
-                      <img
-                        src={rvImage15}
-                        alt="Lightning Design System website showing Icons section with Standard and Custom filters"
-                        className="w-full h-auto"
-                      />
-                    </div>
-                    <br></br>
-                    <div className="space-y-3">
-                      <p className="text-slate-600 leading-relaxed text-sm mb-4">
-                        Select the name of :
-                      </p>
-                      <div className="border-l-2 border-sky-300 pl-4">
-                        <p className="text-sm font-semibold text-[#0f172a]">
-                          Standard Icons
-                        </p>
-                        <p className="text-sm text-slate-600 mb-2">
-                          Standard Icons and paste it in the url as
-                          /img/icon/t4v35/standard/your_standard_icon_name.svg
-                        </p>
-                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                    <ol className="list-decimal list-inside space-y-6 text-slate-600 leading-relaxed text-sm">
+                      <li>
+                        Go to the official website of lightning design system - Icons - Standard & Custom or click the below link{" "}
+                        <a
+                          href="https://www.lightningdesignsystem.com/icons/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-sky-600 hover:text-sky-700 font-semibold underline"
+                        >
+                          https://www.lightningdesignsystem.com/icons/
+                        </a>
+                        <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl mt-3">
                           <img
-                            src={rvImage16}
-                            alt="Lightning Design System standard icons browsing interface with icon names"
+                            src={rvImage15}
+                            alt="Lightning Design System website showing Icons section with Standard and Custom filters"
                             className="w-full h-auto"
                           />
                         </div>
-                      </div>
-                      <div className="border-l-2 border-sky-300 pl-4">
-                        <p className="text-sm font-semibold text-[#0f172a]">
-                          Custom Icons
-                        </p>
-                        <p className="text-sm text-slate-600 mb-2">
-                          For custom icons grab it from the same site in the
-                          Custom icons section and paste it in the link as
-                          /img/icon/t4v35/custom/your_custom_icon_name.svg
-                        </p>
+                      </li>
+                      <li>
+                        Select the name of one of the following options:
+                        <div className="space-y-4 mt-3">
+                          <div className="border-l-2 border-sky-300 pl-4">
+                            <p className="text-sm font-semibold text-[#0f172a]">
+                              Standard Icons
+                            </p>
+                            <p className="text-sm text-slate-600 mb-2">
+                              Standard Icons and paste it in the url as
+                              /img/icon/t4v35/standard/your_standard_icon_name.svg
+                            </p>
+                            <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
+                              <img
+                                src={rvImage16}
+                                alt="Lightning Design System standard icons browsing interface with icon names"
+                                className="w-full h-auto"
+                              />
+                            </div>
+                          </div>
+                          <div className="border-l-2 border-sky-300 pl-4">
+                            <p className="text-sm font-semibold text-[#0f172a]">
+                              Custom Icons
+                            </p>
+                            <p className="text-sm text-slate-600 mb-2">
+                              For custom icons grab it from the same site in the
+                              Custom icons section and paste it in the link as
+                              /img/icon/t4v35/custom/your_custom_icon_name.svg
+                            </p>
                         <div className="rounded-xl overflow-hidden border border-sky-200 shadow-lg max-w-2xl">
                           <img
                             src={rvImage17}
@@ -918,8 +1009,10 @@ export default function RelationshipVistaUserGuide() {
                             className="w-full h-auto"
                           />
                         </div>
-                      </div>
-                    </div>
+                          </div>
+                        </div>
+                      </li>
+                    </ol>
                   </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-3">
@@ -932,19 +1025,17 @@ export default function RelationshipVistaUserGuide() {
                     </p>
                     <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
                       <p className="text-sm font-semibold text-slate-700 mb-2">
-                        How to pick a color:
+                        Use color picker or the standard Inspect element to pick the color code and change it as follows:
                       </p>
                       <ol className="list-decimal list-inside space-y-2 text-sm text-slate-600">
                         <li>
-                          Right-click on any element and select{" "}
-                          <strong>Inspect</strong> (or press F12)
+                          Right click and select Inspect to open the inspect element or the developer tools or press F12.
                         </li>
                         <li>
-                          Open Developer Tools and locate the{" "}
-                          <strong>Color Picker</strong> option
+                           Use the color picker option given in the dev tools to pick the color.
                         </li>
                         <li>
-                          Click on any color to copy the hex code to clipboard
+                           Click on any color you like and it will be copied to clipboard as a hex color.
                         </li>
 
                         <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
@@ -979,10 +1070,9 @@ export default function RelationshipVistaUserGuide() {
                       Sort Records
                     </h4>
                     <p className="text-slate-600 leading-relaxed text-sm mb-4">
-                      Sort, filter, and group the child records based on
-                      different fields of the object. Select the object that
-                      needs to be configured for sorting to customize how
-                      related records are displayed in the visualization.
+                      Sort the child records based on different fields of the object. 
+                      Also filter and group records. See example below where sorting, grouping and filtering are 
+                      applied to Opportunity object records.
                     </p>
 
                     <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl">
@@ -1001,14 +1091,16 @@ export default function RelationshipVistaUserGuide() {
                       />
                     </div>
                     <br></br>
+                    <h4 className="text-base font-semibold text-[#0f172a] mb-3">
+                      Select the object that needs to be configured for sorting.
+                    </h4>
                     <div className="space-y-3">
                       <div className="border-l-2 border-sky-300 pl-4">
                         <p className="text-sm font-semibold text-[#0f172a]">
                           Auto Expand
                         </p>
                         <p className="text-sm text-slate-600">
-                          If enabled, the parent node is automatically expanded
-                          when the visualization is loaded.
+                          If enabled, the parent node is auto expanded.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -1016,9 +1108,7 @@ export default function RelationshipVistaUserGuide() {
                           Show Objects
                         </p>
                         <p className="text-sm text-slate-600">
-                          To show the relation of records from another object.
-                          Specify which object types should be displayed as
-                          children of this node.
+                          To show the relation of opportunities of another object.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -1026,13 +1116,8 @@ export default function RelationshipVistaUserGuide() {
                           Filter Records
                         </p>
                         <p className="text-sm text-slate-600 mb-2">
-                          Filter to show only records that meet specific
-                          criteria. Multiple filter conditions can be used
-                          together to refine the records displayed.
-                        </p>
-                        <p className="text-xs text-slate-600 italic">
-                          Example: Filter Opportunities to show only those with
-                          Probability greater than or equal to 10%.
+                          Filter to show opportunities whose Probability is Greater or Equal to 10%. 
+                          Multiple filter conditions Can be used to filter the records.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -1040,13 +1125,8 @@ export default function RelationshipVistaUserGuide() {
                           Group Records
                         </p>
                         <p className="text-sm text-slate-600 mb-2">
-                          Group the records by fields of the object and choose a
-                          different label for each group. More than one criteria
-                          can be used to group records.
-                        </p>
-                        <p className="text-xs text-slate-600 italic">
-                          Example: Group Opportunities by Stage field to
-                          organize them by sales status.
+                          Group the records by fields of opportunity and choose a different label for it too. 
+                          More than one criteria can be used for grouping records.
                         </p>
                       </div>
                       <div className="border-l-2 border-sky-300 pl-4">
@@ -1054,9 +1134,7 @@ export default function RelationshipVistaUserGuide() {
                           Sort Records By
                         </p>
                         <p className="text-sm text-slate-600">
-                          Sort the records by fields of the object in ascending
-                          or descending order to organize how child records
-                          appear.
+                          Sort the records by fields of opportunity.
                         </p>
                       </div>
                     </div>
@@ -1086,9 +1164,9 @@ export default function RelationshipVistaUserGuide() {
               value="misc"
               className="border border-sky-200 rounded-lg overflow-hidden"
             >
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 focus-visible:outline-none" style={{scrollBehavior: "auto"}}>
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">
-                  Miscellaneous Features
+                  Restricting the display of view selector
                 </h3>
               </AccordionTrigger>
               <AccordionContent className="px-6 bg-white">
@@ -1117,7 +1195,7 @@ export default function RelationshipVistaUserGuide() {
                   </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-4">
-                      Configuring User View Options
+                      Configuring views that a user can select
                     </h4>
                     <p className="text-slate-600 leading-relaxed mb-4">
                       In some situations, the administrator wants to give users
@@ -1136,7 +1214,7 @@ export default function RelationshipVistaUserGuide() {
                   </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-4">
-                      Setting a Default View
+                      Configuring a default view for the users
                     </h4>
                     <p className="text-slate-600 leading-relaxed mb-4">
                       The administrator can pin a view by checking the "Pinned"
@@ -1156,7 +1234,7 @@ export default function RelationshipVistaUserGuide() {
                   </div>
                   <div>
                     <h4 className="text-base font-semibold text-[#0f172a] mb-4">
-                      User View Creation Control
+                      Controlling if the users can create their own views
                     </h4>
                     <p className="text-slate-600 leading-relaxed mb-4">
                       In some cases, the administrator would like to allow users
@@ -1225,7 +1303,7 @@ export default function RelationshipVistaUserGuide() {
               value="questions"
               className="border border-sky-200 rounded-lg overflow-hidden"
             >
-              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 scroll-mt-0 focus-visible:outline-none focus:scroll-mt-0">
+              <AccordionTrigger className="px-6 hover:bg-sky-50 bg-sky-50/30 focus-visible:outline-none" style={{scrollBehavior: "auto"}}>
                 <h3 className="text-lg font-semibold font-display text-[#0f172a]">
                   Have Questions?
                 </h3>
