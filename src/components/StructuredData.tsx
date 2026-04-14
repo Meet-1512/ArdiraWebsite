@@ -13,8 +13,8 @@ export default function StructuredData({ type, data = {} }: StructuredDataProps)
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "Ardira",
-        url: "https://www.ardira.com",
-        logo: "https://www.ardira.com/assets/ArdiraFooterLogo.webp",
+        url: "https://ardira.com",
+        logo: "https://ardira.com/assets/ArdiraFooterLogo.webp",
         description: "Enterprise-grade Salesforce native applications and consulting services",
         sameAs: [
           "https://www.linkedin.com/company/ardira",
@@ -23,8 +23,8 @@ export default function StructuredData({ type, data = {} }: StructuredDataProps)
         contactPoint: {
           "@type": "ContactPoint",
           contactType: "Customer Support",
-          email: "contact@ardira.com",
-          telephone: "+1-XXXXXXXXXX",
+          email: "info@ardira.com",
+          telephone: "+1-669-777-6838",
         },
         address: {
           "@type": "PostalAddress",
@@ -49,8 +49,8 @@ export default function StructuredData({ type, data = {} }: StructuredDataProps)
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         name: "Ardira",
-        url: "https://www.ardira.com",
-        telephone: "+1-XXXXXXXXXX",
+        url: "https://ardira.com",
+        telephone: "+1-669-777-6838",
         address: {
           "@type": "PostalAddress",
           addressCountry: "US",
@@ -67,7 +67,7 @@ export default function StructuredData({ type, data = {} }: StructuredDataProps)
         "@type": "SoftwareApplication",
         name: data.name || "Ardira Enterprise Solutions",
         description: data.description || "Enterprise Salesforce applications",
-        url: data.url || "https://www.ardira.com",
+        url: data.url || "https://ardira.com",
         applicationCategory: data.category || "BusinessApplication",
         offers: {
           "@type": "Offer",
@@ -90,12 +90,12 @@ export default function StructuredData({ type, data = {} }: StructuredDataProps)
         "@context": "https://schema.org",
         "@type": "WebPage",
         name: data.name || "Ardira",
-        url: data.url || "https://www.ardira.com",
+        url: data.url || "https://ardira.com",
         description: data.description || "Enterprise Salesforce solutions",
         mainEntity: {
           "@type": "Organization",
           name: "Ardira",
-          url: "https://www.ardira.com",
+          url: "https://ardira.com",
         },
         ...data,
       };
@@ -112,7 +112,7 @@ export default function StructuredData({ type, data = {} }: StructuredDataProps)
             "@type": "ListItem",
             position: 1,
             name: "Home",
-            item: "https://www.ardira.com",
+            item: "https://ardira.com",
           },
         ],
         ...data,

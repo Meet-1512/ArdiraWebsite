@@ -60,7 +60,7 @@ export default function Contact() {
       }
 
       // Submit form to Vercel serverless function with reCAPTCHA token
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/contact.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -102,7 +102,7 @@ export default function Contact() {
         keywords="contact Ardira, Salesforce consulting, partnership"
         ogTitle="Contact Ardira"
         ogDescription="Reach out to us for enterprise Salesforce solutions"
-        ogUrl="https://www.ardira.com/contact"
+        ogUrl="https://ardira.com/contact"
       />
       <StructuredData type="Organization" />
       <Navbar />

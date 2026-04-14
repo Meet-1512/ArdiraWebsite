@@ -207,7 +207,7 @@ export default function Home() {
         keywords="Salesforce apps, AppExchange applications, enterprise software, Salesforce native solutions"
         ogTitle="Ardira - Enterprise Salesforce Solutions"
         ogDescription="Build, deploy, and optimize enterprise-grade Salesforce native applications"
-        ogUrl="https://www.ardira.com"
+        ogUrl="https://ardira.com"
       />
       <StructuredData
         type="Organization"

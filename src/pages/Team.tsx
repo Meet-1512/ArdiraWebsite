@@ -109,7 +109,7 @@ export default function About() {
         keywords="Salesforce team, enterprise architects, Salesforce consultants"
         ogTitle="Ardira Team - Salesforce Experts"
         ogDescription="Experienced leadership and advisory board dedicated to Salesforce innovation"
-        ogUrl="https://www.ardira.com/team"
+        ogUrl="https://ardira.com/team"
       />
       <StructuredData type="Organization" />
       <Navbar />

@@ -113,7 +113,7 @@ export default function RelationshipVistaUserGuide() {
         keywords="RelationshipVista, Salesforce relationships, user guide, documentation"
         ogTitle="RelationshipVista User Guide"
         ogDescription="Master RelationshipVista and visualize your Salesforce relationships"
-        ogUrl="https://www.ardira.com/relationship-vista-user-guide"
+        ogUrl="https://ardira.com/relationship-vista-user-guide"
       />
       <StructuredData type="WebPage" data={{ name: "RelationshipVista User Guide" }} />
       <Navbar />

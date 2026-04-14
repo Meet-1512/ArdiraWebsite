@@ -36,7 +36,7 @@ export default function RelationshipVistaInstallationGuide() {
         keywords="RelationshipVista installation, setup guide, Salesforce app installation"
         ogTitle="RelationshipVista Installation Guide"
         ogDescription="Install RelationshipVista and start visualizing your Salesforce relationships"
-        ogUrl="https://www.ardira.com/relationship-vista-installation-guide"
+        ogUrl="https://ardira.com/relationship-vista-installation-guide"
       />
       <StructuredData type="WebPage" data={{ name: "RelationshipVista Installation Guide" }} />
       <Navbar />

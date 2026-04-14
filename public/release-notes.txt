@@ -1,0 +1,46 @@
+ARDIRA WEBSITE - PRODUCTION RELEASE NOTES
+=========================================
+
+1. Route Inventory
+------------------
+The React application contains the following public indexable paths, configured to fallback to index.html in standard Apache hosting via .htaccess:
+- /
+- /products
+- /partners
+- /team
+- /contact
+- /terms-of-use
+- /privacy-policy
+- /relationship-vista-user-guide
+- /relationship-vista-installation-guide
+
+A 404 Not Found dynamic route acts as a catch-all for any unregistered paths.
+
+2. Infrastructure Settings & .htaccess configuration
+----------------------------------------------------
+- The .htaccess file is securely packaged inside the production bundle (`site-root/`).
+- It has been prepared to:
+  - Provide an SPA (Single Page Application) fallback. Let the URL rewrite rule handle incoming nested routes.
+  - Apply an HTTPS forced redirect.
+  - Force non-www `ardira.com` canonical hostname.
+
+3. PHP Form Implementations (Phase 1)
+-------------------------------------
+Wait... I need to structure this so it's readable. Let me just output simple release notes.
+
+The `public/api/contact.php` and `public/api/partner.php` scripts accept frontend submissions and utilize the core PHP `mail()` function to send an auto-responder and a team inquiry notification to standard addresses.
+
+4. SEO Basics
+-------------
+The canonical domain was universally formatted as non-www globally. The build output provides standard search engine indexing components:
+- `sitemap.xml` provides final canonical routes.
+- `robots.txt` points securely to `https://ardira.com/sitemap.xml`.
+- Structured metadata conforms strictly to modern schemas.
+
+5. Test Summary
+---------------
+- Frontend logic successfully invokes the relative path (`/api/contact.php`, `/api/partner.php`).
+- Forms present the appropriate loading/success logic on return.
+- Design files strictly unaltered.
+
+**Contact Info for Errors:** Dev Team

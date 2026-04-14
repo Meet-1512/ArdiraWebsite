@@ -13,7 +13,7 @@ Disallow: *.xls$
 Allow: /public/
 
 # Sitemap location
-Sitemap: https://www.ardira.com/sitemap.xml
+Sitemap: https://ardira.com/sitemap.xml
 
 # Crawl delay to prevent server overload
 Crawl-delay: 2

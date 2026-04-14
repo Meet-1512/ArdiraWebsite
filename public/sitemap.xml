@@ -5,7 +5,7 @@
   
   <!-- Home Page -->
   <url>
-    <loc>https://www.ardira.com/</loc>
+    <loc>https://ardira.com/</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -13,7 +13,7 @@
 
   <!-- Products Page -->
   <url>
-    <loc>https://www.ardira.com/products</loc>
+    <loc>https://ardira.com/products</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -21,7 +21,7 @@
 
   <!-- Partners Page -->
   <url>
-    <loc>https://www.ardira.com/partners</loc>
+    <loc>https://ardira.com/partners</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -29,7 +29,7 @@
 
   <!-- Team Page -->
   <url>
-    <loc>https://www.ardira.com/team</loc>
+    <loc>https://ardira.com/team</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -37,7 +37,7 @@
 
   <!-- Contact Page -->
   <url>
-    <loc>https://www.ardira.com/contact</loc>
+    <loc>https://ardira.com/contact</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -45,7 +45,7 @@
 
   <!-- Services (Terms) Page -->
   <url>
-    <loc>https://www.ardira.com/terms-of-use</loc>
+    <loc>https://ardira.com/terms-of-use</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -53,7 +53,7 @@
 
   <!-- Privacy Policy Page -->
   <url>
-    <loc>https://www.ardira.com/privacy-policy</loc>
+    <loc>https://ardira.com/privacy-policy</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -61,7 +61,7 @@
 
   <!-- RelationshipVista User Guide -->
   <url>
-    <loc>https://www.ardira.com/relationship-vista-user-guide</loc>
+    <loc>https://ardira.com/relationship-vista-user-guide</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -69,7 +69,7 @@
 
   <!-- RelationshipVista Installation Guide -->
   <url>
-    <loc>https://www.ardira.com/relationship-vista-installation-guide</loc>
+    <loc>https://ardira.com/relationship-vista-installation-guide</loc>
     <lastmod>2026-04-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

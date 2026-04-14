@@ -10,7 +10,7 @@ export default function Privacy() {
         title="Privacy Policy | Ardira"
         description="Learn how Ardira protects your privacy and handles your personal information in accordance with applicable laws."
         robots="index, follow"
-        ogUrl="https://www.ardira.com/privacy-policy"
+        ogUrl="https://ardira.com/privacy-policy"
       />
       <StructuredData type="WebPage" data={{ name: "Privacy Policy" }} />
       <Navbar />
@@ -24,10 +24,10 @@ export default function Privacy() {
             <h2 className="text-xl md:text-2xl font-semibold text-[#0f172a] mb-4">Privacy Notice</h2>
             <p className="mb-4">
               The website located at <a
-                href="https://www.ardira.com"
+                href="https://ardira.com"
                 className="text-emerald-600 hover:text-emerald-700 underline"
               >
-                www.ardira.com
+                ardira.com
               </a>, (the "Website") is published, owned, and operated by Ardira Corporation, its affiliates and related entities ("Ardira," "the Company," "we," "us," and "our"). Ardira respects your privacy and is committed to protecting your privacy through our compliance with this website privacy policy (the "Policy"). This Policy should be read in conjunction with our website Terms of Use, into which this Policy is incorporated by reference.
             </p>
             <p className="font-semibold text-slate-800 mb-2">This Policy describes:</p>

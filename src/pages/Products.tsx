@@ -191,13 +191,13 @@ export default function Products() {
         keywords="Salesforce products, survey management, form builder, relationship mapping, compliance management"
         ogTitle="Ardira Products - Salesforce Applications"
         ogDescription="Enterprise-grade Salesforce native applications for surveys, forms, relationships, compliance, and AI-powered agents"
-        ogUrl="https://www.ardira.com/products"
+        ogUrl="https://ardira.com/products"
       />
       <StructuredData
         type="WebPage"
         data={{
           name: "Ardira Products",
-          url: "https://www.ardira.com/products",
+          url: "https://ardira.com/products",
         }}
       />
       <Navbar />

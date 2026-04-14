@@ -131,7 +131,7 @@ export default function PartnerHub() {
     setSubmitError(null);
 
     try {
-      const response = await fetch("/api/partner", {
+      const response = await fetch("/api/partner.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -167,7 +167,7 @@ export default function PartnerHub() {
         keywords="Salesforce partners, partner program, consulting partners"
         ogTitle="Ardira Partner Hub"
         ogDescription="Partner with Ardira for mutual success in Salesforce solutions"
-        ogUrl="https://www.ardira.com/partners"
+        ogUrl="https://ardira.com/partners"
       />
       <StructuredData type="Organization" />
       <Navbar />

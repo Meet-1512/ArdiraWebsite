@@ -13,7 +13,7 @@ export default function Terms() {
         title="Terms of Use | Ardira"
         description="Read Ardira's Terms of Use and understand the legal agreement governing your use of our website and services."
         robots="index, follow"
-        ogUrl="https://www.ardira.com/terms-of-use"
+        ogUrl="https://ardira.com/terms-of-use"
       />
       <StructuredData type="WebPage" data={{ name: "Terms of Use" }} />
       <Navbar />
@@ -31,10 +31,10 @@ export default function Terms() {
             </h2>
             <p className="mb-4">
               The website located at <a
-                href="https://www.ardira.com"
+                href="https://ardira.com"
                 className="text-emerald-600 hover:text-emerald-700 underline"
               >
-              www.ardira.com
+              ardira.com
               </a>, (the "Website") is
               published, owned, and operated by Ardira Corporation, its
               affiliates and related entities ("Ardira", "the Company," "we,"
