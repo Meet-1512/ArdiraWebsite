@@ -301,7 +301,7 @@ export default function Products() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Customer Experience",
+                    "Customer Feedback",
                     "Marketing Campaigns",
                     "Sales Insights",
                     "Operational Assessments",
