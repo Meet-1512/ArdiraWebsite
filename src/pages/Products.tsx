@@ -1013,7 +1013,7 @@ export default function Products() {
               </div>
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
-                  href="https://compliance-quest-page.vercel.app/"
+                  href="https://compliancevista.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#43AF57] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#43AF57] transition-colors shadow-sm group"
@@ -1123,7 +1123,7 @@ export default function Products() {
               </div>
               <div className="flex flex-wrap gap-3 pt-2">
                 <a
-                  href="https://agentvista-design.vercel.app/"
+                  href="https://agentsvista.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-blue-500 text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors shadow-sm group"
