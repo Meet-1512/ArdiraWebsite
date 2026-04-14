@@ -348,7 +348,7 @@ export default function Products() {
                 className="lg:sticky lg:top-24 h-fit space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
+                <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-2 md:p-6 flex items-center justify-center w-full h-[220px] md:h-[350px]">
                   <img
                     src={svProductCard}
                     alt="SurveyVista Product Card"
@@ -445,7 +445,7 @@ export default function Products() {
                 className="lg:sticky lg:top-24 h-fit space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
+                <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-3 md:p-6 flex items-center justify-center w-full h-[280px] md:h-[350px]">
                   <img
                     src={fvProductCard}
                     alt="FormVista Product Card"
@@ -757,7 +757,7 @@ export default function Products() {
                 className="lg:sticky lg:top-24 h-fit space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
+                <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-3 md:p-6 flex items-center justify-center w-full h-[220px] md:h-[350px]">
                   <img
                     src={rvProductCard}
                     alt="Relationship Vista Product Card"
@@ -854,7 +854,7 @@ export default function Products() {
                 className="lg:sticky lg:top-24 h-fit space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-[#c1e9c3] via-#c1e9c3 to-[#c1e9c3] rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
+                <div className="bg-gradient-to-br from-[#c1e9c3] via-#c1e9c3 to-[#c1e9c3] rounded-3xl p-3 md:p-6 flex items-center justify-center w-full h-[280px] md:h-[350px]">
                   <img
                     src={cvProductCard}
                     alt="ComplianceVista Product Card"
@@ -1152,7 +1152,7 @@ export default function Products() {
                 className="lg:sticky lg:top-24 h-fit space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-6 flex items-center justify-center w-full h-[350px]">
+                <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-3 md:p-6 flex items-center justify-center w-full h-[280px] md:h-[350px]">
                   <img
                     src={avProductCard}
                     alt="AgentVista Product Card"

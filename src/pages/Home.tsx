@@ -239,8 +239,8 @@ export default function Home() {
             </motion.div>
 
             {/* Headline - Fixed height with larger container */}
-            <div className="relative" style={{ marginBottom: "2rem" }}>
-              <div className="min-h-[8rem] sm:min-h-[10rem] md:min-h-[13rem]">
+            <div className="relative" style={{ marginBottom: "4rem" }}>
+              <div className="h-[8rem] sm:min-h-[10rem] md:min-h-[13rem] flex items-center justify-center">
                 <AnimatePresence custom={direction} mode="wait">
                   <motion.h1
                     key={current}
@@ -266,8 +266,8 @@ export default function Home() {
 
             {/* Subtitle - Fixed height with larger container */}
             <div
-              className="min-h-[3rem] sm:min-h-[4rem]"
-              style={{ marginBottom: "0" }}
+              className="h-[3rem] sm:min-h-[4rem] flex items-center justify-center"
+              style={{ marginBottom: "2rem" }}
             >
               <AnimatePresence mode="wait">
                 <motion.p
@@ -285,14 +285,14 @@ export default function Home() {
           </div>
 
           {/* Bottom section - CTAs and Trust bar */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center mt-8 sm:mt-0">
             {/* CTAs - Fixed position */}
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.25 }}
               className="flex flex-col sm:flex-row gap-4 justify-center"
-              style={{ height: "3.5rem", marginBottom: "2rem" }}
+              style={{ height: "3.5rem", marginBottom: "4rem" }}
             >
               <Link
                 href="/products"
@@ -446,17 +446,17 @@ export default function Home() {
               <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#43AF57] mb-5">
                 About Ardira
               </p>
-              <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-7 text-justify">
+              <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-7">
                 Building powerful, native products for Salesforce
               </h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-10 text-justify">
+              <p className="text-slate-600 text-lg leading-relaxed mb-10">
                 Founded in 2019, Ardira set out with a clear mission to build
                 powerful, 100% native Salesforce applications that enterprises
                 can trust. What began as a small startup has grown into a
                 recognized Salesforce ISV partner, delivering a suite of
                 applications available on the Salesforce AppExchange.
               </p>
-              <p className="text-slate-600 text-lg leading-relaxed mb-10 text-justify">
+              <p className="text-slate-600 text-lg leading-relaxed mb-10">
                 Everything we build lives natively inside Salesforce, designed
                 from the ground up to help enterprises work better, move faster,
                 and scale with confidence. As a Salesforce ISV partner, we are

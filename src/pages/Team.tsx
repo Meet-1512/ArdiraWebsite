@@ -191,12 +191,12 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-extrabold font-display text-[#0f172a] leading-tight mb-6">
               Making Salesforce Work Harder for You
             </h2>
-            <p className="text-slate-500 text-lg leading-relaxed mb-6 text-justify">
+            <p className="text-slate-500 text-lg leading-relaxed mb-6">
               Ardira was founded on a simple belief: Salesforce is the world's
               most powerful business platform, and most organizations are only
               scratching the surface of what it can do.
             </p>
-            <p className="text-slate-500 text-lg leading-relaxed text-justify">
+            <p className="text-slate-500 text-lg leading-relaxed">
               Our mission is to extend Salesforce with powerful, native products
               that help organizations collect better data, gain deeper insights,
               and act with confidence.
