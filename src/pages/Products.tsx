@@ -613,7 +613,7 @@ export default function Products() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#28aae1] text-white px-6 py-3 rounded-lg font-semibold text-sm hover:bg-[#1a8ec4] transition-colors shadow-sm group"
                 >
-                  Visit FormVista.com <ExternalLink size={15} />
+                  Visit FormVista <ExternalLink size={15} />
                 </a>
                 <a
                   href="https://appexchange.salesforce.com/appxListingDetail?listingId=cb060fcb-9641-4d9b-ab2f-2a9475b48081"
