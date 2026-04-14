@@ -214,7 +214,7 @@ export default function RelationshipVistaUserGuide() {
                       />
                     </div>
                     <br></br>
-                    <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl"></div>
+                    {/* <div className="rounded-xl overflow-hidden border border-sky-200 shadow-md max-w-2xl"></div> */}
 
                     <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 text-sm text-slate-700">
                       <p className="font-semibold text-sky-700 mb-2">
