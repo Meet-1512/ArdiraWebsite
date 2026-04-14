@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Phone, Mail, Globe, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import ardiraFooterLogo from "@assets/ArdiraFooterLogo.webp";
 import sfPartnerLogo from "@assets/SalesForcePartnerLogo.webp";
 
