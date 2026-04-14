@@ -60,7 +60,7 @@ export default function Contact() {
       }
 
       // Submit form to Vercel serverless function with reCAPTCHA token
-      const response = await fetch("/api/contact.php", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -71,7 +71,14 @@ export default function Contact() {
         }),
       });
 
-      const result = await response.json();
+      let result = {};
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        result = await response.json();
+      } else if (!response.ok) {
+        // If it's an empty 404 (local Vite) or generic HTML 500 error
+        throw new Error(`Server execution failed (Status ${response.status}). If testing locally, ensure you are using Vercel Dev.`);
+      }
 
       if (!response.ok) {
         throw new Error(result.error || "Failed to submit form");

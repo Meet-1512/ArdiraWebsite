@@ -131,13 +131,19 @@ export default function PartnerHub() {
     setSubmitError(null);
 
     try {
-      const response = await fetch("/api/partner.php", {
+      const response = await fetch("/api/partner", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      const result = await response.json();
+      let result: any = {};
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.indexOf("application/json") !== -1) {
+        result = await response.json();
+      } else if (!response.ok) {
+        throw new Error(`Server execution failed (Status ${response.status}). If testing locally, ensure you are using Vercel Dev.`);
+      }
 
       if (!response.ok) {
         throw new Error(result.error || "Failed to submit application");
