@@ -235,24 +235,33 @@ export default function Products() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-12 lg:gap-16">
             {/* Left Column - Product Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="order-2 lg:order-none space-y-7"
-            >
-              <div className="flex items-center">
-                <img loading="lazy"
-                  src={surveyVistaLogo}
-                  alt="Survey Vista"
-                  className="h-12 w-auto"
-                />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-                100% Salesforce Native Intelligence & Action Platform
-              </h2>
-              <p className="text-base md:text-lg font-medium text-[#43AF57]">
+            <div className="contents lg:block lg:space-y-7 lg:order-none">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-1 lg:order-none space-y-7"
+              >
+                <div className="flex items-center">
+                  <img loading="lazy"
+                    src={surveyVistaLogo}
+                    alt="Survey Vista"
+                    className="h-12 w-auto"
+                  />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
+                  100% Salesforce Native Intelligence & Action Platform
+                </h2>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+              >
+                <p className="text-base md:text-lg font-medium text-[#43AF57]">
                 Turn customer signals into results — inside Salesforce.
               </p>
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
@@ -335,7 +344,8 @@ export default function Products() {
                   View on AppExchange <ArrowRight size={15} />
                 </a>
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
             {/* Right Column - Sticky Container for Image and Testimonial */}
             <div className="contents lg:flex lg:flex-col lg:order-none">
@@ -349,7 +359,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="order-1 lg:order-none w-full"
+                  className="order-2 lg:order-none w-full"
                 >
                   <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-2 md:p-6 flex items-center justify-center w-full aspect-video">
                     <img
@@ -367,7 +377,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="order-3 lg:order-none w-full"
+                  className="order-4 lg:order-none w-full"
                 >
                   <Carousel
                   opts={{
@@ -458,7 +468,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="order-1 lg:order-none w-full"
+                  className="order-2 lg:order-none w-full"
                 >
                   <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
                     <img
@@ -476,7 +486,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="order-3 lg:order-none w-full"
+                  className="order-4 lg:order-none w-full"
                 >
                   <Carousel
                   opts={{
@@ -546,26 +556,35 @@ export default function Products() {
             </div>
 
             {/* Right Column - Product Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="order-2 lg:order-2 space-y-7"
-            >
-              <div className="flex items-center">
-                <img
-                  src={formVistaLogo}
-                  alt="Form Vista"
-                  loading="lazy"
-                  className="h-12 w-auto"
-                />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-                FormVista: 100% Native Forms, Surveys, Quizzes, Checklists, and
-                Assessments
-              </h2>
-              <p className="text-base md:text-lg font-medium text-[#28aae1]">
+            <div className="contents lg:block lg:space-y-7 lg:order-2">
+              <motion.div
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-1 lg:order-none space-y-7"
+              >
+                <div className="flex items-center">
+                  <img
+                    src={formVistaLogo}
+                    alt="Form Vista"
+                    loading="lazy"
+                    className="h-12 w-auto"
+                  />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
+                  FormVista: 100% Native Forms, Surveys, Quizzes, Checklists, and
+                  Assessments
+                </h2>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+              >
+                <p className="text-base md:text-lg font-medium text-[#28aae1]">
                 Endless Applications: The 5-star rated Data Collection Solution
                 You Need.
               </p>
@@ -648,7 +667,8 @@ export default function Products() {
                   View on AppExchange <ArrowRight size={15} />
                 </a>
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -661,26 +681,35 @@ export default function Products() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-12 lg:gap-16">
             {/* Left Column - Product Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="order-2 lg:order-none space-y-7 lg:order-1"
-            >
-              <div className="flex items-center">
-                <img
-                  src={relationshipVistaLogo}
-                  loading="lazy"
-                  alt="Relationship Vista"
-                  className="h-22 w-auto"
-                />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-                Relationship Vista: Uncover Deeper Insights with Simplified
-                Relationship Mapping
-              </h2>
-              <p className="text-base md:text-lg font-medium text-sky-600">
+            <div className="contents lg:block lg:space-y-7 lg:order-1">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-1 lg:order-none space-y-7"
+              >
+                <div className="flex items-center">
+                  <img
+                    src={relationshipVistaLogo}
+                    loading="lazy"
+                    alt="Relationship Vista"
+                    className="h-22 w-auto"
+                  />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
+                  Relationship Vista: Uncover Deeper Insights with Simplified
+                  Relationship Mapping
+                </h2>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+              >
+                <p className="text-base md:text-lg font-medium text-sky-600">
                 Uncover & Visualize Your Salesforce Relationships
               </p>
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
@@ -768,7 +797,8 @@ export default function Products() {
                   View on AppExchange <ArrowRight size={15} />
                 </a>
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
             {/* Right Column - Sticky Container for Image and Testimonial */}
             <div className="contents lg:flex lg:flex-col lg:order-2">
@@ -782,7 +812,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="order-1 lg:order-none w-full"
+                  className="order-2 lg:order-none w-full"
                 >
                   <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
                     <img
@@ -800,7 +830,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="order-3 lg:order-none w-full"
+                  className="order-4 lg:order-none w-full"
                 >
                   <Carousel
                   opts={{
@@ -891,7 +921,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="order-1 lg:order-none w-full"
+                  className="order-2 lg:order-none w-full"
                 >
                   <div className="bg-gradient-to-br from-[#c1e9c3] via-#c1e9c3 to-[#c1e9c3] rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
                     <img
@@ -909,7 +939,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="order-3 lg:order-none w-full"
+                  className="order-4 lg:order-none w-full"
                 >
                   <Carousel
                   opts={{
@@ -979,26 +1009,35 @@ export default function Products() {
             </div>
 
             {/* Right Column - Product Info */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="order-2 lg:order-2 space-y-7"
-            >
-              <div className="flex items-center">
-                <img
-                  src={complianceVistaLogo}
-                  alt="Compliance Vista"
-                  loading="lazy"
-                  className="h-12 w-auto"
-                />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-                Compliance Vista – Assessment & Compliance Management – In your
-                Salesforce Org
-              </h2>
-              <p className="text-base md:text-lg font-medium text-[#43AF57]">
+            <div className="contents lg:block lg:space-y-7 lg:order-2">
+              <motion.div
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-1 lg:order-none space-y-7"
+              >
+                <div className="flex items-center">
+                  <img
+                    src={complianceVistaLogo}
+                    alt="Compliance Vista"
+                    loading="lazy"
+                    className="h-12 w-auto"
+                  />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
+                  Compliance Vista – Assessment & Compliance Management – In your
+                  Salesforce Org
+                </h2>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+              >
+                <p className="text-base md:text-lg font-medium text-[#43AF57]">
                 Automate assessments, reduce risk, and ensure compliance inside
                 Salesforce
               </p>
@@ -1077,7 +1116,8 @@ export default function Products() {
                   View on AppExchange <ArrowRight size={15} />
                 </a>
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -1087,28 +1127,37 @@ export default function Products() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-12 lg:gap-16">
             {/* Left Column - Product Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="order-2 lg:order-none space-y-7 lg:order-1"
-            >
-              <div className="flex items-center">
-                <img
-                  src={agentVistaLogo}
-                  alt="Agent Vista"
-                  loading="lazy"
-                  className="h-16 w-auto"
-                />
-              </div>
-              <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
-                AgentVista – SurveyVista Copilot for Intelligent Surveys, Forms,
-                and Assessments
-              </h2>
-              <p className="text-base md:text-lg font-medium text-blue-400">
-                AI-Powered Feedback Automation with SurveyVista & Agentforce
-              </p>
+            <div className="contents lg:block lg:space-y-7 lg:order-1">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="order-1 lg:order-none space-y-7"
+              >
+                <div className="flex items-center">
+                  <img
+                    src={agentVistaLogo}
+                    alt="Agent Vista"
+                    loading="lazy"
+                    className="h-16 w-auto"
+                  />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-semibold font-display text-[#0f172a]">
+                  AgentVista – SurveyVista Copilot for Intelligent Surveys, Forms,
+                  and Assessments
+                </h2>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+              >
+                <p className="text-base md:text-lg font-medium text-blue-400">
+                  AI-Powered Feedback Automation with SurveyVista & Agentforce
+                </p>
               <p className="text-slate-500 text-sm md:text-base leading-relaxed font-normal">
                 Harness the power of Agentforce with SurveyVista to drive
                 intelligent feedback operations through AI powered survey & form
@@ -1187,7 +1236,8 @@ export default function Products() {
                   View on AppExchange <ArrowRight size={15} />
                 </a>
               </div>
-            </motion.div>
+              </motion.div>
+            </div>
 
             {/* Right Column - Sticky Container for Image and Testimonial */}
             <div className="contents lg:flex lg:flex-col lg:order-2">
@@ -1201,7 +1251,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="order-1 lg:order-none w-full"
+                  className="order-2 lg:order-none w-full"
                 >
                   <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
                     <img
@@ -1219,7 +1269,7 @@ export default function Products() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="order-3 lg:order-none w-full"
+                  className="order-4 lg:order-none w-full"
                 >
                   <Carousel
                   opts={{
