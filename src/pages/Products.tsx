@@ -233,14 +233,14 @@ export default function Products() {
         className="py-24 border-t border-slate-100"
       >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-12 lg:gap-16">
             {/* Left Column - Product Info */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="space-y-7"
+              className="order-2 lg:order-none space-y-7"
             >
               <div className="flex items-center">
                 <img loading="lazy"
@@ -338,27 +338,38 @@ export default function Products() {
             </motion.div>
 
             {/* Right Column - Sticky Container for Image and Testimonial */}
-            <div className="flex flex-col">
+            <div className="contents lg:flex lg:flex-col lg:order-none">
               {/* Combined Sticky Section */}
-              <motion.div
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit space-y-4"
+              <div
+                className="contents lg:block lg:sticky lg:top-24 h-fit space-y-8 lg:space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-2 md:p-6 flex items-center justify-center w-full aspect-video">
-                  <img
-                    src={svProductCard}
-                    alt="SurveyVista Product Card"
-                    loading="lazy"
-                    className="w-full h-full object-cover rounded-2xl shadow-md"
-                  />
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="order-1 lg:order-none w-full"
+                >
+                  <div className="bg-gradient-to-br from-emerald-50 to-green-100 rounded-3xl p-2 md:p-6 flex items-center justify-center w-full aspect-video">
+                    <img
+                      src={svProductCard}
+                      alt="SurveyVista Product Card"
+                      loading="lazy"
+                      className="w-full h-full object-cover rounded-2xl shadow-md"
+                    />
+                  </div>
+                </motion.div>
 
                 {/* Testimonial Carousel */}
-                <Carousel
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="order-3 lg:order-none w-full"
+                >
+                  <Carousel
                   opts={{
                     align: "start",
                     loop: true,
@@ -421,7 +432,8 @@ export default function Products() {
                     ))}
                   </CarouselContent>
                 </Carousel>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -433,29 +445,40 @@ export default function Products() {
         className="py-24 bg-[#f8fafc] border-t border-slate-100"
       >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-12 lg:gap-16">
             {/* Left Column - Sticky Container for Image and Testimonial */}
-            <div className="flex flex-col lg:order-1">
+            <div className="contents lg:flex lg:flex-col lg:order-1">
               {/* Combined Sticky Section */}
-              <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit space-y-4"
+              <div
+                className="contents lg:block lg:sticky lg:top-24 h-fit space-y-8 lg:space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
-                  <img
-                    src={fvProductCard}
-                    alt="FormVista Product Card"
-                    loading="lazy"
-                    className="w-full h-full object-cover rounded-2xl shadow-md"
-                  />
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: -24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="order-1 lg:order-none w-full"
+                >
+                  <div className="bg-gradient-to-br from-[#e0f7fc] to-[#b3e9f5] rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
+                    <img
+                      src={fvProductCard}
+                      alt="FormVista Product Card"
+                      loading="lazy"
+                      className="w-full h-full object-cover rounded-2xl shadow-md"
+                    />
+                  </div>
+                </motion.div>
 
                 {/* Testimonial Carousel */}
-                <Carousel
+                <motion.div
+                  initial={{ opacity: 0, x: -24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="order-3 lg:order-none w-full"
+                >
+                  <Carousel
                   opts={{
                     align: "start",
                     loop: true,
@@ -518,7 +541,8 @@ export default function Products() {
                     ))}
                   </CarouselContent>
                 </Carousel>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
 
             {/* Right Column - Product Info */}
@@ -527,7 +551,7 @@ export default function Products() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="space-y-7 lg:order-2"
+              className="order-2 lg:order-2 space-y-7"
             >
               <div className="flex items-center">
                 <img
@@ -635,14 +659,14 @@ export default function Products() {
         className="py-24 border-t border-slate-100"
       >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-12 lg:gap-16">
             {/* Left Column - Product Info */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="space-y-7 lg:order-1"
+              className="order-2 lg:order-none space-y-7 lg:order-1"
             >
               <div className="flex items-center">
                 <img
@@ -747,27 +771,38 @@ export default function Products() {
             </motion.div>
 
             {/* Right Column - Sticky Container for Image and Testimonial */}
-            <div className="flex flex-col lg:order-2">
+            <div className="contents lg:flex lg:flex-col lg:order-2">
               {/* Combined Sticky Section */}
-              <motion.div
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit space-y-4"
+              <div
+                className="contents lg:block lg:sticky lg:top-24 h-fit space-y-8 lg:space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
-                  <img
-                    src={rvProductCard}
-                    alt="Relationship Vista Product Card"
-                    loading="lazy"
-                    className="w-full h-full object-cover rounded-2xl shadow-md"
-                  />
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="order-1 lg:order-none w-full"
+                >
+                  <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
+                    <img
+                      src={rvProductCard}
+                      alt="Relationship Vista Product Card"
+                      loading="lazy"
+                      className="w-full h-full object-cover rounded-2xl shadow-md"
+                    />
+                  </div>
+                </motion.div>
 
                 {/* Testimonial Carousel */}
-                <Carousel
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="order-3 lg:order-none w-full"
+                >
+                  <Carousel
                   opts={{
                     align: "start",
                     loop: true,
@@ -830,7 +865,8 @@ export default function Products() {
                     ))}
                   </CarouselContent>
                 </Carousel>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -842,29 +878,40 @@ export default function Products() {
         className="py-24 bg-[#f8fafc] border-t border-slate-100"
       >
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-12 lg:gap-16">
             {/* Left Column - Sticky Container for Image and Testimonial */}
-            <div className="flex flex-col lg:order-1">
+            <div className="contents lg:flex lg:flex-col lg:order-1">
               {/* Combined Sticky Section */}
-              <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit space-y-4"
+              <div
+                className="contents lg:block lg:sticky lg:top-24 h-fit space-y-8 lg:space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-[#c1e9c3] via-#c1e9c3 to-[#c1e9c3] rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
-                  <img
-                    src={cvProductCard}
-                    alt="ComplianceVista Product Card"
-                    loading="lazy"
-                    className="w-full h-full object-cover rounded-2xl shadow-md"
-                  />
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: -24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="order-1 lg:order-none w-full"
+                >
+                  <div className="bg-gradient-to-br from-[#c1e9c3] via-#c1e9c3 to-[#c1e9c3] rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
+                    <img
+                      src={cvProductCard}
+                      alt="ComplianceVista Product Card"
+                      loading="lazy"
+                      className="w-full h-full object-cover rounded-2xl shadow-md"
+                    />
+                  </div>
+                </motion.div>
 
                 {/* Testimonial Carousel */}
-                <Carousel
+                <motion.div
+                  initial={{ opacity: 0, x: -24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="order-3 lg:order-none w-full"
+                >
+                  <Carousel
                   opts={{
                     align: "start",
                     loop: true,
@@ -927,7 +974,8 @@ export default function Products() {
                     ))}
                   </CarouselContent>
                 </Carousel>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
 
             {/* Right Column - Product Info */}
@@ -936,7 +984,7 @@ export default function Products() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="space-y-7 lg:order-2"
+              className="order-2 lg:order-2 space-y-7"
             >
               <div className="flex items-center">
                 <img
@@ -1037,14 +1085,14 @@ export default function Products() {
       {/* ── AgentVista ────────────────────────────── */}
       <section id="agentvista" className="py-24 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-y-12 lg:gap-16">
             {/* Left Column - Product Info */}
             <motion.div
               initial={{ opacity: 0, x: -24 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="space-y-7 lg:order-1"
+              className="order-2 lg:order-none space-y-7 lg:order-1"
             >
               <div className="flex items-center">
                 <img
@@ -1142,27 +1190,38 @@ export default function Products() {
             </motion.div>
 
             {/* Right Column - Sticky Container for Image and Testimonial */}
-            <div className="flex flex-col lg:order-2">
+            <div className="contents lg:flex lg:flex-col lg:order-2">
               {/* Combined Sticky Section */}
-              <motion.div
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="lg:sticky lg:top-24 h-fit space-y-4"
+              <div
+                className="contents lg:block lg:sticky lg:top-24 h-fit space-y-8 lg:space-y-4"
               >
                 {/* Product Card */}
-                <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
-                  <img
-                    src={avProductCard}
-                    alt="AgentVista Product Card"
-                    loading="lazy"
-                    className="w-full h-full object-cover rounded-2xl shadow-md"
-                  />
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="order-1 lg:order-none w-full"
+                >
+                  <div className="bg-gradient-to-br from-sky-50 to-blue-100 rounded-3xl p-3 md:p-6 flex items-center justify-center w-full aspect-video">
+                    <img
+                      src={avProductCard}
+                      alt="AgentVista Product Card"
+                      loading="lazy"
+                      className="w-full h-full object-cover rounded-2xl shadow-md"
+                    />
+                  </div>
+                </motion.div>
 
                 {/* Testimonial Carousel */}
-                <Carousel
+                <motion.div
+                  initial={{ opacity: 0, x: 24 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="order-3 lg:order-none w-full"
+                >
+                  <Carousel
                   opts={{
                     align: "start",
                     loop: true,
@@ -1225,7 +1284,8 @@ export default function Products() {
                     ))}
                   </CarouselContent>
                 </Carousel>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
