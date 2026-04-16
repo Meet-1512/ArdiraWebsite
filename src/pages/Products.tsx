@@ -259,7 +259,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+                className="order-3 lg:order-none space-y-7"
               >
                 <p className="text-base md:text-lg font-medium text-[#43AF57]">
                 Turn customer signals into results — inside Salesforce.
@@ -582,7 +582,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+                className="order-3 lg:order-none space-y-7"
               >
                 <p className="text-base md:text-lg font-medium text-[#28aae1]">
                 Endless Applications: The 5-star rated Data Collection Solution
@@ -707,7 +707,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+                className="order-3 lg:order-none space-y-7"
               >
                 <p className="text-base md:text-lg font-medium text-sky-600">
                 Uncover & Visualize Your Salesforce Relationships
@@ -1035,7 +1035,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+                className="order-3 lg:order-none space-y-7"
               >
                 <p className="text-base md:text-lg font-medium text-[#43AF57]">
                 Automate assessments, reduce risk, and ensure compliance inside
@@ -1153,7 +1153,7 @@ export default function Products() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="order-3 lg:order-none space-y-7 mt-7 lg:mt-0"
+                className="order-3 lg:order-none space-y-7"
               >
                 <p className="text-base md:text-lg font-medium text-blue-400">
                   AI-Powered Feedback Automation with SurveyVista & Agentforce
